@@ -1,0 +1,17 @@
+backend:
+  name: test-repo
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "src/products"
+    create: true
+    fields:
+      - { name: "name", label: "Name" }
+      - { name: "templateKey", label: "Template Key", widget: "hidden", default: "product"}
+      - { name: "price", label: "Price" }
+      - { name: "weight", label: "Weight" }
+      - { name: "description", label: "Description", wiget: "markdown" }
