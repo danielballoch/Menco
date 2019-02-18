@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
   branch: master
+  repo: danielballoch/ecom
+  site_domain: musing-ardinghelli-c4017a.netlify.com
 
 media_folder: static/assets
 public_folder: assets
