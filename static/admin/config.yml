@@ -3,6 +3,7 @@ backend:
   branch: master
   repo: danielballoch/ecom
   site_domain: musing-ardinghelli-c4017a.netlify.com
+  publish_mode: editorial_workflow
 
 media_folder: static/assets
 public_folder: assets
@@ -19,13 +20,4 @@ collections:
       - { name: "weight", label: "Weight" }
       - { name: "description", label: "Description", wiget: "markdown" }
 
-  - name: "pages"
-    label: "Pages"
-    files:
-      - file: "src/pages/about/index.md"
-        label: "About"
-        name: "about"
-        fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+ 
