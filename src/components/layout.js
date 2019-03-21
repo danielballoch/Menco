@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import seo from "./seo"
 
 import Header from "./header"
 import "./layout.css"
@@ -18,6 +19,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
+      <seo></seo>
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
