@@ -1,5 +1,8 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import image from "../components/image"
+import Layout from "../components/layout"
+
 
 
 export default function Template({
@@ -8,11 +11,13 @@ export default function Template({
     const { markdownRemark } = data
     const { frontmatter, html } = markdownRemark
     return (
+        <Layout>
         <div className="blog-post-container">
         <div className="blog-post">
           <h1>{frontmatter.name}</h1>
           <h2>${frontmatter.price}</h2>
-          <h2>{frontmatter.title}</h2>
+          <img src={frontmatter.image}/>
+          <image src={frontmatter.image}></image>
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
@@ -25,11 +30,13 @@ export default function Template({
             data-item-weight={frontmatter.weight}
             data-item-url={"http://snipcart-gatsby.netlify.com" + frontmatter.path}>
             Buy
+
         </a>
         <Link to="/">Back</Link>
 
         </div>
       </div>
+      </Layout>
     )
 }
 
@@ -45,6 +52,7 @@ query($path: String!) {
             templateKey
             title
             date(formatString: "MMMM DD, YYYY")
+            image
         }
     }
 }

@@ -1,0 +1,24 @@
+9/04/2019
+* change layout from const to class? and actually incorperate into pages.
+    -> comma out old work and try this
+    *had trouble
+* Do I need to change index page also?
+ -> index page to class? class in class? go back and read over classes vs const to figure out a plan to:
+    1. get display markdown content in index page 
+    2. have layout component over 
+    3. figure out what  data: {allMarkdownRemark: { edges } ... etc actually does and requires.
+$$$ Just needed to put layout in return section.
+
+Now:
+! prioritise core fuctionalityfirst (snip cart)
+
+
+
+* get snipcart buy working
+
+* add cart fuctionality?
+
+* style product tem and index page
+
+* add styled components or chage styling to get toolbar, side drawer etc working
+
