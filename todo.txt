@@ -1,4 +1,4 @@
-9/04/2019
+Web goals for 9/04/2019
 * change layout from const to class? and actually incorperate into pages.
     -> comma out old work and try this
     *had trouble
@@ -27,7 +27,7 @@ Now:
 * get photos working
 
 
-Web goals for today 10/04/2019:
+Web goals for 10/04/2019:
 1. Learn more about snipcart and get buy button working on ecom site. est 1hr.
 -> updated api key and added required id tag. Kinda working now 11:25 (only took 20m)
     *cart already in use off the bat. but need cart icon 
@@ -43,6 +43,41 @@ then keep reading. 1:40m then I needed a break. @12:50pm
 
 
 also today: look at marketing for freelancers and try suss business card.
+-> looked at fonts and business card examples (bookmarked), still not 100%.
+* Need to brainstorm and make different prototypes, try stuff out.. throw some shit, see what sticks.
+
+
+Web goals for 11/04/2019:
+1.figure out data-autopop from yesterday est 20m
+-> items and dashboard showing twice, try delete snip in code and just use gatsby plugin.
+$this worked and took 2 seconds :D customer dashboard also working now.
+*number of items and total price does not load automatically on other page, come back to this.
+
+2. read through rest of snipcart docs est 40m
+-read through first section and found customisation options.. as well as case studies.
+ Beautiful case studies! https://snipcart.com/custom-shopping-cart
+ -> couldent help myself, I checked out case studies with rest of time.
+
+-> everything can be edited: flexible product options, additional order info, checkout process etc
+https://snipcart.com/custom-shopping-cart
+
+Break. Yoga or have a walk. Butt exercise since sitting so long. 9:45 :D
+-> put washing out, got air, now im good 10:00 
+-> read rest of case study (10m)
+
+3. Read through customization https://snipcart.com/blog/customize-snipcart-v2-shopping-cart est 20m
+https://snipcart.com/blog/cart-customization-sass-bem-low-specificity
+-> read but dont really understand
+https://docs.snipcart.com/getting-started/customization'
+this helped a lot (found after looking through other repos)
+-> cloned repo but i'm losing focus. time for luch and to do something else for a bit.
+11:30am
+
+4.explore customization options.
+
+
+5. Functionality fully working.. whatever this means?
+6. Create design plan for website and figure out goal for practice site?
 
 
 

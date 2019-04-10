@@ -27,6 +27,14 @@ return(
                     <StyledLink to="/about/" ><Nav>Our Plans</Nav></StyledLink>
                     <StyledLink to="/services/"><Nav>Our Recipes</Nav></StyledLink>
                     <StyledLink to="/contact" ><Nav>Support</Nav></StyledLink>
+                    <Nav><a href="#" class="snipcart-user-profile">
+                         <span>Login</span>
+                        </a>
+                    </Nav>
+                    <Nav><a href="#" class="snipcart-user-logout">
+                            Logout
+                        </a>
+                    </Nav>
                 </div>
                 
             </div>

@@ -34,14 +34,7 @@ export default function Template({
 
         </button>
 
-        <div class="snipcart-summary">
-            <a href="#" class="snipcart-user-email snipcart-user-profile">
-            Customer dashboard
-            </a>
-        </div>
-        <div>
-            Lots of content
-        </div>
+        
         <div class="snipcart-summary">
             Number of items: <span class="snipcart-total-items"></span>
             Total price: <span class="snipcart-total-price"></span>
