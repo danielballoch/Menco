@@ -20,5 +20,29 @@ Now:
 
 * style product tem and index page
 
+* get toolbar working
+
 * add styled components or chage styling to get toolbar, side drawer etc working
+
+* get photos working
+
+
+Web goals for today 10/04/2019:
+1. Learn more about snipcart and get buy button working on ecom site. est 1hr.
+-> updated api key and added required id tag. Kinda working now 11:25 (only took 20m)
+    *cart already in use off the bat. but need cart icon 
+2. Learn about cart customization and figure out how long to implement. est 30m.
+read through snipcart doc for next hour or so
+->added cart icon.
+->installed gatsby-plugin-snipcart
+*need to figure out data-autopop*
+https://docs.snipcart.com/getting-started/the-cart
+then keep reading. 1:40m then I needed a break. @12:50pm
+
+*need user login and dashboard for user to stop subscriptions (also shows them usefull info)
+
+
+also today: look at marketing for freelancers and try suss business card.
+
+
 

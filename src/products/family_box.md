@@ -1,7 +1,8 @@
 ---
 name: Family Box
 templateKey: product
-price: 100
+id: 2
+price: 100.00
 weight: 5
 image: "/products/PorkBlackBean.jpg"
 path: "/products/family_box"

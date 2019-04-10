@@ -86,6 +86,12 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/cms`,
     }
 },'gatsby-plugin-netlify',
+{
+    resolve: 'gatsby-plugin-snipcart',
+    options: {
+      apiKey: 'MmVjYmVjYzMtZTA5MS00NzJjLTlmZGMtMmIxYjVlZjFjMjM0NjM2ODUzNjg2NTY4NTk5NTIy',
+    }
+  },
 
   ],
 }

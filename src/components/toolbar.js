@@ -23,9 +23,10 @@ return(
             <div className="spacer"></div>
             <div className="toolbar_navigation_items">
                 <div>
-                    <StyledLink to="/about/" ><Nav>About</Nav></StyledLink>
-                    <StyledLink to="/services/"><Nav>Products</Nav></StyledLink>
-                    <StyledLink to="/contact" ><Nav>Contact</Nav></StyledLink>
+                    <Nav>  <a href="#" class="snipcart-checkout">Cart</a> </Nav>
+                    <StyledLink to="/about/" ><Nav>Our Plans</Nav></StyledLink>
+                    <StyledLink to="/services/"><Nav>Our Recipes</Nav></StyledLink>
+                    <StyledLink to="/contact" ><Nav>Support</Nav></StyledLink>
                 </div>
                 
             </div>

@@ -22,16 +22,30 @@ export default function Template({
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
           />
-        <a
+        <button
              href='#' 
             className='snipcart-add-item buyBtn'
             data-item-price={frontmatter.price}
             data-item-name={frontmatter.name}
+            data-item-id={frontmatter.id}
             data-item-weight={frontmatter.weight}
             data-item-url={"http://snipcart-gatsby.netlify.com" + frontmatter.path}>
             Buy
 
-        </a>
+        </button>
+
+        <div class="snipcart-summary">
+            <a href="#" class="snipcart-user-email snipcart-user-profile">
+            Customer dashboard
+            </a>
+        </div>
+        <div>
+            Lots of content
+        </div>
+        <div class="snipcart-summary">
+            Number of items: <span class="snipcart-total-items"></span>
+            Total price: <span class="snipcart-total-price"></span>
+        </div>
         <Link to="/">Back</Link>
 
         </div>
@@ -47,6 +61,7 @@ query($path: String!) {
         frontmatter {
             path
             name
+            id
             price
             weight
             templateKey

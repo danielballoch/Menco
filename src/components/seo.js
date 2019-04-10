@@ -71,11 +71,12 @@ function SEO({ description, lang, meta, keywords, title }) {
                 type: 'text/javascript', 
                 url:"",
                 id: "snipcart",
-                "data-api-key": "YjdiNWIyOTUtZTIyMy00MWMwLTkwNDUtMzI1M2M2NTgxYjE0",
-                src:"https://cdn.snipcart.com/scripts/2.0/snipcart.js" 
+                "data-api-key": "MmVjYmVjYzMtZTA5MS00NzJjLTlmZGMtMmIxYjVlZjFjMjM0NjM2ODUzNjg2NTY4NTk5NTIy",
+                src:"https://cdn.snipcart.com/scripts/2.0/snipcart.js",
               },{
                 type: 'text/javascript',
-                src:"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"
+                src:"https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js",
+               
               }]}
             //add snip data-api-key
 
