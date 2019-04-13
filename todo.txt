@@ -10,7 +10,7 @@ Web goals for 9/04/2019
 $$$ Just needed to put layout in return section.
 
 Now:
-! prioritise core fuctionalityfirst (snip cart)
+! prioritise core fuctionality first (snip cart)
 
 
 
@@ -68,16 +68,51 @@ Break. Yoga or have a walk. Butt exercise since sitting so long. 9:45 :D
 3. Read through customization https://snipcart.com/blog/customize-snipcart-v2-shopping-cart est 20m
 https://snipcart.com/blog/cart-customization-sass-bem-low-specificity
 -> read but dont really understand
-https://docs.snipcart.com/getting-started/customization'
+https://docs.snipcart.com/getting-started/customization 
 this helped a lot (found after looking through other repos)
 -> cloned repo but i'm losing focus. time for luch and to do something else for a bit.
 11:30am
 
-4.explore customization options.
+
+
+
+
+Web goals 12/04/2019   - 1:30m today, unless I do stuff after. 
+**power went out. went shopping. Below is 30m work :/
+1.explore customization options for snip cart.
+*read docs from yesterday and try and figure it out?
+*just get a small idea of what you can do and how then move to #2
+-> after reading I think the way it works is I use the template to create a custom
+ theme using sass and whatevers in the template.
+I then use gulp to build the final file (testing & production/min).
+ This saves time as compiling the sass
+
+
+Web goals 13/04/2019
+1. READ THIS AND IMPLEMENT 
+https://snipcart.com/blog/gulp-optimize-frontend-workflow  est 30m
+*This should be implemented in the snipcart themes application
+2. Figure out how theme works (yesterdays research) est 30m
+break.
+*New snip tem is different than old guide, but I think everything is already done. (30m mark)
+-> will keep going for 30m
+*yep everything was done.. silly me didnt read https://docs.snipcart.com/getting-started/customization
+but hey, I got there :D
+*All new gulp tasks listed with descriptions and at least now I understand gulp.
+
+How I should go about using the file?
+*Use gulp watch and gulp sync. The created css (constantly being synced while edited)
+will be on server and I can access it on my (now synced dev server) via normal link tag
+e.g  <link href="http://localhost:3005/themes/base/snipcart.css" rel="stylesheet" />
+
+10m to try it out :D *two terminals, shits getting fancy
+
+
+3. Create design plan for website and figure out goal for practice site?  (est 1hr)
 
 
 5. Functionality fully working.. whatever this means?
-6. Create design plan for website and figure out goal for practice site?
+ 
 
 
 
