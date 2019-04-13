@@ -102,10 +102,27 @@ but hey, I got there :D
 
 How I should go about using the file?
 *Use gulp watch and gulp sync. The created css (constantly being synced while edited)
-will be on server and I can access it on my (now synced dev server) via normal link tag
+will be on server and I can access it on my (now synced dev server) via normal link tag,
+ or in my case the gatsby-plugin-snipcart options. 
 e.g  <link href="http://localhost:3005/themes/base/snipcart.css" rel="stylesheet" />
 
 10m to try it out :D *two terminals, shits getting fancy
+I'm on a roll baby, lets put dinner on then do another half! (1:30m in?)
+40m while dinners cooking to figure out.
+-> browser sync working but not css.
+*think I might need 3 servers up. sync, proxy and 
+-> changed to 3006 vs 3005 and now it's working 
+*setup is 3 terminals:
+1. gulp sync --proxy http://localhost:8000/
+2. gulp dev
+3. gatsby develop
+
+*Changing scss doesnt actually work even though browser refreshes and
+ new css file is created (double check). 
+ I think it could be because the link to the css file is in gatsby plugin meaning the server would 
+ need to be restarted for the new css file to show up? 
+ tomorrows work anyway. 
+
 
 
 3. Create design plan for website and figure out goal for practice site?  (est 1hr)
