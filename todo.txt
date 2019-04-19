@@ -123,9 +123,43 @@ I'm on a roll baby, lets put dinner on then do another half! (1:30m in?)
  need to be restarted for the new css file to show up? 
  tomorrows work anyway. 
 
+ 14/04/2019
 
-
+goal: figure out yesterdays troubles.
+1. Update css and then restart server and see if change works.
+2. Test css link in head (seo) instead of plugin.
+*Just tested again and it worked without any changes. Maybe it was the order of starting things?
+That's not a problem now, lets work on some design.
 3. Create design plan for website and figure out goal for practice site?  (est 1hr)
+
+17/04/2019
+Finally doing design plan (desktop folder). Last few days I struggled to make a plan and was irrational.
+->Formed importent questions for picking design elements, these should be reusable.
+->Created fake menswear company, answering questions 
+->Created freelance process document to solidify ideas
+
+18/04/2019
+Got up and felt great so doing some morning planning before trip.
+-> finished freelance process doc (for now).
+-> updated designTemplate doc (still more to add around how to pick features?)
+
+
+19/04/2019
+Goals: Font
+->ecom designTemplate purpose sections. Then:
+1.research selection and testing proccess for design features.
+-> First fonts: *writing font choosing process now, almost done. 
+*Finish rule 7 and reading articule. est 30m took 15
+*Create process document. est 10m maybe a bit more :D
+-> this actually took like an hour as I researched similar websites.
+Even still I'm not 100%. It seems simple for this scenario of a profesional/classic
+website, but there could be a lot more to it. 
+*try it out/create template?
+
+2. create selection and testing process/templates based on research.
+3. follow through with selection and testing for ecom site.
+
+*start putting time estmates on things again.
 
 
 5. Functionality fully working.. whatever this means?
