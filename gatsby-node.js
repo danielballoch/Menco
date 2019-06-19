@@ -31,13 +31,31 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 exports.createPages = ({ actions, graphql }) => {
     const {createPage} = actions;
 
- 
+ return new Promise((resolve, reject) => {
     const productPostTemplate = path.resolve(`src/templates/productPageTem.js`);
     const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
 
-    return graphql(`{
-            allMarkdownRemark(
+    resolve(
+         graphql(`{
+            products: allMarkdownRemark(
                 filter: {fields: {collection: {eq: "products"}}}
+                sort: { order: DESC, fields: [frontmatter___date] }
+                limit: 1000
+                ){
+                edges {
+                    node {
+                        html
+                        id
+                        frontmatter {
+                            path
+                            date
+                            title
+                        }
+                    }
+                }
+            }   
+            posts: allMarkdownRemark(
+                filter: {fields: {collection: {eq: "posts"}}}
                 sort: { order: DESC, fields: [frontmatter___date] }
                 limit: 1000
                 ){
@@ -55,13 +73,13 @@ exports.createPages = ({ actions, graphql }) => {
             }   
         }`).then(result => {
         if (result.errors){
-            return Promise.reject(result.errors);
+            return reject(result.errors);
         }
 
-        const products = result.data.allMarkdownRemark.edges;
+        const products = result.data.products.edges;
 
         products.forEach(({node}) => {
-            const path = node.frontmatter.path
+            const path = node.frontmatter.path;
 
             createPage({
                 path,
@@ -69,13 +87,26 @@ exports.createPages = ({ actions, graphql }) => {
                 contextpathSlug: path,
             });
         });
-
-        return products;
-
-
-
-    });
         
+
+
+        const posts = result.data.posts.edges;
+
+        posts.forEach(({node}) => {
+            const path = node.frontmatter.path;
+
+            createPage({
+                path,
+                component: blogPostTemplate,
+                contextpathSlug: path,
+            });
+        });
+        
+
+        
+    })
+    );
+});     
 };
 
         
