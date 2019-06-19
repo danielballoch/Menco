@@ -1,0 +1,32 @@
+.footer {
+    background-color: #FFE9E1;
+    align-content: center;
+}
+.links {
+    display: flex;
+    height: 250px;
+    width: 100%;
+    background-color: #FFE9E1;
+    margin-top: 400px;
+    padding-top: 50px;
+    justify-content: center;
+    font-family: "Open Sans";
+    font-size: .8rem;
+}
+.links div {
+    display: flexbox;
+    padding: 1rem;
+    
+
+}
+.links a {
+    display: flex;
+    padding: .2rem;
+}
+.links div :first-child {
+    font-weight: bold;
+}
+.copyright {
+    font-size: .7rem;
+   text-align: center;
+}

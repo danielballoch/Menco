@@ -7,21 +7,65 @@
     height: 56px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
     z-index: 300;
+    font-family: "open sans"
+  
 }
+.middleNav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: .5rem 1rem;
+    margin: auto;
+    font-size: 14px;
+}
+.middleNav a {
+    padding: 1rem 1rem;
+}
+.rightNav {
+    display: flex;
+    height: 100%;
+    align-items: right;
+    padding: 1rem 2rem;
+}
+.rightNav a {
+    padding: 0 1rem;
+    text-decoration: none;
+    color: black;
+}
+.rightNav a:hover {
+    color: #36648b
+}
+
 
 .toolbar_navigation {
     display: flex;
     height: 100%;
-    align-items: center;
-    padding: 0 1rem;
+    max-width: 100%;
+    justify-content: space-between;
     margin: auto;
-    max-width: 1038px;
+    /* max-width: 1038px; */
+}
+.cart-div {
+    display: inline-flex;
+
+}
+.cart-icon {
+height: 22px;
+position: relative;
+/* Adjust these values accordingly */
+top: 4px;
+left: 5px;
+
+
+
 }
 
 .toolbar_logo {
-    margin-left: 1rem;
-    transition: 0.3s;
-    z-index: 300;
+transition: 0.3s;
+z-index: 300;
+   height: 100%;
+   font-family: 'Quattrocento', serif;
+   
 }
 
 .toolbar_logo a {
@@ -29,36 +73,25 @@
    font-size: 1.5rem; 
    color: #000;
    transition: 0.3s;
+   padding: 1rem 1rem;
+   font-size: 3rem;
+  
 }
 .toolbar_logo a:hover {
     text-decoration: none;
-    font-size: 1.5rem; 
     /* color: #fa923f;  */
     color: #36648b;
  }
 
-.spacer {
-    flex: 1;
-}
-
-.toolbar_navigation_items ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.toolbar__toggle-button {
     display: flex;
-}
-.toolbar_navigation_items div {
-    list-style: none;
+    height: 100%;
+    align-items: center;
+    padding: 0 1rem;
     margin: 0;
-    padding: 0.5;
-    display: flex;
 }
 
 
-
-.toolbar_navigation_items a {
-    text-decoration: none;
-}
 
 .toolbar_navigation_items a:hover,
 .toolbar_navigation_items a:active {
@@ -67,19 +100,43 @@
 }
 
 
-@media (max-width: 555px) {
-    .toolbar_navigation_items{
+@media (max-width: 760px) {
+    .middleNav{
         display:none;
+    }
+    .login-button{
+        display: none;
+    }
+    .cart-text {
+        display: none;
+    }
+    .cart-icon {
+        height: 22px;
+        position: relative;
+        /* Adjust these values accordingly */
+        top: 3px;
+        left: 5px;
+        }
+    
+    .toolbar_navigation {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        justify-content: flex-end;
+        margin: auto;
+        /* max-width: 1038px; */
+    }
+    .toolbar_logo{
+        margin-right: auto;
+        margin-left: 0;
     }
 }
 
-@media (min-width: 556px) {
+@media (min-width: 760px) {
     .toolbar__toggle-button{
         display:none;
     }
-    .toolbar_logo{
-        margin-left: 0;
-    }
+    
 }
 
 

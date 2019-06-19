@@ -155,15 +155,379 @@ Goals: Font
 Even still I'm not 100%. It seems simple for this scenario of a profesional/classic
 website, but there could be a lot more to it. 
 *try it out/create template?
+-templates done. Not really sure how to find right fonts still though.
+like what actually signifys font personality?
+fading so I'm gonna hit it tomorrow after work. font pairings. logo design.
+create a index page layout? tons of shit to do.
 
-2. create selection and testing process/templates based on research.
-3. follow through with selection and testing for ecom site.
+20/04/2019
+-Layout design. Learn how to wire frame and quickly create client options, mock up design etc. est 30m
+-> Learnt how to use adobe xd a bit and created half a page tem. see if theres ones already made?
 
+21/04/2019
+8:20am
+1.freelance plan document to figure out some realistic timelines for goals. est 30m
+30 min, i'm about 1/3 through. so 1hour more?
+9:00 called into work. Finish this when your back.
+12:30 Back, had lunch.
+1.finish freelance plan/timeline est 30m. 
+-> actually finished in about 30m. Now to prioritise and timeline...
+ which I guess is the same doc :/.
+-> Finished.
+2. Now continue with layout from yesterday, researching, learning and creating process document.
+*work on templating process. ecom.
+-> researched layout process and half created layout process document.
+*Trello Tasks tomorrow.
+
+22/04/2019
+layout doc - menco catalog creation so I can make layout properly
+-> create products/catalog and potentially find images (1hour) (color tones, products)
+found color tones and created list of products (I will make it a onnit type deal, endorse and resell,
+this way I can use the already made photos and still keep to brands vision.)
+-> set up trello ready for tomorrow and the week ahead. 
+*realisticly did fuck all today but I've got a plan and I'm excited for the productivity 
+and exploration in the week ahead. I'm gonna have dinner, stop stressing out and work on 
+my business card a bit, or find some popular fonts before chilling out properly.
+
+23/04/2019
+1.Layout process (Theory and documentation) est 1 hour
+->Finished in an hour, actually got some good stuff done.
+Rearranged content and gave myself a better understanding of how things would work. 
+2.Create templates? (I think this would mean either for ecom site or just brainstorm common site
+patterns/ideas I think I would see.) -kill two birds, follow process for ecom site.
+->started process. Stage one kinda complete?
+ looked at a bunch of websites to get inspiration, may redo some of this. quick walk then start creating.
+*put washing on now: follow process.
+ -> finished 2. (although would brainstorm a lot more and present more options for an actual client.)
+*now quick mobile first wireframe. 
+-> finished.. took about 10m extra.
+*still need to do desktop design as well as all the other pages :D so yeah nah more time than I thought.
+This is good though, it's definatly progress and I'm learning as I go :).
+->Wrote down other pages and content on page, now I need to draft them in xd for client visual.
+3-5 est 1 hour.
+3. Draft catalog.
+4. Draft product page.
+5. about page.
+-> got to here, this is more work than I thought but I think with templates and such it'll get faster.
+Having a plan is definatly going to pay off anyway and this is the first draft the client would be
+paying for and giving me feedback on.
+Finish tomorrow? or after dinner.
+
+24/04/2019
+6. Draft register/Login page.
+-> one took 20m
+7. Draft account page.
+8. Customer care.
+finished by 10:40. Did basic prototype also. 
+Need to do desktop ones now. (real quick, not much will change)
+-> realised I didnt have cart or menu page so added those. Think I'm done for planning and need to
+do something else.
+
+25/04/2019
+2:20 :/. 
+yeah nah did fuck all. tiny start to desktop but I was being retarded.
+
+26/04/2019
+1.30m business card design because I'm inspired.
+-> downloaded fonts and made quick test to get feedback on. Basically agreed but helped me rule out 
+the bold which I thought looked alright.
+* try the same thing with the other half, create some quotes that fit your business.
+Go through design process. Create telling slogan, leave a bit of mystery still? 
+2. -> desktop designs?
+*Thinking about getting quick feedback on design, perhaps braking each page into sections 
+e.g. homepage - blog advertising section and creating 2 or three versions, comtimplating reasons for each
+could be benifitial to the owner and customer. It would bring reason and testing to the process rather
+than just freeballing what looks good.
+-> 2 featured products options & some homepage work. Hour down :/. lunch time. 
+*unsure about how many options/drafts I should give. Will read up quickly.
+-> made a little doc about design prototypes and presentation. lead me to design, psycology 
+and the idea of presenting 1 idea with technical reasoning - based on business questions,
+design patterns, science, psycology, theme etc etc - but have a backup or other options ready.
+*you can always get feedback and change, but with multiple options it's hard to stay consistent 
+and often leads to waisted time. Better to break the project down and present one solution. 
+*framing your presentation also matters.
+https://blog.hubspot.com/sales/the-psychology-of-choice#sm.00001wg21z3r4ge7cylxp8c9itqku 
+
+-> too much reading not enough doing. I would have been better of picking a task and doing it.
+Q : will I make rest of desktop pages or just main?
+
+27/04/2019 - worked till 2. lunch. Lets put a hour or two in toward the dream :)
+-> started template but was unsure how to go about... seems too simple.
+-> researched and gather a list of fonts to try out, downloaded all.
+
+28/04/2019
+*I dont really need layout templates, these are what mock ups are for. Don't create work that doesnt
+need to be done. Perhaps researching layouts and when to use what could be helpful though?
+-> removed from list
+->20m research
+*gave me motivation but didn't really accomplish much. I should be doing the most important things to
+quickly get me up and running.
+1. Quickly do colour process doc and font tasks to self assure.
+->font pairings half and hour done *template could be made but is not a neccesity
+2. color 40m 
+-> researched and created document to refer back to
+*Now follow through on Menco project tasks: choose font 
+(create templates to help?), go through design processes etc.
+3. Install fonts (while listening to audiobook) so I can create a template. 20m
+-> updating in go to fonts doc 10m
+->research style guides 40m
+log off *tomorrow Create proper style guide or finish menco process?
+
+29/04/2019
+all day at work
+
+30/04/2019 - 2:40
+-what can I do to get me up and running. -menco process. you've got the processes, now use them.
+1.sort documents. What needs to be redone or started?
+*need to 
+1.finish brand (Logo)
+->done + favicon options
+2. design process (colors, fonts, pictures, icons etc - style guide).
+->updated a bit. added all to one file. Need to break down and keep going.
+    *pick color and fonts - test in layout 
+3. Layout heirachy/element details and update xd doc to match.
+1. est 20m -created grid of name in different fonts and picked out most fitting imo (Quattrocento)
+
+
+ *Went on 2 day trip with guys. Nothing over half a day this month.
+
+3/05/2019 - friday.
 *start putting time estmates on things again.
+1. design process & style guide (fron 30/04) 
+*pick color and fonts - test in layout  est 40m.
+-> searched for photos and made more realistic draft... what was I supposed to do though :/.
+lunch
+-> updated more realistic draft. Still need to add more and actually
+ list colours, pick fonts properly etc. Use colours of images. Create pallate.
+ *research hero images?
 
 
-5. Functionality fully working.. whatever this means?
+
+ 4/05/2019 - sat:3:40 - couple hours before dinner.
+ goal: 
  
+Where am I and whats the best step forward?
+What are my time restrictions?
+Energy levels and how can I reframe to motivate and make this fun/meaningfull?
+
+-front page in xd (done?)
++half a style guide -> need to finish to present to client.
+*Need to properly reason and pick font and colours in writing (dispay on style guide what/why)
+-> Pick fonts matching project personality + buttons & headings, explaining ui/ux, human nature, style.
+-> Solidify color pallate and reason for which (showing photo examples, statistics/theory etc)
++half design/layout process doc.  
+
+time: 2-3 hours?
+
+First Fonts est 1.5 hours:
+1. Reason for fonts. -> design docs
+2.Research title fonts & look at examples. (how many on website) ->web
+3. Select and test in xd.  -> web, xd
+4. Feedback? -> friends
+5. Finalise
+6. Document
+
+5:00 -> Created proper font selection document. took 1 hour. 
+6:00 -> filled out examples in document. took 1 hour.
+*might not be fast enough, implement and make adjustments as neccasery.
+*need to implement in ecom fonts doc
+
+5/05/2019 - sunday: 5pm 
+1.Font process for ecom site est 40m
+-6:14 filled half of h1 process, need to gather range. 
+-finish tomorrow.
+
+6/05/2019
+worked till 5, didn't do much
+
+7/05/2019 - tuesday: 12pm
+Tons of energy - 2 hours then lunch ?
+follow font process (this is a bit tedious but the effect is huge, it is all over your website) 
+1.finish h1 section est 30m.
+-> spent 30minutes reading web pages, not really doing a whole lot. found serif style catagories
+(old, transitional, didone, slab, ) and can include this in design doc when describing elements
+needed in fonts. * need to do simple thing, set timer, create list. or download more fonts?
+-> downoaded and arranged fonts. *Need to install and add to selection doc.
+-> 20m to install and put on chart.. now to narrow down. Seems to be very hard since they are 
+similar... look at logistics.
+
+8/05/2019 - wednesday: 9am
+1. Quickly narrow down fonts est 20m
+-> narrowed down to four, scrutinising over line smoothness, caps, joinings etc little over 20m
+2. quick desc. of slight differences est 10m
+->
+3. Body section - readible, popular, matching process est 30minutes
+brekfast
+
+9/05/2019 - friday: 11:40am
+no work yesterday, with friends, unmotivated.
+today im happy and motivated, run with book really helped.
+1. pick font (desc est 30m) 
+->took till 1:05 to fully settle on aleo and describe why.
+*add to style guide?
+2.Body section - readible, popular, matching process est 30minutes 5 options?
+-Did a bit of research and looked at logistics of fonts.
+came to 4 suitible matchs, decided on open sans largly due to symbol visuals.
+lato matches? find 4 other options? helvetica, ???
+
+13/05/2019 whered the habit go :/
+Where am I? fonts picked (aleo & open sans)
+-> finished off doc, need feedback but this can wait.
+-> updated style guide
+
+14/05/2019 - tuesday 9:40
+*I have everything I need, stop searching, start producing; Learn through doing.
+1. Select colour options. est 30m.
+-created doc with 2 options, not quite finished 
+-> reading article, I missed so many bits or maybe didn't read this one but it's gold.
++I'M Implementing immediatly so it's ok :D
+-> second is hard to do, I understand but think nuetrals support brand story, move onto
+ competitors first.
+*finish 2nd. est 20m.
+*look at competitors and make a third option based on findings. est 20m
+-> -did rough for 2nd and 3rd.
+2. Create drafts to compare. Experiment.
+-> got a bit distracted changing design, only did one or two options. 
+12:37, gonna have a break.
+
+3:14: cooked, cleaned, put washing out
+-> Started reading article then realise I was in a black hole. Close that tab!
+*now look at rest of competitors, add to doc. est 30m 
+->done in 25..
+*decided on binging to code before altering colours anymore.
+4:52, Break: dinner... don't know where time went.
+
+1.Put design into code : any changes to layout first? check heirachy.
+    1.Create page files. est 5m.
+    -> done
+    *Break pages down into elements:
+    All
+        1.Navbar. est 20m -> nope, maybe another 20m - done in 10 but I think it's over complicated.
+        * Still need login to disapper and cart to snap to the right. 
+        -> fixed.
+        *need to style fonts and adjust container width or padding.
+ 17/05/2019 - 4pm friday: worked on fitness otherdays.. should have prioritised this and done a bit of
+ both in the day so it was still in the subconcious, next time.
+    *carry on
+    * cart icon est 3m -> 14m now i need to style. -1hour later ...
+    * remove login and cart text on mobile + add link to cart icon
+    ->finished by 5:35
+    * import font & adjust center font
+    -> fucked around with fonts, need to figure out specificity of css selection
+     (how does this fit with theme css doc?)
+18/05/2019 Saturday 2pm 
+    -> added pages and linked with nav 
+    *fix fonts/styling
+    -> navingation links (styled components) had priority over css... sloppy
+    -> fixed nav then broke again :|.
+    3:38-> had a rest for 5m in bed, fixed nav (trouble shoot with inspector, specific css)
+    *create quick footer est 10m -> created, now style est 10m
+    -> created footer 4:20
+    *update styling -> replaced layout css, updated fonts etc  
+        2.Footer -done
+    *Homepage
+        1. Home: Hero image + h2 + p + shop button. 6:30 est 20m
+        -> created hero image, not sure if it looks good and the scale for mobile is a bit off 
+        this is something you need serious work on as a designer.
+******        
+        * shop now button - white border (no fill) on hover?
+21/05/2018 tuesday
+        -heirachy/contrast (bigger header text) makes a huge difference.
+        *need to do below:
+        2. Featured product: h1 + product grid + shop all button.
+        ->trying to implement image (featuredImage) into project... not working so far
+        *changed product file structure
+        https://www.orangejellyfish.com/blog/a-comprehensive-guide-to-images-in-gatsby/
+        - still struggling. slow down and fully read guide.
+        *link relitive to markdown
+        -pretty certain I have correct path... :|. Read below? 
+        https://spectrum.chat/gatsby-js/general/gatsby-v2-embed-images-in-markdown~e8406ffb-d9af-4731-8625-1ab0f2f8b95d 
+        https://medium.com/@sgpropguide/customising-image-display-in-gatsby-3b027d783dce 
+
+28/05/2019 tuesday
+        *got images working by reading:
+         https://www.gatsbyjs.org/packages/gatsby-plugin-sharp/?=sharp
+        & https://github.com/gatsbyjs/gatsby/issues/2054
+
+        -needed correct link (post.frontmatter.image.childImageSharp.fluid) matching my specific query
+        -needed to use <Img> tag vs img in order to use sharp plugin?
+
+        *now to style the product section est 30m -done in 40? just working on effects now
+        -can do details later *add products and other sections. 
+        -> added products, happy with progress today good 2hrs
+        ->updated little things (hover colour, product hover)
+29/05/2019 -new monitor *no work ;/
+30/05/2019 *1hr cardio + squats... feeling it. 
+        1.create shop all button -> 30m or so adjusting style, postitioning etc
+        2.look blog banner -> 20m. Drained now, 30m nap then food.
+31/05/2019
+        1.create blog section -> same as products but blog posts rather than products
+        what are the steps??
+        -blog template, markdown pages, gatsby node,  
+        https://swas.io/blog/using-multiple-queries-on-gatsbyjs-createpages-node-api/ 
+        https://www.gatsbyjs.org/docs/adding-markdown-pages/ 
+        -integration not quite working - query error. lunch then attack.
+        https://spectrum.chat/gatsby-js/general/how-do-i-create-pages-with-multiple-templates~cd82ebe3-0d3b-4ce5-8f6a-193353d0867f
+        https://desktopofsamuel.com/building-gatsby-with-multiple-post-type -this seems like me
+        https://desktopofsamuel.com/gatsby-website-with-multiple-post-types -found an update on the guys blog
+1/06/2019 ... probably should have been using git this whole time :|
+-gon dun fucked it :(
+    *specificity to paths and your own project, attention and understanding whats going on is how you worked it out with one create page, now do it with two.
+https://desktopofsamuel.com/gatsby-website-with-multiple-post-types
+-dont have energy for it right now, work on something else productive though.
+
+3/06/2019 3pm: work on blog intead as I'm motivated to do this.
+-didn't end up liking starter template, easier and more benificial to go from scratch?? or maybe I should try and understand :/
+-ecom blog section not working, realised that I tried to implement something for a starter which was set up different than my project and the pieces wouldn't fot so to speak
+-either 
+1.figure out starter, then apply to own site
+ or
+2.go back to old method which worked and try figure out multiple create pages from a different source of info.
+
+I think delving into advanced starter and seeing a different process could be helpful and if I can understand quickly then it will drastically 
+save time vs me slowly adding one piece at a time, although I could look over some details so I need to be vigilent, look at plugin docs, etc.
+attck this tomorrow or tonight? 
 
 
+18/06/2019 - created blog (half way), now implement concepts learned e.g. correct two page node creation, tags etc
+1. compare, strip and get ecom working. -products first
+*I want to distinguish products from blog posts, so do I use all markdown remark or what?
+
+
+**** https://justinformentin.com/guide-to-building-a-gatsby-site
+dude seems legit, worth the read as I'm especially stuck right now.
+
+
+        3. blog section:
+            450px cream banner + Hero Text + h1 (sans)
+            blog item template (image, h2, p, read more button)
+            blog link button.
+        4. Social media section (tan/red bg, hero text, image, icons, p)    
+
+
+
+    2. Create layout for each. est 40m.
+    3. Placeholder content. est 20m
+    4. Images est 30m.
+
+2. Get some feedback from josh tonight.
+
+colour combos can be previewed easier with scss themes.
+
+
+
+
+
+
+*look at white space formula (picking fonts ideas doc) and adjust layout.
+
+The overall goal at this point is to make a beautiful, functional website while testing 
+design practices and learning at the same time. 
+Quickly get to the stage where I have value and can offer this to prospective clients so I can
+live freely, learn and help people. Value, value, value. Give it out freely all the time.
+
+Article on fonts while it's on my mind? #value
+-recreate website around creating and showing value. Is whats valuable to me valuable to customers?
+-or is this a way to create a community, gather feedback, learn enable others and create connections.
+ 
 

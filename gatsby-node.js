@@ -4,39 +4,82 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-// You can delete this file if you're not using it
+const path = require("path");
 
-const path = require("path")
+const _ = require("lodash")
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+    const { createNodeField } = actions;
+  
+    if (_.get(node, "internal.type") === `MarkdownRemark`) {
+      // Get the parent node
+      const parent = getNode(_.get(node, "parent"));
+  
+      // Create a field on this node for the "collection" of the parent
+      // NOTE: This is necessary so we can filter `allMarkdownRemark` by
+      // `collection` otherwise there is no way to filter for only markdown
+      // documents of type `post`.
+      createNodeField({
+        node,
+        name: "collection",
+        value: _.get(parent, "sourceInstanceName")
+      });
+    }
+  };
+
 
 exports.createPages = ({ actions, graphql }) => {
-    const {createPage} = actions
-    const productPostTemplate = path.resolve(`src/templates/productPageTem.js`)
+    const {createPage} = actions;
 
-    return graphql(`
-    {
-        allMarkdownRemark(
-            
-            limit: 1000
-        ){
-            edges{
-                node{
-                    frontmatter{
-                        path
+ 
+    const productPostTemplate = path.resolve(`src/templates/productPageTem.js`);
+    const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
+
+    return graphql(`{
+            allMarkdownRemark(
+                filter: {fields: {collection: {eq: "products"}}}
+                sort: { order: DESC, fields: [frontmatter___date] }
+                limit: 1000
+                ){
+                edges {
+                    node {
+                        html
+                        id
+                        frontmatter {
+                            path
+                            date
+                            title
+                        }
                     }
                 }
-            }
-        }
-    }`).then(result => {
+            }   
+        }`).then(result => {
         if (result.errors){
-        return Promise.reject(result.errors)
-    }
+            return Promise.reject(result.errors);
+        }
 
-    result.data.allMarkdownRemark.edges.forEach(({node}) => {
-        createPage({
-            path: node.frontmatter.path,
-            component: productPostTemplate,
-            context: {}, //additional data passed via context
-        })
-    })
-    })
-}
+        const products = result.data.allMarkdownRemark.edges;
+
+        products.forEach(({node}) => {
+            const path = node.frontmatter.path
+
+            createPage({
+                path,
+                component: productPostTemplate,
+                contextpathSlug: path,
+            });
+        });
+
+        return products;
+
+
+
+    });
+        
+};
+
+        
+        
+        
+
+

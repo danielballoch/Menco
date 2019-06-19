@@ -16,8 +16,8 @@ export default function Template({
         <div className="blog-post">
           <h1>{frontmatter.name}</h1>
           <h2>${frontmatter.price}</h2>
-          <img src={frontmatter.image}/>
-          <image src={frontmatter.image}></image>
+          <img src={frontmatter.featuredImage} alt={frontmatter.name + " worn by one of Mencos models"}/>
+          <image src={frontmatter.featuredImage}></image>
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
@@ -48,7 +48,7 @@ export default function Template({
 }
 
 export const productsQuery = graphql`
-query($path: String!) {
+query productPost($path: String!) {
     markdownRemark(frontmatter: {path: {eq: $path } }) {
         html
         frontmatter {
@@ -60,8 +60,32 @@ query($path: String!) {
             templateKey
             title
             date(formatString: "MMMM DD, YYYY")
-            image
+            
         }
     }
 }
 `
+
+
+
+
+
+// query {
+//     allMarkdownRemark(filter: {fields: {collection: {eq: "products"}}}){
+//         edges {
+//             node {
+//                 frontmatter {
+//                     path
+//                     name
+//                     id
+//                     price
+//                     weight
+//                     templateKey
+//                     title
+//                     date(formatString: "MMMM DD, YYYY")
+//                 }
+//             }
+//         }
+//     }
+// }
+// `

@@ -9,16 +9,11 @@ color: black;
 list-style-type: none;
 transition: 0.1s;
 &:hover {
-    color:#FF4136;
+    color:#36648b;
 }
 &:active {
     color: red;
     background: radial-gradient(rgba(255,245,255, 0.95), rgba(255,255,255, 0.95)); 
   }
 
-`
-
-export const Nav = styled.div`
-padding: .75em 1em;
-font-family: "Helvetica Neue", Helvetica, "Segoe UI";
 `

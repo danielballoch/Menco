@@ -13,15 +13,15 @@ module.exports = {
           path: `${__dirname}/static/img`,
           name: 'uploads',
         },
-      },
-      {
+    },
+    {
         resolve: 'gatsby-source-filesystem',
         options: {
           path: `${__dirname}/src/pages`,
           name: 'pages',
         },
-      },
-      {
+    },
+    {
         resolve: 'gatsby-source-filesystem',
         options: {
           path: `${__dirname}/src/images`,
@@ -31,10 +31,17 @@ module.exports = {
     {
         resolve: 'gatsby-source-filesystem',
         options: {
-            path: `${__dirname}/src/products`,
+            path: `${__dirname}/src/content/products`,
             name: 'products',
         },
-      },
+    },
+    {
+        resolve: 'gatsby-source-filesystem',
+        options: {
+            path: `${__dirname}/src/content/blog`,
+            name: 'posts',
+        }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -67,7 +74,7 @@ module.exports = {
                     // It's important to specify the maxWidth (in pixels) of
                     // the content container as this plugin uses this as the
                     // base for generating different widths of each image.
-                    maxWidth: 2048,
+                    maxWidth: 400,
                   },
                 },
                 {
