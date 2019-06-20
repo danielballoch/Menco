@@ -5,14 +5,17 @@ import "../pages/index.css";
 import heart from "../Icons/heart.svg";
 
 const PostLink = ({ post }) => (
-  <div className="post_div">
     <Link to={`/${post.frontmatter.path}`} key={post.title}>
-    <Image fluid={post.frontmatter.image.childImageSharp.fluid}/>
-    {post.frontmatter.name}
-    <br/>
-    <p className="sub_text"> ${post.frontmatter.price} - add to wishlist <img className="symbol" src={heart}/> </p>
+        <div className="post_div">
+            <Image fluid={post.frontmatter.image.childImageSharp.fluid}/>
+            {post.frontmatter.title}
+            <br/>
+            <p className="sub_text"> {post.frontmatter.date}</p>
+            <p className="sub_text">{post.excerpt}</p>
+            {post.frontmatter.tags}
+            
+        </div>
     </Link>
-  </div>
 )
 
 export default PostLink

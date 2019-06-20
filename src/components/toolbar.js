@@ -26,7 +26,7 @@ return(
                
                     <StyledLink to="/products/" >Products</StyledLink>
                     <StyledLink to="/about/">About</StyledLink>
-                    <StyledLink to="/contact" >Blog</StyledLink>
+                    <StyledLink to="/blog" >Blog</StyledLink>
                     <StyledLink to="/lookbook/" >Lookbook</StyledLink>
                 </div>
             
