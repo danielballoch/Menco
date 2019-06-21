@@ -1,9 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import PostListing from "../components/post-link"
-
+import styled from '@emotion/styled';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+
 
 class Index extends React.Component {
     render() {

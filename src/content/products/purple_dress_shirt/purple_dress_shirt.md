@@ -8,6 +8,7 @@ weight: 1
 image: "../purple_dress_shirt/purple_dress_shirt.jpg"
 path: "/products/purple_dress_shirt/purple_dress_shirt"
 date: "2017-11-07"
+tags: ['shirt']
 ---
 
 ![alt text](/products/purple_dress_shirt/purple_dress_shirt.jpg)

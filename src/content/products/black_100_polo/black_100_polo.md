@@ -8,6 +8,7 @@ weight: 1
 image: "../black_100_polo/black_100_polo.jpg"
 path: "/products/black_100_polo/black_100_polo"
 date: "2017-11-07"
+tags: ['polo']
 ---
 
 ![alt text](/products/black_100_polo/black_100_polo.jpg)

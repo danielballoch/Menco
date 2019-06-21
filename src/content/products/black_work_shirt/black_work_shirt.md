@@ -8,6 +8,7 @@ weight: 1
 image: "../black_work_shirt/black_work_shirt.jpg"
 path: "/products/black_work_shirt/black_work_shirt"
 date: "2017-11-07"
+tags: ['shirt']
 ---
 
 ![alt text](/products/black_work_shirt/black_work_shirt.jpg)

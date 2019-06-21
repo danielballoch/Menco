@@ -7,6 +7,7 @@ price: 100.00
 weight: 5
 image: "../black_vneck/black_vneck.jpg"
 path: "/products/black_vneck/black_vneck"
+tags: ['t-shirt']
 ---
 
 ![alt text](/products/black_vneck/black_vneck.jpg)
