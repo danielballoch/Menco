@@ -23,7 +23,7 @@ const IndexPage =  ({
       .map(edge => <ProductLink key={edge.node.id} post={edge.node} />)
 
     return <div>
-        <img className="hero-image" src={heroimage}/>
+        <img className="hero-image" src={heroimage} />
         <div className="hero-text">
         <h1>Quality Essentials</h1>
         
@@ -56,6 +56,7 @@ const IndexPage =  ({
         allMarkdownRemark(
             filter: {fields: {collection: {eq: "products"}}}
             sort: { order: DESC, fields: [frontmatter___price] }
+            limit: 4
 
             ) {
           edges {
@@ -70,7 +71,7 @@ const IndexPage =  ({
                 image {
                     childImageSharp {
                         fluid(maxWidth: 980) {
-                            ...GatsbyImageSharpFluid
+                            ...GatsbyImageSharpFluid_withWebp_tracedSVG
                             src
                         }
                     }
