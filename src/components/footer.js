@@ -17,18 +17,18 @@ return(
                     <StyledLink to="/contact" >Affiliates</StyledLink>                  
                 </div>
                 <div>
-                    <StyledLink to="/products/" >Customer Care</StyledLink>
-                    <StyledLink to="/about/">FAQ & Contact</StyledLink>
-                    <StyledLink to="/contact" >Shipping</StyledLink>
-                    <StyledLink to="/lookbook/" >Returns</StyledLink>
-                    <StyledLink to="/lookbook/" >Account</StyledLink>
-                    <StyledLink to="/lookbook/" >Size Guides</StyledLink>
+                    <StyledLink to="/customer-care" >Customer Care</StyledLink>
+                    <StyledLink to="/customer-care">FAQ & Contact</StyledLink>
+                    <StyledLink to="/customer-care" >Shipping</StyledLink>
+                    <StyledLink to="/customer-care" >Returns</StyledLink>
+                    <StyledLink to="/customer-care" >Account</StyledLink>
+                    <StyledLink to="/customer-care" >Size Guides</StyledLink>
                 </div>
                 <div>
-                    <StyledLink to="/products/" >Follow Us</StyledLink>
-                    <StyledLink to="/about/">Instagram</StyledLink>
-                    <StyledLink to="/lookbook/" >Twitter</StyledLink>
-                    <StyledLink to="/contact" >Facebook</StyledLink>
+                    <StyledLink to="/#" >Follow Us</StyledLink>
+                    <StyledLink to="/#">Instagram</StyledLink>
+                    <StyledLink to="/#" >Twitter</StyledLink>
+                    <StyledLink to="/#" >Facebook</StyledLink>
                 </div>
             </links>
                 

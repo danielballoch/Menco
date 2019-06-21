@@ -13,6 +13,9 @@
     transform: translateX(-100%);
     transition: transform 0.3s ease-out;
 }
+.draw-link-wrapper {
+    padding-top: 200px;
+}
 
 .side-drawer.open {
     transform: translateX(0);
@@ -49,8 +52,3 @@
     margin: 4rem auto 1rem  auto;
 }
 
-@media (min-width: 556px) {
-    .side-drawer{
-        display: none;
-    }
-}

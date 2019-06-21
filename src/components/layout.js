@@ -1,52 +1,83 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
-import Seo from "./seo"
-import Toolbar from "./toolbar"
-import Footer from "./footer"
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+import { StaticQuery, graphql } from 'gatsby'
+import PageTransition from 'gatsby-v2-plugin-page-transitions';
 
-import Header from "./header"
-import "./layout.css"
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
+
+import Toolbar from './toolbar'
+import SideDrawer from './SideDrawer/SideDrawer'
+import Backdrop from './Backdrop/Backdrop'
+import Footer from './footer'
+import './layout.css'
+// import SEO from '../components/SEO'
+
+
+
+
+
+
+export default class Layout extends React.Component {
+    state = {
+        sideDrawerOpen: false 
+    };
+    
+    drawerToggleClickHandler = () => {
+     this.setState((prevState)=> {
+         return{sideDrawerOpen: !prevState.sideDrawerOpen};
+     });
+    };
+
+    backdropClickHandler = () => {
+        this.setState({sideDrawerOpen: false});
+    };
+
+   
+
+
+
+
+    render() {
+      const { children } = this.props;
+      
+      let backdrop;
+
+      if(this.state.sideDrawerOpen){
+          backdrop = <Backdrop click={this.backdropClickHandler}/>;
       }
-    `}
-    render={data => (
-      <>
-      <Seo/>
-       
-        <div
-          style={{
-            margin: `56px auto`,
-            // maxWidth: 960,
-            paddingTop: 0, height: '100%',
-          }}
-        >
-        <Toolbar/>
-          <main>{children}</main>
-          {/* <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer> */}
+      return (
+        <>
+        {/* <SEO/> */}
+        
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} open={this.state.sideDrawerOpen}/>
+        <SideDrawer show={this.state.sideDrawerOpen}/>
+        {backdrop}
+          <PageTransition>
+          <div id="wrapper">
+            {children}
+          </div>
+          </PageTransition>
           
-        </div>
         <Footer/>
-      </>
-    )}
-  />
-)
+        
+          </>
+      );
+    }
+  }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
-export default Layout
+
+
+
+
+
+
+
+
+
+
+    
+
+
+

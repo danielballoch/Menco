@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from "styled-components"
 
 export const StyledLink = styled(Link)`
-
+padding: 10px;
 text-decoration: none;
 color: black;
 list-style-type: none;

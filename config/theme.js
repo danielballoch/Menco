@@ -1,11 +1,17 @@
 // config/theme.js
 const colors = {
-    black: {
-      base: '#333438',
-      light: '#4b4e57',
-      lighter: '#696d77',
-      blue: '#2e3246',
+    background: {
+        white: '#ffffff',
+        cream: '#ffe9e1',
+        red: '#542323'
+    },
+    highlights: {
+        blue: '#36648b',
+    },
+    neutral: {
+        grey: '362E2E',
     }
+
   }
   const transition = {
     easeInOutCubic: 'cubic-bezier(0.645, 0.045, 0.355, 1)',

@@ -8,17 +8,19 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import { ENGINE_METHOD_DIGESTS } from "constants";
-import heroimage from "../images/whiteb.jpg";
+import heroimage from "../images/cover-image.jpg";
 import "../pages/index.css";
 
 
 class Index extends React.Component {
     render() {
-      const postEdges = this.props.data.allMarkdownRemark.edges;
+      const postEdges = this.props.data.post.edges;
+      const data = this.props.data;
       return (
         <Layout>
             <SEO />
             <img className="hero-image" src={heroimage} />
+            {/* <Image fluid={data.hero.childImageSharp.fluid} className="hero-image"  /> */}
             <div className="hero-text">
                 <h1>Quality Essentials</h1>
                 <button className="shop-now">shop now</button>
@@ -26,8 +28,8 @@ class Index extends React.Component {
             <h1>Featured Products</h1>
         
             <div className="post_wrapper_div">
-                <ProductListing postEdges={postEdges} />
-            </div>
+                <ProductListing postEdges={postEdges} className="post_div"/>
+                </div>
             <button className="shop-all" href="#">Shop All</button>
             <div className="blog-banner">
                 <div className="banner-text">
@@ -45,7 +47,15 @@ class Index extends React.Component {
 
   export const pageQuery = graphql`
     query {
-        allMarkdownRemark(
+        hero: file(relativePath: { eq: "david-goggins.jpg"}){
+            childImageSharp {
+                fluid(maxWidth: 980) {
+                    ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                    src
+                }
+            }
+        }
+        post: allMarkdownRemark(
             filter: {fields: {collection: {eq: "products"}}}
             sort: { order: DESC, fields: [frontmatter___price] }
             limit: 4
