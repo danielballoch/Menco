@@ -4,7 +4,7 @@ import Img from 'gatsby-image';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.header`
-  background: ${props => props.theme.colors.black.base};
+  background: ${props => props.theme.colors.neutral.grey};
   height: 40vh; 
   position: relative;
   overflow: hidden;
@@ -12,7 +12,7 @@ const Wrapper = styled.header`
 `;
 
 const Text = styled.div`
-  color: ${props => props.theme.colors.white.base};
+  color: ${props => props.theme.colors.background.white};
   z-index: 0;
   position: absolute;
   top: 50%;
@@ -22,7 +22,8 @@ const Text = styled.div`
   flex-direction: column;
   text-align: center;
   width: 100%;
-  max-width: ${props => props.theme.layout.base};
+  max-width: 1080px;
+  /*max width in theme*/
   padding: 0 2rem;
   margin-bottom: 3rem;
   align-items: center;
@@ -30,7 +31,7 @@ const Text = styled.div`
 
 const Subtitle = styled.p`
   max-width: 650px;
-  color: ${props => props.theme.colors.white.light};
+  color: ${props => props.theme.colors.background.cream};
 `;
 
 const Header = ({ children, title, date, cover }) => (

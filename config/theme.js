@@ -9,7 +9,8 @@ const colors = {
         blue: '#36648b',
     },
     neutral: {
-        grey: '362E2E',
+        grey: '#362E2E',
+        black: '#000000'
     }
 
   }

@@ -36,6 +36,10 @@ exports.createPages = ({ actions, graphql }) => {
  return new Promise((resolve, reject) => {
     const productPostTemplate = path.resolve(`src/templates/productPageTem.js`);
     const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
+    const postTagPage = path.resolve('src/pages/blogTags.jsx');
+    const productTagPage = path.resolve('src/pages/productTags.jsx');
+    const postTag = path.resolve('src/templates/postTag.jsx');
+    const productTag = path.resolve('src/templates/productTag.jsx');
 
     resolve(
          graphql(`{
@@ -51,7 +55,8 @@ exports.createPages = ({ actions, graphql }) => {
                         frontmatter {
                             path
                             date
-                            title
+                            name
+                            tags
                         }
                     }
                 }
@@ -69,6 +74,7 @@ exports.createPages = ({ actions, graphql }) => {
                             path
                             date
                             title
+                            tags
                         }
                     }
                 }
@@ -77,9 +83,96 @@ exports.createPages = ({ actions, graphql }) => {
         if (result.errors){
             return reject(result.errors);
         }
-
+        //shorten links
         const products = result.data.products.edges;
+        const posts = result.data.posts.edges;
+        //tag
 
+        const postsByTag = {};
+        // create post tags page
+        posts.forEach(({ node }) => {
+          if (node.frontmatter.tags) {
+            node.frontmatter.tags.forEach(tag => {
+              if (!postsByTag[tag]) {
+                postsByTag[tag] = [];
+              }
+
+              postsByTag[tag].push(node);
+            });
+          }
+        });
+        const productsByTag = {};
+        //create product tags page
+        products.forEach(({ node }) => {
+            if (node.frontmatter.tags) {
+              node.frontmatter.tags.forEach(tag => {
+                if (!productsByTag[tag]) {
+                  productsByTag[tag] = [];
+                }
+  
+                productsByTag[tag].push(node);
+              });
+            }
+          });
+
+
+        const postTags = Object.keys(postsByTag);
+
+        createPage({
+          path: '/blog-tags',
+          component: postTagPage,
+          context: {
+            tags: postTags.sort(),
+          },
+        });
+
+        const productTags = Object.keys(productsByTag);
+
+        createPage({
+          path: '/product-catagories',
+          component: productTagPage,
+          context: {
+            tags: productTags.sort(),
+          },
+        });
+
+        //create tags
+        postTags.forEach(tagName => {
+          const posts = postsByTag[tagName];
+
+          createPage({
+            path: `/blog-tags/${tagName}`,
+            component: postTag,
+            context: {
+              posts,
+              tagName,
+            },
+          });
+        });
+
+         //create tags
+         productTags.forEach(tagName => {
+            const products = productsByTag[tagName];
+  
+            createPage({
+              path: `/product-catagories/${tagName}`,
+              component: productTag,
+              context: {
+                products,
+                tagName,
+              },
+            });
+          });
+
+
+
+
+
+
+
+        //tag
+        
+        //create product pages
         products.forEach(({node}) => {
             const path = node.frontmatter.path;
 
@@ -91,9 +184,7 @@ exports.createPages = ({ actions, graphql }) => {
         });
         
 
-
-        const posts = result.data.posts.edges;
-
+        //create post pages
         posts.forEach(({node}) => {
             const path = node.frontmatter.path;
 
