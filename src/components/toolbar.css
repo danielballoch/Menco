@@ -49,15 +49,15 @@
     display: inline-flex;
 
 }
+.cart-text {
+    
+}
 .cart-icon {
 height: 22px;
 position: relative;
 /* Adjust these values accordingly */
-top: 4px;
-left: 5px;
-
-
-
+top: 0px;
+left: 0px;
 }
 
 .toolbar_logo {

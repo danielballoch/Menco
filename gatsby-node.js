@@ -185,13 +185,18 @@ exports.createPages = ({ actions, graphql }) => {
         
 
         //create post pages
-        posts.forEach(({node}) => {
+        posts.forEach(({node}, index) => {
             const path = node.frontmatter.path;
-
+            const prev = index === 0 ? null : posts[index -1].node;
+            const next = index === posts.length - 1 ? null : posts[index + 1].node;
             createPage({
                 path,
                 component: blogPostTemplate,
-                contextpathSlug: path,
+                context: {
+                    pathSlug: path,
+                    prev,
+                    next,
+                }
             });
         });
         

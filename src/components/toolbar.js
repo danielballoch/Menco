@@ -32,11 +32,12 @@ return(
             
                
                 <div className="rightNav">
-                    <div className="login-button"><a href="#" class="snipcart-user-profile">
-                         <span>Login</span>
+                    <div className="login-button">
+                        <a href="#" class="snipcart-user-profile">
+                            Login
                         </a>
                     </div>
-                    <div className="cart-div">  <a href="#" class="snipcart-checkout" className="cart-text" >Cart </a><img class="snipcart-checkout" className="cart-icon" src={ShoppingCart}/> 
+                    <div className="cart-div">  <a href="#" class="snipcart-checkout" className="cart-text" >Cart</a><img class="snipcart-checkout" className="cart-icon" src={ShoppingCart}/> 
                     {/* <a href="#" class="snipcart-user-logout">
                             Logout
                         </a>
