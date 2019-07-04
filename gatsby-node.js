@@ -50,6 +50,7 @@ exports.createPages = ({ actions, graphql }) => {
                 ){
                 edges {
                     node {
+                        fileAbsolutePath
                         html
                         id
                         frontmatter {
@@ -172,17 +173,23 @@ exports.createPages = ({ actions, graphql }) => {
 
         //tag
         
+        
         //create product pages
         products.forEach(({node}) => {
-            const path = node.frontmatter.path;
+            // const path = node.frontmatter.path;
 
             createPage({
-                path,
+                path: node.frontmatter.path,
                 component: productPostTemplate,
-                contextpathSlug: path,
+                context: {
+                    contextpathSlug: node.frontmatter.path,
+                    // Pass the current directory of the project as regex in context so that the GraphQL query can filter by it
+                    absolutePathRegex: `/^${path.dirname(node.fileAbsolutePath)}/`,
+                }
+                
             });
         });
-        
+    
 
         //create post pages
         posts.forEach(({node}, index) => {

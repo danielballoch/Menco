@@ -1,23 +1,42 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import image from "../components/image"
+import Img from "../components/image"
 import Layout from "../components/layout"
+import Container from "../layouts/Container"
+import slideshow from "../components/slideshow"
 
+import styled from '@emotion/styled';
+
+
+const ProductImage = styled(Img)`
+  width: 40%;
+  max-width: 90%;
+`;
 
 
 export default function Template({
-    data,
+    data: {images}
 }){
     const { markdownRemark } = data
     const { frontmatter, html } = markdownRemark
     return (
         <Layout>
+            <Container type="big">
         <div className="blog-post-container">
         <div className="blog-post">
-          <h1>{frontmatter.name}</h1>
-          <h2>${frontmatter.price}</h2>
-          <img src={frontmatter.featuredImage} alt={frontmatter.name + " worn by one of Mencos models"}/>
-          <image src={frontmatter.featuredImage}></image>
+          <h1>{frontmatter.name} - ${frontmatter.price}</h1>
+          
+          {/* <ProductImage fluid={frontmatter.image.childImageSharp.fluid} /> */}
+          
+          {images.nodes.map(image => (
+              <Img
+                alt={image.name}
+                key={image.childImageSharp.fluid.src}
+                fluid={image.childImageSharp.fluid}
+                style={{ margin: '3rem 0' }}
+              />
+            ))}
+
           <div
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
@@ -43,12 +62,13 @@ export default function Template({
 
         </div>
       </div>
+      </Container>
       </Layout>
     )
 }
 
 export const productsQuery = graphql`
-query productPost($path: String!) {
+query productPost($path: String!, $absolutePathRegex:String!) {
     markdownRemark(frontmatter: {path: {eq: $path } }) {
         html
         frontmatter {
@@ -60,8 +80,34 @@ query productPost($path: String!) {
             templateKey
             title
             date(formatString: "MMMM DD, YYYY")
+            image {
+                childImageSharp {
+                    fluid(maxWidth: 980) {
+                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                        src
+                    }
+                }
+            }
             
         }
+    }
+    images: allFile(
+        filter: {
+          absolutePath: { regex: $absolutePathRegex }
+          extension: { regex: "/(jpg)|(png)|(tif)|(tiff)|(webp)|(jpeg)/" }
+        }
+      ) {
+        nodes {
+            name
+            childImageSharp {
+              fluid(maxWidth: 1920, quality: 80) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+              resize(width: 600, quality: 80) {
+                src
+              }
+            }
+          }
     }
 }
 `
@@ -89,3 +135,4 @@ query productPost($path: String!) {
 //     }
 // }
 // `
+// {/* <img src={frontmatter.featuredImage} alt={frontmatter.name + " worn by one of Mencos models"}/> */}

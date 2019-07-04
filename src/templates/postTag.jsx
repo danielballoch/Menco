@@ -45,7 +45,7 @@ const Tag = ({ pageContext }) => {
               <h3>{post.frontmatter.title}</h3>
             </Link>
           ))}
-          <StyledLink to="/blog-tags">All Blog Tags</StyledLink>
+          <StyledLink to="/blog-tags">View all blog tags</StyledLink>
         </Information>
       
     </Layout>

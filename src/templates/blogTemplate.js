@@ -1,9 +1,18 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
+import Container from "../layouts/Container"
 import styled from '@emotion/styled';
 import TagsBlock from "../components/PostTagsBlock"
 
+
+const BlogPostContainer = styled.div`
+text-align: left;
+h2 {
+    text-align: left;
+}
+
+`
 
 const SuggestionBar = styled.div`
   display: flex;
@@ -28,17 +37,18 @@ export default function Template({
   const { next, prev } = pageContext;
   return (
       <Layout>
-    <div className="blog-post-container">
-      <div className="blog-post">
-        <h1>{frontmatter.title}</h1>
-        <h2>{frontmatter.date}</h2>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+          <Container type="article">
+            <BlogPostContainer>
+                <div className="blog-post">
+                    <h1>{frontmatter.title}</h1>
+                    <p>{frontmatter.date}</p>
+                    <div
+                    className="blog-post-content"
+                    dangerouslySetInnerHTML={{ __html: html }}
+                    />
 
-      </div>
-    </div>
+                </div>
+            </BlogPostContainer>
     <TagsBlock list={frontmatter.tags || []} />
     <SuggestionBar>
         <PostSuggestion>
@@ -58,6 +68,7 @@ export default function Template({
           )}
         </PostSuggestion>
       </SuggestionBar>
+      </Container>
     </Layout>
   )
 }
