@@ -8,7 +8,7 @@ const footer = props => {
 
 return(
     <footer className="footer">
-        <links className="links">
+        <div className="links">
                 <div>
                     <StyledLink to="/products/" >Menco</StyledLink>
                     <StyledLink to="/about/">Products</StyledLink>
@@ -30,7 +30,7 @@ return(
                     <StyledLink to="/#" >Twitter</StyledLink>
                     <StyledLink to="/#" >Facebook</StyledLink>
                 </div>
-            </links>
+            </div>
                 
             <p className="copyright">© 2019 Menco, Inc. All Rights Reserved</p>
     </footer>

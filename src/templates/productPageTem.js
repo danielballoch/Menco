@@ -1,9 +1,10 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "../components/image"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import Container from "../layouts/Container"
 import slideshow from "../components/slideshow"
+import PropTypes from 'prop-types'
 
 import styled from '@emotion/styled';
 
@@ -15,10 +16,11 @@ const ProductImage = styled(Img)`
 
 
 export default function Template({
-    data: {images}
+    data
 }){
     const { markdownRemark } = data
     const { frontmatter, html } = markdownRemark
+    const { images } = data
     return (
         <Layout>
             <Container type="big">
@@ -26,7 +28,7 @@ export default function Template({
         <div className="blog-post">
           <h1>{frontmatter.name} - ${frontmatter.price}</h1>
           
-          {/* <ProductImage fluid={frontmatter.image.childImageSharp.fluid} /> */}
+        
           
           {images.nodes.map(image => (
               <Img
@@ -36,6 +38,8 @@ export default function Template({
                 style={{ margin: '3rem 0' }}
               />
             ))}
+
+            
 
           <div
             className="blog-post-content"
@@ -66,6 +70,14 @@ export default function Template({
       </Layout>
     )
 }
+
+
+Template.propTypes = {
+    data: PropTypes.shape({
+        images: PropTypes.object.isRequired,
+    }).isRequired,
+}
+
 
 export const productsQuery = graphql`
 query productPost($path: String!, $absolutePathRegex:String!) {
@@ -100,11 +112,8 @@ query productPost($path: String!, $absolutePathRegex:String!) {
         nodes {
             name
             childImageSharp {
-              fluid(maxWidth: 1920, quality: 80) {
+              fluid(maxWidth: 1920, quality: 90) {
                 ...GatsbyImageSharpFluid_withWebp
-              }
-              resize(width: 600, quality: 80) {
-                src
               }
             }
           }
