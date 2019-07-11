@@ -11,4 +11,4 @@ tags: ['t-shirt']
 ---
 
 <!-- ![alt text](/products/black_vneck/black_vneck.jpg) -->
-Three dinners for four mouths. Select between our range of gourmet options or take our quick quiz and we'll make suggestions. All our Primal Energy Boxes come with easy to follow cooking instructions taste great and give you energy for anything your day throws at you! 
+We hear you loud and clear. You want a wool tee that matches the durability and travel-worthiness of our button-downs. After spending a year in development, we selected a wool/nylon blend. Traditionally, blended yarns are constructed by mixing fibers from two different sources and then spinning the mixed fibers. We took a different approach and spun a 17.5 micron wool core with two small nylon filaments. After testing the t-shirt for more than six months, our founder can attest to the lab results of increased durability, reduced pilling, and improved shrink resistance. You won’t find this fabric anywhere else.

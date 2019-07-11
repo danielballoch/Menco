@@ -3,16 +3,11 @@ import { Link, graphql } from "gatsby"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
 import Container from "../layouts/Container"
-import slideshow from "../components/slideshow"
+import ImageGallery from 'react-image-gallery'
 import PropTypes from 'prop-types'
-
+import "react-image-gallery/styles/css/image-gallery.css";
+import "./productPageTem.css"
 import styled from '@emotion/styled';
-
-
-const ProductImage = styled(Img)`
-  width: 40%;
-  max-width: 90%;
-`;
 
 
 export default function Template({
@@ -21,25 +16,29 @@ export default function Template({
     const { markdownRemark } = data
     const { frontmatter, html } = markdownRemark
     const { images } = data
+
+    // create array of images from querys - does using src still enable blur up??
+      var productImages = images.nodes.map(image => (
+       { 
+           original: image.childImageSharp.fluid.src,
+           thumbnail: image.childImageSharp.fluid.src,
+        }
+
+      ))
+    
+
     return (
         <Layout>
             <Container type="big">
         <div className="blog-post-container">
         <div className="blog-post">
           <h1>{frontmatter.name} - ${frontmatter.price}</h1>
-          
+         {console.log(productImages)}
         
-          
-          {images.nodes.map(image => (
-              <Img
-                alt={image.name}
-                key={image.childImageSharp.fluid.src}
-                fluid={image.childImageSharp.fluid}
-                style={{ margin: '3rem 0' }}
-              />
-            ))}
-
-            
+        
+        {/* pushing array into ImageGallery component */}
+        <ImageGallery items={productImages} showPlayButton={false} showFullscreenButton={false} />
+        
 
           <div
             className="blog-post-content"
@@ -121,7 +120,14 @@ query productPost($path: String!, $absolutePathRegex:String!) {
 }
 `
 
-
+    //  {images.nodes.map(image => (
+    //           <Img
+    //             alt={image.name}
+    //             key={image.childImageSharp.fluid.src}
+    //             fluid={image.childImageSharp.fluid}
+    //             style={{ margin: '3rem 0' }}
+    //           />
+    //         ))} 
 
 
 

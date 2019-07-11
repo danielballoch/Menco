@@ -1,0 +1,11 @@
+
+@media (min-width: 760px) {
+    .image-gallery {
+        display: flex;
+        width: 50%;
+    }
+    .blog-post-content {
+        display: flexbox;
+        width: 50%;
+    }
+}
