@@ -30,37 +30,50 @@ export default function Template({
     return (
         <Layout>
             <Container type="big">
-        <div className="blog-post-container">
-        <div className="blog-post">
-          <h1>{frontmatter.name} - ${frontmatter.price}</h1>
-         {console.log(productImages)}
-        
-        
-        {/* pushing array into ImageGallery component */}
-        <ImageGallery items={productImages} showPlayButton={false} showFullscreenButton={false} />
-        
 
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        <button
+
+            <div className="container">
+                {/* pushing array into ImageGallery component */}
+                <ImageGallery items={productImages} showPlayButton={false} showFullscreenButton={false} showNav={false}/>
+        
+        <div className="product">
+          <h2>{frontmatter.name} - ${frontmatter.price}</h2>
+         
+        <div className="detail-section">
+            <div className="section">
+                Fabric weight: 130 gsm<br/>
+                100% merino wool<br/>
+                18.5 micron<br/>
+                Made in Shanghai<br/>
+                Greg, our model, is 180lbs, 6'1", and wears a medium slim fit<br/>
+                Slim Fit: Our modern, tapered fit. Also, our most popular fit.<br/>
+            </div>
+            <div className="section">
+                <h3>Size</h3>
+
+            </div>
+        </div>
+         
+
+         <button
              href='#' 
-            className='snipcart-add-item buyBtn'
+            className='snipcart-add-item'
             data-item-price={frontmatter.price}
             data-item-name={frontmatter.name}
             data-item-id={frontmatter.id}
             data-item-weight={frontmatter.weight}
+            data-item-categories="s, m, l, xl"
             data-item-url={"http://snipcart-gatsby.netlify.com" + frontmatter.path}>
-            Buy
+            Add to Cart
 
         </button>
-
         
-        <div class="snipcart-summary">
-            Number of items: <span class="snipcart-total-items"></span>
-            Total price: <span class="snipcart-total-price"></span>
-        </div>
+        
+          <div
+            className="product-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+
         <Link to="/">Back</Link>
 
         </div>

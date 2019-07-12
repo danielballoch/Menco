@@ -92,7 +92,7 @@ export default class Layout extends React.Component {
             color: ${theme.colors.linkHover};
           }
           h1 {
-            
+            margin: 4rem 0;
           }
 
         `}
