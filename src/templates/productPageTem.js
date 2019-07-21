@@ -8,10 +8,12 @@ import PropTypes from 'prop-types'
 import "react-image-gallery/styles/css/image-gallery.css";
 import "./productPageTem.css"
 import styled from '@emotion/styled';
+import heart from "../Icons/heart.svg";
 
 
-export default function Template({
+export default function Template( {
     data
+    
 }){
     const { markdownRemark } = data
     const { frontmatter, html } = markdownRemark
@@ -25,9 +27,24 @@ export default function Template({
         }
 
       ))
+
+    //   var btnContainer = document.getElementById("myDiv");
+    //   var btns = btnContainer.getElementsByClassName("sizeBtn");
+
+    //   for (var i = 0; i < btns.length; i++) {
+    //       btns[i].addEventListener("click", function(){
+    //           var current = document.getElementsByClassName("active");
+    //           current[0].className = current[0].className.replace("active", "");
+    //           this.className += " active"
+    //       });
+    //   }
+    
+    
     
 
     return (
+        
+
         <Layout>
             <Container type="big">
 
@@ -41,17 +58,47 @@ export default function Template({
          
         <div className="detail-section">
             <div className="section">
-                Fabric weight: 130 gsm<br/>
-                100% merino wool<br/>
-                18.5 micron<br/>
-                Made in Shanghai<br/>
-                Greg, our model, is 180lbs, 6'1", and wears a medium slim fit<br/>
-                Slim Fit: Our modern, tapered fit. Also, our most popular fit.<br/>
+                {frontmatter.details.map(detail => (
+                    <li>{detail}</li>
+                ))}
             </div>
-            <div className="section">
-                <h3>Size</h3>
+            <div className="section" id="myDiv">
+                
+                <h3>Size:</h3>
+                {/* someFunct(name) {
+                    this.setState({ active: name })
+                }  
+                
+                {frontmatter.sizes.map(size => (
+                    <button 
+                    className={this.state.active === size ? 'active' : ''}
+                    value={size}
+                    onClick={() => this.someFunct(size)}
+                    key={ size }
+
+                    
+                    >{size}</button>
+                ))} */}
+
+
+
+
+
+
+
+                
+
+                {frontmatter.sizes.map(size => (
+                    <label className="sizeBtn button">
+                        {size}
+                    <input id="radio" type="radio" className="radio" name="size-radio"/>
+                    </label>
+                ))}
+
 
             </div>
+
+            
         </div>
          
 
@@ -67,6 +114,7 @@ export default function Template({
             Add to Cart
 
         </button>
+        <button className="heart-icon"><img src={heart}/></button>
         
         
           <div
@@ -103,6 +151,8 @@ query productPost($path: String!, $absolutePathRegex:String!) {
             weight
             templateKey
             title
+            details
+            sizes
             date(formatString: "MMMM DD, YYYY")
             image {
                 childImageSharp {

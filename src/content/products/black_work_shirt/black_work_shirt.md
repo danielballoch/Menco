@@ -9,6 +9,8 @@ image: "black_work_shirt.jpg"
 path: "/products/black_work_shirt"
 date: "2017-11-07"
 tags: ['shirt']
+details: ['Fabric weight: 130 gsm', '100% merino wool','18.5 micron','Greg, our model, is 180lbs, 6''1" and wears a medium slim fit','Made in Shanghai','Slim Fit: Our modern, tapered fit. Also, our most popular fit.']
+sizes: ['S','M','L']
 ---
 
 <!-- ![alt text](/products/black_work_shirt/black_work_shirt.jpg) -->

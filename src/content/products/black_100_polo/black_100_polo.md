@@ -9,8 +9,12 @@ image: "../black_100_polo/black_100_polo.jpg"
 path: "/products/black_100_polo/black_100_polo"
 date: "2017-11-07"
 tags: ['polo']
+details: ['Fabric weight: 160 gsm', '78% merino wool, 22% nylon','17.5 micron merino wool','Machine wash cold, line dry','Greg, our model, is 180lbs, 6''1" and wears a medium slim fit','Yarn spun in Korea, fabric knitted in Korea, and garment sewn in Korea']
+sizes: ['S','M','L']
 ---
 
 <!-- ![alt text](/products/black_100_polo/black_100_polo.jpg) -->
 
-If you’re looking for a polo with beautiful drape, luxurious hand-feel, and all the benefits of 100% wool, this is the one. You’ll hardly need to wash the polo given its odor resistant nature, but when you do, we recommend gently hand washing the garment to lengthen its lifespan. Additionally, many of the merino polos on the market suffer from collars that lie flat. We designed our collar to stand more upright giving the polo a more modern look.
+A modern, slim-fitting polo. We used our blended 78%, merino, 22% nylon for added durability and ease of care.
+
+Traditionally, blended yarns are constructed by mixing fibers from two different sources and then spinning the mixed fibers. We took a different approach and spun a 17.5 micron wool core with two small nylon filaments. Customers have been raving about the durability, drape, and hand feel of this fabrication. You won’t find it anywhere else.
