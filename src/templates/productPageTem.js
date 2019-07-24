@@ -11,41 +11,50 @@ import styled from '@emotion/styled';
 import heart from "../Icons/heart.svg";
 
 
-export default function Template( {
-    data
+export default class Template extends React.Component {
+    state = {
+        selected: true 
+    };
     
-}){
-    const { markdownRemark } = data
-    const { frontmatter, html } = markdownRemark
-    const { images } = data
+    sizeToggleClickHandler = () => {
+     this.setState((prevState)=> {
+         return{selected: !prevState.selected};
+     });
+    };
+    someFunct(name) {
+        this.setState({ active: name })
+    }
+    render(){
+        const { data } = this.props;
+        const { markdownRemark } = data
+        const { frontmatter, html } = markdownRemark
+        const { images } = data
+        console.log(this.state)
+        console.log(frontmatter.sizes)
 
-    // create array of images from querys - does using src still enable blur up??
-      var productImages = images.nodes.map(image => (
-       { 
-           original: image.childImageSharp.fluid.src,
-           thumbnail: image.childImageSharp.fluid.src,
-        }
-
-      ))
-
-    //   var btnContainer = document.getElementById("myDiv");
-    //   var btns = btnContainer.getElementsByClassName("sizeBtn");
-
-    //   for (var i = 0; i < btns.length; i++) {
-    //       btns[i].addEventListener("click", function(){
-    //           var current = document.getElementsByClassName("active");
-    //           current[0].className = current[0].className.replace("active", "");
-    //           this.className += " active"
-    //       });
-    //   }
+       
+       
     
+        // create array of images from querys - does using src still enable blur up??
+          var productImages = images.nodes.map(image => (
+           { 
+               original: image.childImageSharp.fluid.src,
+               thumbnail: image.childImageSharp.fluid.src,
+            }
     
-    
+          ))
 
-    return (
+          var sizeButtons = frontmatter.sizes.map(size => (
+            { 
+                size,
+             }
+     
+           ))
         
 
-        <Layout>
+        return (
+            <>
+            <Layout>
             <Container type="big">
 
 
@@ -67,7 +76,7 @@ export default function Template( {
                 <h3>Size:</h3>
                 {/* someFunct(name) {
                     this.setState({ active: name })
-                }  
+                }   */}
                 
                 {frontmatter.sizes.map(size => (
                     <button 
@@ -78,7 +87,12 @@ export default function Template( {
 
                     
                     >{size}</button>
-                ))} */}
+                ))}
+
+                
+              
+            
+               
 
 
 
@@ -88,12 +102,12 @@ export default function Template( {
 
                 
 
-                {frontmatter.sizes.map(size => (
+                {/* {frontmatter.sizes.map(size => (
                     <label className="sizeBtn button">
                         {size}
                     <input id="radio" type="radio" className="radio" name="size-radio"/>
                     </label>
-                ))}
+                ))} */}
 
 
             </div>
@@ -128,8 +142,14 @@ export default function Template( {
       </div>
       </Container>
       </Layout>
-    )
+      </>
+        );
+    }
 }
+
+
+
+
 
 
 Template.propTypes = {
@@ -214,3 +234,140 @@ query productPost($path: String!, $absolutePathRegex:String!) {
 // }
 // `
 // {/* <img src={frontmatter.featuredImage} alt={frontmatter.name + " worn by one of Mencos models"}/> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//// old template
+
+// export default function Template( {
+//     data
+    
+// }){
+//     const { markdownRemark } = data
+//     const { frontmatter, html } = markdownRemark
+//     const { images } = data
+
+//     // create array of images from querys - does using src still enable blur up??
+//       var productImages = images.nodes.map(image => (
+//        { 
+//            original: image.childImageSharp.fluid.src,
+//            thumbnail: image.childImageSharp.fluid.src,
+//         }
+
+//       ))
+
+//     //   var btnContainer = document.getElementById("myDiv");
+//     //   var btns = btnContainer.getElementsByClassName("sizeBtn");
+
+//     //   for (var i = 0; i < btns.length; i++) {
+//     //       btns[i].addEventListener("click", function(){
+//     //           var current = document.getElementsByClassName("active");
+//     //           current[0].className = current[0].className.replace("active", "");
+//     //           this.className += " active"
+//     //       });
+//     //   }
+    
+    
+    
+
+//     return (
+        
+
+//         <Layout>
+//             <Container type="big">
+
+
+//             <div className="container">
+//                 {/* pushing array into ImageGallery component */}
+//                 <ImageGallery items={productImages} showPlayButton={false} showFullscreenButton={false} showNav={false}/>
+        
+//         <div className="product">
+//           <h2>{frontmatter.name} - ${frontmatter.price}</h2>
+         
+//         <div className="detail-section">
+//             <div className="section">
+//                 {frontmatter.details.map(detail => (
+//                     <li>{detail}</li>
+//                 ))}
+//             </div>
+//             <div className="section" id="myDiv">
+                
+//                 <h3>Size:</h3>
+//                 {/* someFunct(name) {
+//                     this.setState({ active: name })
+//                 }  
+                
+//                 {frontmatter.sizes.map(size => (
+//                     <button 
+//                     className={this.state.active === size ? 'active' : ''}
+//                     value={size}
+//                     onClick={() => this.someFunct(size)}
+//                     key={ size }
+
+                    
+//                     >{size}</button>
+//                 ))} */}
+
+
+
+
+
+
+
+                
+
+//                 {frontmatter.sizes.map(size => (
+//                     <label className="sizeBtn button">
+//                         {size}
+//                     <input id="radio" type="radio" className="radio" name="size-radio"/>
+//                     </label>
+//                 ))}
+
+
+//             </div>
+
+            
+//         </div>
+         
+
+//          <button
+//              href='#' 
+//             className='snipcart-add-item'
+//             data-item-price={frontmatter.price}
+//             data-item-name={frontmatter.name}
+//             data-item-id={frontmatter.id}
+//             data-item-weight={frontmatter.weight}
+//             data-item-categories="s, m, l, xl"
+//             data-item-url={"http://snipcart-gatsby.netlify.com" + frontmatter.path}>
+//             Add to Cart
+
+//         </button>
+//         <button className="heart-icon"><img src={heart}/></button>
+        
+        
+//           <div
+//             className="product-content"
+//             dangerouslySetInnerHTML={{ __html: html }}
+//           />
+
+//         <Link to="/">Back</Link>
+
+//         </div>
+//       </div>
+//       </Container>
+//       </Layout>
+//     )
+// }
