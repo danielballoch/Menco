@@ -1,7 +1,7 @@
 ---
 path: "/blog/dapper-vs-real"
-image: "./blocks.jpg"
-date: "2018-10-15"
+image: "./Smart-Casual-Jacket.jpg"
+date: "2020-10-15"
 title: "Tuxedo 24/7??"
 published: true
 tags: ['dapper', 'balance', 'casual',]

@@ -1,6 +1,6 @@
 ---
 path: "/blog/blog1"
-image: "./blocks.jpg"
+image: "./bluejeanoutfitcrop.jpg"
 date: "2019-05-21"
 title: "Mens Neutrals pt.2"
 published: true

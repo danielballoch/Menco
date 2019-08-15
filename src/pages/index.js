@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import ProductListing from "../components/product-link"
-import PostListing from "../components/post-link"
+import PostListing from "../components/post-link-wide"
 
 
 import Layout from "../components/layout"
@@ -38,6 +38,11 @@ class Index extends React.Component {
             <div className="post_wrapper_div">
                 <ProductListing postEdges={productEdges} className="post_div"/>
                 </div>
+                {/* <p>Menco is about making looking smart easy. We understand how busy our people are and hate seeing them look anything
+                    less than their best, just because their wardrobe is a mess.
+                    As such, we provide products you can't go wrong with, timeless classics, 
+                    versitile colors and quality materials.
+                </p> */}
             <button className="shop-all" href="#">Shop All</button>
             <div className="blog-banner">
                 <div className="banner-text">
@@ -57,13 +62,15 @@ class Index extends React.Component {
                     </div>
 
                     <div className="social-images">{instagramEdges.map(edge => (
+                        <a href="#">
                         <img src={edge.node.images.standard_resolution.url}></img>
+                        </a>
                         )
                     )}</div>
                 </div>
 
                 <div className="social-subsection">
-                    <div className="social-icons"><img src={twitter}/><img src={facebook}/><img src={instagram}/></div>
+                    <div className="social-icons"><a href="#"><img  src={twitter}/></a><a href="#"><img  src={facebook}/></a><a href="https://www.instagram.com/mencoapparel/"><img  src={instagram}/></a></div>
                     <div className="social-sub">We love to share fashion/business tips and have a laugh on social media.
                     Post with #SmartMan for a chance to be featured alongside other inspiring men on @Menco.
                     </div>
@@ -117,13 +124,13 @@ class Index extends React.Component {
         }
         post: allMarkdownRemark(
             filter: {fields: {collection: {eq: "posts"}}}
-            limit: 2
+            limit: 3
             sort: { order: DESC, fields: [frontmatter___date] }
           ) {
             edges {
               node {
                 id
-                excerpt(pruneLength: 125)
+                excerpt(pruneLength: 300)
                 timeToRead
                 frontmatter {
                   title

@@ -1,6 +1,6 @@
 ---
 path: "/blog/mens-neutrals"
-image: "./blocks.jpg"
+image: "./Neutral-colors.png"
 date: "2019-05-31"
 title: "Mens Neutrals pt.1"
 published: true

@@ -7,10 +7,34 @@ import styled from '@emotion/styled';
 
 const Wrapper = styled.div`
 margin: 50px auto;
-max-width: 400px;
+width: 80vw;
+max-width: 1000px;
+display: flex;
+background-color: #542323;
+color: white;
+transition: .3s;
+
 h1{
-    margin: 1px;
+    margin: 1px 0;
+    text-align: left;
 }
+.image{
+    width: 100%;
+    min-width: 200px;
+}
+.text-box{
+    margin: 20px;
+}
+p{
+    color: #d5d5d5;
+}
+p:hover{
+    color: #d5d5d5;
+}
+:hover {
+ filter: brightness(110%);
+}
+
 `
 
 class PostListing extends React.Component {
@@ -37,13 +61,16 @@ class PostListing extends React.Component {
                 postList.map(post => (
                     <Link to={post.path} key={post.title}>
                         <Wrapper>
-                        <Image fluid={post.image.childImageSharp.fluid}/>
-                        <h1>{post.title}</h1>
-                        <p className="sub_text">{post.excerpt}</p>
-                        <p className="sub_text">{post.date} {post.timeToRead}m read</p>
-                        {post.tags.map(post => (
-                            <span>{post} </span>
-                        ))}
+                            <Image className="image" fluid={post.image.childImageSharp.fluid}/>
+                            <div className="text-box">
+                                <h1>{post.title}</h1>
+                                <p className="sub_text">{post.excerpt}</p>
+                                <p className="sub_text">{post.date} {post.timeToRead}m read</p>
+                                {post.tags.map(post => (
+                                    <span>#{post} </span>
+                                ))}
+                                
+                            </div>
                         </Wrapper>
                     </Link>
                 ))
