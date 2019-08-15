@@ -5,7 +5,7 @@ templateKey: product
 id: 2
 price: 100.00
 weight: 5
-image: "./black_vneck.jpg"
+image: "./black_vneck2.jpg"
 path: "/products/black_vneck"
 tags: ['t-shirt']
 details: ['Fabric weight: 130 gsm', '100% merino wool','18.5 micron','Greg, our model, is 180lbs, 6''1" and wears a medium slim fit','Made in Shanghai','Slim Fit: Our modern, tapered fit. Also, our most popular fit.']

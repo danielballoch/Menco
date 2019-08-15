@@ -5,7 +5,7 @@ templateKey: product
 id: 1
 price: 65.00
 weight: 1
-image: "purple_dress_shirt.jpg"
+image: "purple_dress_shirt2.jpg"
 path: "/products/purple_dress_shirt"
 date: "2017-11-07"
 tags: ['shirt']

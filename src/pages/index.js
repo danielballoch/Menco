@@ -2,19 +2,27 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import ProductListing from "../components/product-link"
+import PostListing from "../components/post-link"
 
 
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import { ENGINE_METHOD_DIGESTS } from "constants";
-import heroimage from "../images/cover-image.jpg";
+import heroimage from "../images/cover-image2.jpg";
 import "../pages/index.css";
+
+import twitter from "../icons/twitter.svg";
+import facebook from "../icons/facebook.svg";
+import instagram from "../icons/instagram.svg";
+
 
 
 class Index extends React.Component {
     render() {
+      const productEdges = this.props.data.product.edges;
       const postEdges = this.props.data.post.edges;
+      const instagramEdges = this.props.data.instagram.edges;
       const data = this.props.data;
       return (
         <Layout>
@@ -22,19 +30,43 @@ class Index extends React.Component {
             <img className="hero-image" src={heroimage} />
             {/* <Image fluid={data.hero.childImageSharp.fluid} className="hero-image"  /> */}
             <div className="hero-text">
-                <h1>Quality Essentials</h1>
-                <button className="shop-now">shop now</button>
+                <h1>Quality Essentials.</h1>
+                {/* <button className="shop-now">shop now</button> */}
             </div>
             <h1>Featured Products</h1>
         
             <div className="post_wrapper_div">
-                <ProductListing postEdges={postEdges} className="post_div"/>
+                <ProductListing postEdges={productEdges} className="post_div"/>
                 </div>
             <button className="shop-all" href="#">Shop All</button>
             <div className="blog-banner">
                 <div className="banner-text">
                     <h2>Want to look smart with ease?</h2>
                     <h3>View our recent posts to get on track</h3>
+                </div>
+            </div>
+            <div className="blog-posts">
+                <PostListing postEdges={postEdges} />   
+            </div>
+
+
+            <div className="social-section">
+                <div className="social-top">
+                    <div className="social-side-text">
+                        <h1>@Menco #SmartMan</h1>
+                    </div>
+
+                    <div className="social-images">{instagramEdges.map(edge => (
+                        <img src={edge.node.images.standard_resolution.url}></img>
+                        )
+                    )}</div>
+                </div>
+
+                <div className="social-subsection">
+                    <div className="social-icons"><img src={twitter}/><img src={facebook}/><img src={instagram}/></div>
+                    <div className="social-sub">We love to share fashion/business tips and have a laugh on social media.
+                    Post with #SmartMan for a chance to be featured alongside other inspiring men on @Menco.
+                    </div>
                 </div>
             </div>
         </Layout>
@@ -55,7 +87,7 @@ class Index extends React.Component {
                 }
             }
         }
-        post: allMarkdownRemark(
+        product: allMarkdownRemark(
             filter: {fields: {collection: {eq: "products"}}}
             sort: { order: DESC, fields: [frontmatter___price] }
             limit: 4
@@ -83,6 +115,54 @@ class Index extends React.Component {
             }
           }
         }
+        post: allMarkdownRemark(
+            filter: {fields: {collection: {eq: "posts"}}}
+            limit: 2
+            sort: { order: DESC, fields: [frontmatter___date] }
+          ) {
+            edges {
+              node {
+                id
+                excerpt(pruneLength: 125)
+                timeToRead
+                frontmatter {
+                  title
+                  path
+                  tags
+                  date(formatString: "DD MMMM, YYYY")
+                  image {
+                    childImageSharp {
+                      fluid(
+                        maxWidth: 1000
+                        quality: 90
+                        traceSVG: { color: "#2B2B2F" }
+                      ) {
+                        ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          instagram: allInstagramContent {
+              edges {
+                  node {
+                      localImage{
+                          childImageSharp {
+                              fluid(maxHeight: 400, maxWidth: 400 quality: 90){
+                                  ...GatsbyImageSharpFluid_withWebp
+                              }
+                          }
+                      }
+                      images {
+                          standard_resolution {
+                              url
+                          }
+                      }
+                  }
+              }
+          }
       }
     `
 

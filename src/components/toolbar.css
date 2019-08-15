@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     background-color:rgba(255,255,255, 0.95);
-    height: 56px;
+    height: 70px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
     z-index: 300;
     font-family: "open sans"
@@ -47,7 +47,9 @@
 }
 .cart-div {
     display: inline-flex;
-
+}
+.cart-div:hover {
+    cursor:pointer;
 }
 .cart-text {
     
@@ -65,12 +67,13 @@ transition: 0.3s;
 z-index: 300;
    height: 100%;
    font-family: 'Quattrocento', serif;
+   margin-left: 10px;
    
 }
 
 .toolbar_logo a {
    text-decoration: none;
-   font-size: 1.5rem; 
+   font-size: 1.8rem; 
    color: #000;
    transition: 0.3s;
    padding: 1rem 1rem;
@@ -117,6 +120,7 @@ z-index: 300;
         top: 3px;
         left: 5px;
         }
+
     
     .toolbar_navigation {
         display: flex;

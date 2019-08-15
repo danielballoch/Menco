@@ -13,26 +13,46 @@ import heart from "../Icons/heart.svg";
 
 export default class Template extends React.Component {
     state = {
-        selected: true 
+        active: false 
     };
     
-    sizeToggleClickHandler = () => {
-     this.setState((prevState)=> {
-         return{selected: !prevState.selected};
-     });
-    };
+  
     someFunct(name) {
         this.setState({ active: name })
+        let SelectedSize = name;
+        console.log(SelectedSize);
+        return {SelectedSize}
     }
     render(){
         const { data } = this.props;
         const { markdownRemark } = data
         const { frontmatter, html } = markdownRemark
         const { images } = data
-        console.log(this.state)
-        console.log(frontmatter.sizes)
+        //size info for snip-buy-button
+        var selectedSize = this.state.active
+        var sizeOptions = frontmatter.sizes.join('|')
+        // var sizeOptions = frontmatter.sizes.map(size => (
+        //     size.join('|')
+        // ))
+        
+        
 
-       
+
+ 
+
+        const SizeBtns =  frontmatter.sizes.map(size => (
+            <button 
+            className={this.state.active === size ? 'sizeBtn active' : 'sizeBtn'}
+            value={size}
+            onClick={() => this.someFunct(size)}
+            key={ size }
+
+            
+            >{size}</button>
+        ))
+        
+        
+        
        
     
         // create array of images from querys - does using src still enable blur up??
@@ -44,13 +64,7 @@ export default class Template extends React.Component {
     
           ))
 
-          var sizeButtons = frontmatter.sizes.map(size => (
-            { 
-                size,
-             }
-     
-           ))
-        
+          console.log(productImages[1].thumbnail)
 
         return (
             <>
@@ -74,56 +88,25 @@ export default class Template extends React.Component {
             <div className="section" id="myDiv">
                 
                 <h3>Size:</h3>
-                {/* someFunct(name) {
-                    this.setState({ active: name })
-                }   */}
-                
-                {frontmatter.sizes.map(size => (
-                    <button 
-                    className={this.state.active === size ? 'active' : ''}
-                    value={size}
-                    onClick={() => this.someFunct(size)}
-                    key={ size }
-
-                    
-                    >{size}</button>
-                ))}
-
-                
-              
-            
-               
-
-
-
-
-
-
-
-                
-
-                {/* {frontmatter.sizes.map(size => (
-                    <label className="sizeBtn button">
-                        {size}
-                    <input id="radio" type="radio" className="radio" name="size-radio"/>
-                    </label>
-                ))} */}
-
-
+                {SizeBtns}
+                <a href="#">sizeguide</a>
             </div>
 
+                    
             
         </div>
          
 
-         <button
-             href='#' 
+         <button href='#' selectedSize
             className='snipcart-add-item'
+            data-item-image={productImages[1].thumbnail}
             data-item-price={frontmatter.price}
             data-item-name={frontmatter.name}
             data-item-id={frontmatter.id}
             data-item-weight={frontmatter.weight}
-            data-item-categories="s, m, l, xl"
+            data-item-custom2-name="Size"
+            data-item-custom2-options={sizeOptions}
+            data-item-custom2-value={selectedSize}
             data-item-url={"http://snipcart-gatsby.netlify.com" + frontmatter.path}>
             Add to Cart
 
@@ -190,6 +173,7 @@ query productPost($path: String!, $absolutePathRegex:String!) {
           absolutePath: { regex: $absolutePathRegex }
           extension: { regex: "/(jpg)|(png)|(tif)|(tiff)|(webp)|(jpeg)/" }
         }
+        sort: {fields: name, order: ASC}
       ) {
         nodes {
             name

@@ -1,7 +1,6 @@
 .hero-image {
-    margin-top: 56px;
-    width: 100%;
-    height: auto;
+    
+    
 }
 
 /* .hero-text {
@@ -27,17 +26,18 @@ button {
 
 .hero-text {
     position: absolute;
-    top: 20vw;
+    top: 12vw;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: 1s;
+    color: #f1f1f1;
 }
 .hero-text h1 {
     margin: 20px;
-    font-size: 80px;
+    font-size: 120px;
 }
 
 h1 {
@@ -157,11 +157,88 @@ a {
     margin: 200px 0;
 }
 
+.social-section {
+    background-color: #542323;
+    color: #FFF;
+    max-height: 100vh;
+    
+    
+}
+.social-top {
+    display: flex;
+    padding: 50px 50px 0px 50px;
+    margin: auto;
+    width: 80%;
+    justify-content: center;
+    
+}
+.social-side-text {
+    align-items: center;
+    width: 100px;
+    text-align: center;
+}
+.social-top h1 {
+    font-size: 3vw;
+    margin: auto;
+    white-space: nowrap;
+    text-align: left;
+    transform-origin: bottom; 
+    margin-top: 23vw;
+    transform: rotate(-90deg);
+    
+    
+    
+}
+.social-images {
+margin-top: 6px;
+width: 60%;
+margin: 0;
+max-height: 70vh;
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+grid-template-rows: repeat(3, auto);
+grid-gap: 15px;
+
+
+}
+.social-images img {
+margin-top: -6px;
+padding: 0;
+
+
+}
+
+.social-subsection {
+display: flex;
+padding-top: 20px;
+width: 800px;
+margin: auto;
+justify-content: center;
+}
+.social-icons img {
+    width: 40px;
+    margin: 5px;
+    color: white;
+    filter: invert(100%)
+}
+
+.social-sub {
+    width: 600px;
+    padding: 0px 50px 50px 50px;
+}
+
 
 
 .padding-default {
     padding: 0px 1.0875rem 1.45rem,
 }
 
+
+@media (max-width: 760px) {
+    .hero-image {margin-top: 70px;
+    width: 200vw;}
+    .hero-text h1 {font-size: 70px; padding-top: 10vw;}
+    
+}
 
 

@@ -54,7 +54,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/MencoFavicon.jpg`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
@@ -104,7 +104,14 @@ module.exports = {
     resolve: 'gatsby-plugin-snipcart',
     options: {
       apiKey: 'MmVjYmVjYzMtZTA5MS00NzJjLTlmZGMtMmIxYjVlZjFjMjM0NjM2ODUzNjg2NTY4NTk5NTIy',
-      styles: 'http://localhost:3006/themes/base/snipcart.css',
+      styles:  `${__dirname}/config/snipcart.min.css`,
+        //   styles: 'http://localhost:3006/themes/base/snipcart.css',
+    }
+  },
+  {
+    resolve: `gatsby-source-instagram-all`,
+    options: {
+      access_token: "18116458011.1677ed0.69e22be9a2224d4b90f0d8cd9bcfb476"
     }
   },
 
