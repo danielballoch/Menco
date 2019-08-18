@@ -1,7 +1,4 @@
 import React from  'react';
-import { Link, graphql } from 'gatsby'
-import styled from "styled-components"
-import Img from 'gatsby-image'
 
 import DrawerToggleButton from './SideDrawer/DrawerToggleButton'
 import './toolbar.css';
@@ -66,13 +63,13 @@ export default class toolbar extends React.Component {
                 
                     <div className="rightNav">
                         <div className="login-button">
-                            <a href="#" className="snipcart-user-profile">
+                            <button className="snipcart-user-profile">
                                 Login
-                            </a>
+                            </button>
                         </div>
-                        <div className="cart-div snipcart-checkout" href="#">  <a className="cart-text " >Cart</a><img className="cart-icon" src={ShoppingCart}/> 
-                        <a className="snipcart-summary"><span className="snipcart-total-items"></span></a>
-                        </div>
+                        <button className="cart-div snipcart-checkout" >  <div className="cart-text " >Cart</div><img className="cart-icon" alt="shopping cart icon" src={ShoppingCart}/> 
+                        <div className="snipcart-summary"><span className="snipcart-total-items"></span></div>
+                        </button>
                     </div>
                     
                 <div className='toolbar__toggle-button'>

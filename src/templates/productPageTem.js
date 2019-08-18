@@ -1,28 +1,35 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import Img from "gatsby-image"
 import Layout from "../components/layout"
 import Container from "../layouts/Container"
 import ImageGallery from 'react-image-gallery'
 import PropTypes from 'prop-types'
 import "react-image-gallery/styles/css/image-gallery.css";
 import "./productPageTem.css"
-import styled from '@emotion/styled';
 import heart from "../Icons/heart.svg";
 
 
 export default class Template extends React.Component {
     state = {
-        active: false 
+        activeSize: false,
+        modalOpen: false
     };
     
   
-    someFunct(name) {
-        this.setState({ active: name })
+    setActiveSize(name) {
+        this.setState({ activeSize: name })
         let SelectedSize = name;
         console.log(SelectedSize);
         return {SelectedSize}
     }
+
+    ToggleSizeguide(){
+        this.setState((currentState) => ({
+            modalOpen: !currentState.modalOpen, 
+        }));
+    }
+
+
     render(){
         const { data } = this.props;
         const { markdownRemark } = data
@@ -35,16 +42,14 @@ export default class Template extends React.Component {
         //     size.join('|')
         // ))
         
-        
-
 
  
 
         const SizeBtns =  frontmatter.sizes.map(size => (
             <button 
-            className={this.state.active === size ? 'sizeBtn active' : 'sizeBtn'}
+            className={this.state.activeSize === size ? 'sizeBtn active' : 'sizeBtn'}
             value={size}
-            onClick={() => this.someFunct(size)}
+            onClick={() => this.setActiveSize(size)}
             key={ size }
 
             
@@ -70,6 +75,7 @@ export default class Template extends React.Component {
             <>
             <Layout>
             <Container type="big">
+        
 
 
             <div className="container">
@@ -89,10 +95,95 @@ export default class Template extends React.Component {
                 
                 <h3>Size:</h3>
                 {SizeBtns}
-                <a href="#">sizeguide</a>
-            </div>
+                <button onClick={() => this.ToggleSizeguide(this.value)} value={this.state.modalOpen}>size guide</button>
+            </div>  
+            <div className={this.state.modalOpen === true ? 'sizeguide-modal open' : 'sizeguide-modal'}>
+                <div className="modal-content">
+                    <button className="close" onClick={() => this.ToggleSizeguide(this.value)} value={this.state.modalOpen}>&times;</button>
+                    <h1>Size Guide:</h1>
+                    <h2>Tops</h2>
+                    <p><b>Tops:</b> T-shirts & Singlets, Shirts & Polos, Coats & Jackets, Jumpers & Cardigans, Sweats & Hoodies, Base Layers, Sleepwear Top </p>
+                    <table >
+                        <tr>
+                            <th>SIZE INTL.</th>
+                            <th>EU</th>
+                            <th>UK/US</th>
+                            <th>Chest (cm)</th>
+                            <th>Collar (cm)</th>
+                        </tr>
+                        <tr>
+                            <th>S</th>
+                            <th>46</th>
+                            <th>36</th>
+                            <th>100</th>
+                            <th>38</th>
 
-                    
+                        </tr>
+                        <tr>
+                            <th>M</th>
+                            <th>48</th>
+                            <th>38</th>
+                            <th>105</th>
+                            <th>39</th>
+                        </tr>
+                        <tr>
+                            <th>L</th>
+                            <th>50</th>
+                            <th>40</th>
+                            <th>110</th>
+                            <th>40</th>
+                        </tr>
+                        <tr>
+                            <th>XL</th>
+                            <th>52</th>
+                            <th>42</th>
+                            <th>115</th>
+                            <th>41</th>
+                        </tr>
+                    </table>
+                    <br></br>
+                    <h2>Bottoms</h2>
+                    <p><b>Bottoms:</b> T-shirts & Singlets, Shirts & Polos, Coats & Jackets, Jumpers & Cardigans, Sweats & Hoodies, Base Layers, Sleepwear Top </p>
+                    <table>
+                        <tr>
+                            <th>SIZE INTL.</th>
+                            <th>EU</th>
+                            <th>UK/US</th>
+                            <th>Chest (cm)</th>
+                            <th>Collar (cm)</th>
+                        </tr>
+                        <tr>
+                            <th>S</th>
+                            <th>46</th>
+                            <th>36</th>
+                            <th>100</th>
+                            <th>38</th>
+
+                        </tr>
+                        <tr>
+                            <th>M</th>
+                            <th>48</th>
+                            <th>38</th>
+                            <th>105</th>
+                            <th>39</th>
+                        </tr>
+                        <tr>
+                            <th>L</th>
+                            <th>50</th>
+                            <th>40</th>
+                            <th>110</th>
+                            <th>40</th>
+                        </tr>
+                        <tr>
+                            <th>XL</th>
+                            <th>52</th>
+                            <th>42</th>
+                            <th>115</th>
+                            <th>41</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
             
         </div>
          
@@ -111,7 +202,7 @@ export default class Template extends React.Component {
             Add to Cart
 
         </button>
-        <button className="heart-icon"><img src={heart}/></button>
+        <button className="heart-icon"><img src={heart} alt="red heart wishlist icon"/></button>
         
         
           <div

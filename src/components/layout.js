@@ -1,7 +1,5 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import React from 'react'
+
 import PageTransition from 'gatsby-v2-plugin-page-transitions';
 import { css, Global } from '@emotion/core';
 import theme from '../../config/theme';

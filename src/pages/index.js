@@ -1,14 +1,13 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import ProductListing from "../components/product-link"
 import PostListing from "../components/post-link-wide"
 
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+
 import SEO from "../components/seo"
-import { ENGINE_METHOD_DIGESTS } from "constants";
 import heroimage from "../images/cover-image2.jpg";
 import "../pages/index.css";
 
@@ -23,11 +22,11 @@ class Index extends React.Component {
       const productEdges = this.props.data.product.edges;
       const postEdges = this.props.data.post.edges;
       const instagramEdges = this.props.data.instagram.edges;
-      const data = this.props.data;
+    
       return (
         <Layout>
             <SEO />
-            <img className="hero-image" src={heroimage} />
+            <img className="hero-image" src={heroimage} alt="Menco model Andrew fitted with navy jacket, grey pants, shirt and tie looking smart"/>
             {/* <Image fluid={data.hero.childImageSharp.fluid} className="hero-image"  /> */}
             <div className="hero-text">
                 <h1>Quality Essentials.</h1>
@@ -62,15 +61,15 @@ class Index extends React.Component {
                     </div>
 
                     <div className="social-images">{instagramEdges.map(edge => (
-                        <a href="#">
-                        <img src={edge.node.images.standard_resolution.url}></img>
+                        <a href={edge.node.link}>
+                        <img src={edge.node.images.standard_resolution.url} alt="featured instagram customer or model #smartman"></img>
                         </a>
                         )
                     )}</div>
                 </div>
 
                 <div className="social-subsection">
-                    <div className="social-icons"><a href="#"><img  src={twitter}/></a><a href="#"><img  src={facebook}/></a><a href="https://www.instagram.com/mencoapparel/"><img  src={instagram}/></a></div>
+                    <div className="social-icons"><a href="#"><img  src={twitter} alt="white bird icon twitter"/></a><a href="#"><img  src={facebook} alt="white f icon facebook"/></a><a href="https://www.instagram.com/mencoapparel/"><img  src={instagram} alt="white camera icon instagram"/></a></div>
                     <div className="social-sub">We love to share fashion/business tips and have a laugh on social media.
                     Post with #SmartMan for a chance to be featured alongside other inspiring men on @Menco.
                     </div>
@@ -155,6 +154,7 @@ class Index extends React.Component {
           instagram: allInstagramContent {
               edges {
                   node {
+                      link
                       localImage{
                           childImageSharp {
                               fluid(maxHeight: 400, maxWidth: 400 quality: 90){

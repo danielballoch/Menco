@@ -57,7 +57,7 @@ class ProductListing extends React.Component {
                         
                         <Image fluid={post.image.childImageSharp.fluid}/>
                         {post.name}<br/>
-                        <p className="sub_text"> ${post.price} - add to wishlist <img className="symbol" src={heart}/> </p>
+                        <p className="sub_text"> ${post.price} - add to wishlist <img className="symbol" src={heart} alt="red heart icon"/> </p>
                         </Product>
                     </Link>
                 ))

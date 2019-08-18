@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import {graphql } from "gatsby"
 import ProductListing from "../components/product-link"
 
 import Layout from "../components/layout"
@@ -14,8 +14,14 @@ class Index extends React.Component {
         <Layout>
           <div >
             <SEO />
-            <h1>Shop All</h1>
-            <ProductListing postEdges={postEdges} />
+            <div>
+                <div>
+                <h2>Catagorys:</h2>
+                <p>expandable menu</p>
+
+                </div>
+                <ProductListing postEdges={postEdges} />
+            </div>
           </div>
         </Layout>
       );

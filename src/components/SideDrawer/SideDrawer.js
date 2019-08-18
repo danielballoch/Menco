@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby'
-import {StyledLink, Nav} from '../NavigationLinks';
+import {StyledLink} from '../NavigationLinks';
 import './SideDrawer.css'
 const sideDrawer = props => {
     let drawerClasses = 'side-drawer';
