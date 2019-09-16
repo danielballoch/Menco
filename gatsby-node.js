@@ -40,6 +40,7 @@ exports.createPages = ({ actions, graphql }) => {
     const productTagPage = path.resolve('src/pages/productTags.jsx');
     const postTag = path.resolve('src/templates/postTag.jsx');
     const productTag = path.resolve('src/templates/productTag.jsx');
+    // const replacePath = path => (path === `/` ? path : path.replace(/\/$/,``))
 
     resolve(
          graphql(`{
@@ -84,6 +85,33 @@ exports.createPages = ({ actions, graphql }) => {
         if (result.errors){
             return reject(result.errors);
         }
+// 
+
+
+        // const oldPage = Object.assign({}, page)
+        // // Remove trailing slash unless page is /
+        // page.path = replacePath(page.path)
+        // if (page.path !== oldPage.path) {
+        //     // Replace new page with old page
+        //     deletePage(oldPage)
+        //     createPage({
+        //         ...page,
+        //         context: {
+        //             ...page.context,
+        //             catagorie: `shirts`,
+        //         }
+        //     })
+        // }
+
+
+
+
+
+
+
+
+
+// 
         //shorten links
         const products = result.data.products.edges;
         const posts = result.data.posts.edges;
@@ -128,12 +156,14 @@ exports.createPages = ({ actions, graphql }) => {
         });
 
         const productTags = Object.keys(productsByTag);
-
+        const productsList = productsByTag[productTags];
         createPage({
+            
           path: '/product-catagories',
           component: productTagPage,
           context: {
             tags: productTags.sort(),
+            productsList,
           },
         });
 

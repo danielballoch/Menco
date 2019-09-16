@@ -6,20 +6,21 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    
+    {
+        // keep as first gatsby-source-filesystem plugin for gatsby image support
+        resolve: 'gatsby-source-filesystem',
+        options: {
+          path: `${__dirname}/static/img`,
+          name: 'uploads',      
+        },
+    },
     {
         resolve: `gatsby-source-instagram-all`,
         options: {
           access_token: "18116458011.1677ed0.69e22be9a2224d4b90f0d8cd9bcfb476"
         }
       },
-    {
-        // keep as first gatsby-source-filesystem plugin for gatsby image support
-        resolve: 'gatsby-source-filesystem',
-        options: {
-          path: `${__dirname}/static/img`,
-          name: 'uploads',
-        },
-    },
     {
         resolve: 'gatsby-source-filesystem',
         options: {
@@ -111,6 +112,7 @@ module.exports = {
     options: {
       apiKey: 'MmVjYmVjYzMtZTA5MS00NzJjLTlmZGMtMmIxYjVlZjFjMjM0NjM2ODUzNjg2NTY4NTk5NTIy',
       styles: `${__dirname}/config/snipcart.min.css`,
+    //   styles: 'http://localhost:3006/themes/base/snipcart.css'
         
     }
   },

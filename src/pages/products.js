@@ -4,6 +4,7 @@ import ProductListing from "../components/product-link"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import "./products.css"
 
 
 
@@ -12,13 +13,27 @@ class Index extends React.Component {
       const postEdges = this.props.data.allMarkdownRemark.edges;
       return (
         <Layout>
-          <div >
+          <div className="wrapper">
             <SEO />
-            <div>
-                <div>
-                <h2>Catagorys:</h2>
-                <p>expandable menu</p>
+            <div className="sort-bar">Shop/ *items found* <button>sort by: popularity</button></div>
+            <div className="content">
+                
+                <div className="filter-bar">
+                <h2>Clothing:</h2>
+                <div className="catalog-menu">
+                    
+                    <p>Catagory</p>
+                    <a>T-Shirts & Singlets</a> <br/>
+                    <a>Shirts & Polos</a> <br/>
+                    <a>Jumpers & Cardigans</a><br/>
+                    <a>Pants</a><br/>
+                    <a>Jeans</a><br/>
+                    <a>Underwear & Socks</a><br/>
+                    <a>Shorts</a><br/>
+                    <a>Suits & Blazers</a><br/>
+                    <p>Refine</p><br/>
 
+                </div>
                 </div>
                 <ProductListing postEdges={postEdges} />
             </div>
@@ -53,10 +68,10 @@ class Index extends React.Component {
 // export default products
 
 export const pageQuery = graphql`
-    query {
+    query  {
         allMarkdownRemark(sort: {
              order: DESC, fields: [frontmatter___date] }
-             filter: {fields: {collection: {eq: "products"}}}
+             filter: {fields: {collection: {eq: "products"}},frontmatter: {tags: {eq: "shirt"}}}
              ) {
           edges {
             node {
