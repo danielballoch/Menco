@@ -6,19 +6,17 @@ import PropTypes from 'prop-types';
 const TagsContainer = styled.div`
   margin: 1rem 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   a {
-    margin: 0 1rem 1rem 0;
-    
-    padding: 0.3rem 0.6rem;
-    
+    padding: .5rem 0;
     border-radius: 10px;
     &:hover {
-
+        color: ${props => props.theme.colors.highlights.blue};
     }
   }
+  
 `;
 
 const TagsBlock = ({ list }) => (
@@ -28,7 +26,7 @@ const TagsBlock = ({ list }) => (
         const upperTag = tag.charAt(0).toUpperCase() + tag.slice(1);
         return (
           <Link key={tag} to={`/product-catagories/${tag}`}>
-            <span>{upperTag}</span>
+            {upperTag}
           </Link>
         );
       })}

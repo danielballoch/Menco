@@ -7,6 +7,10 @@
 .sort-bar {
     width: 100%;
     background-color: #f0f0f0;
+    padding: 0 2rem;
+}
+.sort-button {
+
 }
 
 .filter-bar {
@@ -16,8 +20,11 @@
 }
 .catalog-menu {
     border-top: 1px solid #d2d2d2;
-
+}
+.catalog-menu p {
+    padding: 0.5rem;
 }
 .filter-bar p {
     border-bottom: 1px solid #d2d2d2;
+    margin: 0;
 }

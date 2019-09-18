@@ -159,7 +159,7 @@ exports.createPages = ({ actions, graphql }) => {
         const productsList = productsByTag[productTags];
         createPage({
             
-          path: '/product-catagories',
+          path: '/products',
           component: productTagPage,
           context: {
             tags: productTags.sort(),

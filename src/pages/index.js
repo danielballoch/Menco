@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import ProductListing from "../components/product-link"
 import PostListing from "../components/post-link-wide"
@@ -42,11 +42,11 @@ class Index extends React.Component {
                     As such, we provide products you can't go wrong with, timeless classics, 
                     versitile colors and quality materials.
                 </p> */}
-            <button className="shop-all" href="#">Shop All</button>
+            <button className="shop-all"><Link to="/products">Shop All</Link></button>
             <div className="blog-banner">
                 <div className="banner-text">
                     <h2>Want to look smart with ease?</h2>
-                    <h3>View our recent posts to get on track</h3>
+                    <h3><Link to="/blog">View our recent posts to get on track</Link></h3>
                 </div>
             </div>
             <div className="blog-posts">

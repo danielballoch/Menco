@@ -8,9 +8,8 @@ import SEO from "../components/seo"
 const lookbook = () => (
   <Layout>
     <SEO title="Page two" />
-    <h1>Hi from the lookbook page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <br/>
+    <h1>Coming November 2019</h1>
   </Layout>
 )
 

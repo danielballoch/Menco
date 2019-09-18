@@ -9,7 +9,7 @@ import SEO from "../components/seo"
 import "../pages/products.css"
 
 const Tags = ({ pageContext, data }) => {
-  const { products, tags } = pageContext;
+  const { tags } = pageContext;
 //  console.log(products);
 const postEdges = data.allMarkdownRemark.edges;
   return (
@@ -18,7 +18,7 @@ const postEdges = data.allMarkdownRemark.edges;
 
         <div className="wrapper">
             <SEO />
-            <div className="sort-bar">Shop/ *items found* <button>sort by: popularity</button></div>
+            <div className="sort-bar">Shop/All <button>sort by: popularity</button></div>
             <div className="content">
                 
                 <div className="filter-bar">
@@ -34,11 +34,6 @@ const postEdges = data.allMarkdownRemark.edges;
 
                 <ProductListing postEdges={postEdges} />
             </div>
-            {/* {products.map((product, index) => (
-                <Link key={index} to={product.frontmatter.path}>
-                <h3>{product.frontmatter.name}</h3>
-                </Link>
-            ))} */}
           </div>
 
     </Layout>
@@ -56,7 +51,7 @@ Tags.propTypes = {
 export const pageQuery = graphql`
     query($tagName: String) {
         allMarkdownRemark(sort: {
-             order: DESC, fields: [frontmatter___date] }
+             order: ASC, fields: [frontmatter___date] }
              filter: {fields: {collection: {eq: "products"}},frontmatter: {tags: {eq: $tagName }}}
              ) {
           edges {

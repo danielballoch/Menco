@@ -11,6 +11,7 @@ import SideDrawer from './SideDrawer/SideDrawer'
 import Backdrop from './Backdrop/Backdrop'
 import Footer from './footer'
 import './layout.css'
+import '../../config/base/snipcart.min.css'
 import { ThemeProvider } from 'emotion-theming';
 // import SEO from '../components/SEO'
 
@@ -49,6 +50,7 @@ export default class Layout extends React.Component {
       }
       return (
         <>
+        
         {/* <SEO/> */}
         <ThemeProvider theme={theme}>
         <Global

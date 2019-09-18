@@ -4,9 +4,12 @@ import Image from 'gatsby-image'
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 import Layout from '../components/layout';
-import Header from '../components/Header';
+import SEO from "../components/seo"
+
+import "../pages/products.css"
 
 import ProductListing from "../components/product-link"
+import TagsBlock from '../components/ProductTagsBlock';
 
 // import config from '../../config/site';
 
@@ -32,19 +35,41 @@ const Information = styled.div`
 `;
 
 const Tag = ({ pageContext, data}) => {
-  const { products, tagName } = pageContext;
+  const { tags, tagName } = pageContext;
   const upperTag = tagName.charAt(0).toUpperCase() + tagName.slice(1);
   const postEdges = data.allMarkdownRemark.edges;
   console.log(postEdges)
   return (
     <Layout>
       {/* <Helmet title={`${tagName} | ${config.siteTitle}`} /> */}
-      <Header title={upperTag}/>
+
+      <div className="wrapper">
+            <SEO />
+            <div className="sort-bar">Shop/{tagName}'s <button className="sort-button">sort by: popularity</button></div>
+            <div className="content">
+                
+                <div className="filter-bar">
+                <h2>Clothing:</h2>
+                    <div className="catalog-menu">
+                        
+                        <p>Catagory</p><br/>
+                        <StyledLink to="/product-catagories">Shop All</StyledLink>
+                        <TagsBlock list={tags} />
+                        <p>Refine</p>
+                        <p>Color</p>
+                        <p>Fabric</p>
+                        
+
+                    </div>
+                </div>
+
+                <ProductListing postEdges={postEdges} />
+            </div>
+          </div>
      
-        <StyledLink to="/product-catagories">All Tags</StyledLink>
+        
       
     
-        <ProductListing postEdges={postEdges} />
         
             
         
@@ -66,11 +91,11 @@ Tag.propTypes = {
   }),
 };
 
-
+//tagName var passed in from node pageContext
 export const pageQuery = graphql`
     query($tagName: String) {
         allMarkdownRemark(sort: {
-             order: DESC, fields: [frontmatter___date] }
+             order: DESC, fields: [frontmatter___price] }
              filter: {fields: {collection: {eq: "products"}},frontmatter: {tags: {eq: $tagName }}}
              ) {
           edges {

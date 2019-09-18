@@ -12,7 +12,7 @@ module.exports = {
         resolve: 'gatsby-source-filesystem',
         options: {
           path: `${__dirname}/static/img`,
-          name: 'uploads',      
+          name: 'uploads',          
         },
     },
     {
@@ -111,8 +111,9 @@ module.exports = {
     resolve: 'gatsby-plugin-snipcart',
     options: {
       apiKey: 'MmVjYmVjYzMtZTA5MS00NzJjLTlmZGMtMmIxYjVlZjFjMjM0NjM2ODUzNjg2NTY4NTk5NTIy',
-      styles: `${__dirname}/config/snipcart.min.css`,
-    //   styles: 'http://localhost:3006/themes/base/snipcart.css'
+      styles: `${__dirname}/config/base/snipcart.min.css`,
+    //   styles: 'http://localhost:3006/themes/base/snipcart.css',
+    //   styles: "https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css",
         
     }
   },

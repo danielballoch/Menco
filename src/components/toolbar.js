@@ -53,9 +53,8 @@ export default class toolbar extends React.Component {
             
                 
                     <div className="middleNav">
-                
+                         <StyledLink to="/">Home</StyledLink>
                         <StyledLink to="/products/" >Products</StyledLink>
-                        <StyledLink to="/about/">About</StyledLink>
                         <StyledLink to="/blog" >Blog</StyledLink>
                         <StyledLink to="/lookbook/" >Lookbook</StyledLink>
                     </div>

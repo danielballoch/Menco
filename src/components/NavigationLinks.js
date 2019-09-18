@@ -1,5 +1,5 @@
 import { Link } from 'gatsby'
-import styled from "styled-components"
+import styled from '@emotion/styled';
 
 export const StyledLink = styled(Link)`
 padding: 10px;
@@ -8,7 +8,7 @@ color: black;
 list-style-type: none;
 transition: 0.1s;
 &:hover {
-    color:#36648b;
+    color: ${props => props.theme.colors.highlights.blue};
 }
 &:active {
     color: red;
