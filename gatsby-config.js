@@ -26,7 +26,7 @@ module.exports = {
         options: {
           path: `${__dirname}/src/pages`,
           name: 'pages',
-        },
+        }, 
     },
     {
         resolve: 'gatsby-source-filesystem',
@@ -103,9 +103,9 @@ module.exports = {
     },
     { resolve: 'gatsby-plugin-netlify-cms',
     options: {
-
+ 
         modulePath: `${__dirname}/src/cms/cms`,
-    }
+    }   
 },'gatsby-plugin-netlify',
 {
     resolve: 'gatsby-plugin-snipcart',

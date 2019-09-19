@@ -66,7 +66,8 @@ export default class toolbar extends React.Component {
                                 Login
                             </button>
                         </div>
-                        <button className="cart-div snipcart-checkout" >  <div className="cart-text " >Cart</div><img className="cart-icon" alt="shopping cart icon" src={ShoppingCart}/> 
+                        <button className="cart-div snipcart-checkout" >  <div className="cart-text ">Cart </div>
+                        <img className="cart-icon" alt="shopping cart icon" src={ShoppingCart}/> 
                         <div className="snipcart-summary"><span className="snipcart-total-items"></span></div>
                         </button>
                     </div>

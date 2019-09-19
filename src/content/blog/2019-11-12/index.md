@@ -2,7 +2,7 @@
 path: "/blog/blog1"
 image: "./bluejeanoutfitcrop.jpg"
 date: "2019-05-21"
-title: "Mens Neutrals pt.2"
+title: "Mens Wardrobe Staples "
 published: true
 tags: ['fashion', 'neutrals', 'men', 'color']
 ---

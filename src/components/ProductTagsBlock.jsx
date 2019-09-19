@@ -10,7 +10,7 @@ const TagsContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   a {
-    padding: .5rem 0;
+    padding: .5rem;
     border-radius: 10px;
     &:hover {
         color: ${props => props.theme.colors.highlights.blue};

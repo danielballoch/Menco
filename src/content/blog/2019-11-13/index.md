@@ -2,7 +2,7 @@
 path: "/blog/mens-neutrals"
 image: "./Neutral-colors.png"
 date: "2019-05-31"
-title: "Mens Neutrals pt.1"
+title: "Menco Colors Explained"
 published: true
 tags: ['fashion', 'neutrals', 'men', 'color']
 ---

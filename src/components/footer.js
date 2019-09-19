@@ -9,11 +9,11 @@ return(
     <footer className="footer">
         <div className="links">
                 <div>
-                    <StyledLink to="/products/" >Menco</StyledLink>
-                    <StyledLink to="/about/">Products</StyledLink>
-                    <StyledLink to="/contact" >About</StyledLink>
+                    <StyledLink to="/" >Menco</StyledLink>
+                    <StyledLink to="/products">Products</StyledLink>
+                    <StyledLink to="/" >About</StyledLink>
                     <StyledLink to="/lookbook/" >Privacy</StyledLink>  
-                    <StyledLink to="/contact" >Affiliates</StyledLink>                  
+                    <StyledLink to="/lookbook" >Affiliates</StyledLink>                  
                 </div>
                 <div>
                     <StyledLink to="/customer-care" >Customer Care</StyledLink>

@@ -5,7 +5,7 @@ templateKey: product
 id: 1
 price: 65.00
 weight: 1
-image: "../black_100_polo/black_100_polo2.jpg"
+image: "../black_100_polo/black_100_polo1front.jpg"
 path: "/products/black_100_polo/black_100_polo"
 date: "2017-11-07"
 tags: ['polo']

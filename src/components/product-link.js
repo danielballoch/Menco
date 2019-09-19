@@ -9,16 +9,17 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: 40px auto;
+    justify-content: flex-start;
+    margin: 40px auto 0 0;
+    
     max-width: 1240px;
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
 `
 const Product = styled.div`
 height: 300px;
 width: 240px;
-margin: 20px;
+margin: 10px;
 background-color: #f4f4f4;
 text-align: center;
 color: #362E2E;

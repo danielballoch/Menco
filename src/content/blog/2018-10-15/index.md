@@ -2,7 +2,7 @@
 path: "/blog/dapper-vs-real"
 image: "./Smart-Casual-Jacket.jpg"
 date: "2020-10-15"
-title: "Tuxedo 24/7??"
+title: "Wearing a Tux 7 days a week..."
 published: true
 tags: ['dapper', 'balance', 'casual',]
 ---

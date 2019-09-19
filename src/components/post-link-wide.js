@@ -67,9 +67,8 @@ class PostListing extends React.Component {
                                 <p className="sub_text">{post.excerpt}</p>
                                 <p className="sub_text">{post.date} {post.timeToRead}m read</p>
                                 {post.tags.map(post => (
-                                    <span>#{post} </span>
-                                ))}
-                                
+                                    <span key={post}>#{post} </span>
+                                ))}                               
                             </div>
                         </Wrapper>
                     </Link>
