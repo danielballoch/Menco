@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 
 import ProductListing from "../components/product-link"
 import PostListing from "../components/post-link-wide"
@@ -61,9 +62,10 @@ class Index extends React.Component {
                     </div>
 
                     <div className="social-images">{instagramEdges.map(edge => (
-                        <a href={edge.node.link}>
-                        <img src={edge.node.images.standard_resolution.url} alt="featured instagram customer or model #smartman"></img>
+                        <a href={"https://www.instagram.com/p/" + edge.node.id}>
+                        <Img fluid={edge.node.localFile.childImageSharp.fluid}  alt="featured instagram customer or model #smartman" />
                         </a>
+                        
                         )
                     )}</div>
                 </div>
@@ -151,20 +153,15 @@ class Index extends React.Component {
               }
             }
           }
-          instagram: allInstagramContent {
+          instagram: allInstaNode{
               edges {
                   node {
-                      link
-                      localImage{
+                        id
+                        localFile{
                           childImageSharp {
                               fluid(maxHeight: 400, maxWidth: 400 quality: 90){
                                   ...GatsbyImageSharpFluid_withWebp
                               }
-                          }
-                      }
-                      images {
-                          standard_resolution {
-                              url
                           }
                       }
                   }

@@ -16,10 +16,14 @@ module.exports = {
         },
     },
     {
-        resolve: `gatsby-source-instagram-all`,
+        resolve: `gatsby-source-instagram`,
         options: {
-          access_token: "18116458011.1677ed0.69e22be9a2224d4b90f0d8cd9bcfb476"
-        }
+          username: `mencoapparel`,
+          access_token: "18116458011.1677ed0.69e22be9a2224d4b90f0d8cd9bcfb476",
+        //   access_token: "EAAHSUvICu4ABAJ5MLidSArZBWvLi7rM9DcRvUZCQ0dhR3ZCaArT6mRRPjmn2mXEKu30HZA3LxO1eHB1yE4qeATAFVkUrnO8EyhlSqhaohYUW7uh8tOQH422RLEVRhqJUyZB08S1KyxraO9kbcKhEwxqpWSYf8tLzC9WfkiZAJvuwZDZD",
+        //   instagram_id: "mencoapparel"
+
+        },
       },
     {
         resolve: 'gatsby-source-filesystem',
