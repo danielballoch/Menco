@@ -21,9 +21,31 @@ import { ThemeProvider } from 'emotion-theming';
 
 
 export default class Layout extends React.Component {
-    state = {
-        sideDrawerOpen: false 
+    constructor(props) {
+        super(props);
+      }
+      
+      componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+      };
+      
+      componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+      };
+
+      state = {
+        sideDrawerOpen: false, 
+        scroll: false
     };
+      
+      handleScroll = (event) => {
+        console.log('the scroll things', event)
+        this.setState({
+            scroll: true
+        })
+      };
+
+    
     
     drawerToggleClickHandler = () => {
      this.setState((prevState)=> {
@@ -42,8 +64,10 @@ export default class Layout extends React.Component {
 
     render() {
       const { children } = this.props;
+      const scroll = this.state.scroll
       
       let backdrop;
+      console.log(scroll);
 
       if(this.state.sideDrawerOpen){
           backdrop = <Backdrop click={this.backdropClickHandler}/>;
@@ -102,11 +126,11 @@ export default class Layout extends React.Component {
 
 
         
-        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} open={this.state.sideDrawerOpen}/>
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} open={this.state.sideDrawerOpen} navtheme={this.props.navtheme} scroll/>
         <SideDrawer show={this.state.sideDrawerOpen}/>
         {backdrop}
           <PageTransition>
-          <div id="wrapper">
+          <div id="wrapper" >
             {children}
           </div>
           </PageTransition>

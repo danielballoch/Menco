@@ -11,7 +11,13 @@ const colors = {
     neutral: {
         grey: '#362E2E',
         black: '#000000',
-    }
+    },
+    nav: {
+        textlight: '#fff',
+        textdark: '000',
+        texthover: '#36648b',
+        background: 'rgba(0, 0, 0, 0)',
+    },
 
   }
   const transition = {

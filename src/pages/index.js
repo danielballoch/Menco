@@ -25,18 +25,19 @@ class Index extends React.Component {
       const instagramEdges = this.props.data.instagram.edges;
     
       return (
-        <Layout>
+        <Layout navtheme="light">
             <SEO />
             <img className="hero-image" src={heroimage} alt="Menco model Andrew fitted with navy jacket, grey pants, shirt and tie looking smart"/>
             {/* <Image fluid={data.hero.childImageSharp.fluid} className="hero-image"  /> */}
             <div className="hero-text">
                 <h1>Quality Essentials.</h1>
+                <h3>Quality mensware, making smart attire effortless.</h3>
                 {/* <button className="shop-now">shop now</button> */}
             </div>
             <h1>Featured Products</h1>
         
             <div className="post_wrapper_div">
-                <ProductListing postEdges={productEdges} className="post_div"/>
+                <ProductListing postEdges={productEdges} className="post_div" wrap={"wrapper-center"}/>
                 </div>
                 {/* <p>Menco is about making looking smart easy. We understand how busy our people are and hate seeing them look anything
                     less than their best, just because their wardrobe is a mess.

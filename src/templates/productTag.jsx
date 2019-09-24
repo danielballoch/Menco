@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Image from 'gatsby-image'
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
@@ -43,7 +43,7 @@ const Tag = ({ pageContext, data}) => {
     <Layout>
       {/* <Helmet title={`${tagName} | ${config.siteTitle}`} /> */}
 
-      <div className="wrapper">
+      <div className="top-margin">
             <SEO />
             <div className="sort-bar">Shop/{tagName}'s <button className="sort-button">sort by: popularity</button></div>
             <div className="content">
@@ -63,7 +63,7 @@ const Tag = ({ pageContext, data}) => {
                     </div>
                 </div>
 
-                <ProductListing postEdges={postEdges} />
+                <ProductListing postEdges={postEdges} wrap={"wrapper-left"}/>
             </div>
           </div>
      

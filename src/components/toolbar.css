@@ -3,36 +3,31 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color:rgba(255,255,255, 0.95);
-    height: 70px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    /* background-color:rgba(255,255,255, 0.95); */
+    background-color:rgba(255,255,255, 0);
+    height: 110px;
+    /* box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05); */
     z-index: 300;
     font-family: "open sans"
   
 }
-.middleNav {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    padding: .5rem 1rem;
-    margin: auto;
-    font-size: 14px;
-}
-.middleNav a {
-    padding: 1rem 1rem;
-}
+
+
 .rightNav {
     display: flex;
     height: 100%;
     align-items: right;
     padding: 1rem 2rem;
+    
 }
 .rightNav button {
+    display: flex;
     border: none;
     background-color: rgba(255,255,255, 0);
     padding: 0 1rem;
     text-decoration: none;
-    color: black;
+    color: #fff;
+   
 }
 .rightNav button:hover {
     color: #36648b;
@@ -49,14 +44,19 @@
     /* max-width: 1038px; */
 }
 .cart-div {
-    display: inline-flex;
+    display: flex;
+}
+.cart-div a{
+    height: 100%;
+    
+
 }
 .cart-div:hover {
     cursor:pointer;
 }
-.cart-text {
-    
-}
+/* .cart-text {
+    color: #fff;
+} */
 .cart-icon {
 height: 22px;
 position: relative;
@@ -66,18 +66,19 @@ left: 0px;
 }
 
 .toolbar_logo {
+    display:flex;
 transition: 0.3s;
 z-index: 300;
    height: 100%;
    font-family: 'Quattrocento', serif;
-   margin-left: 10px;
+   margin-left: 70px;
    
 }
 
 .toolbar_logo a {
    text-decoration: none;
    font-size: 1.8rem; 
-   color: #000;
+   color: #fff;
    transition: 0.3s;
    padding: 1rem 1rem;
    font-size: 3rem;
@@ -95,6 +96,9 @@ z-index: 300;
     align-items: center;
     padding: 0 1rem;
     margin: 0;
+}
+.snip-item-count {
+    font-size: 12px;
 }
 
 

@@ -5,17 +5,8 @@ import "../pages/index.css";
 import heart from "../Icons/heart.svg";
 import styled from '@emotion/styled';
 
-const Wrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin: 40px auto 0 0;
-    
-    max-width: 1240px;
-    /* width: 100%; */
-    text-align: center;
-`
+
+
 const Product = styled.div`
 height: 300px;
 width: 240px;
@@ -47,10 +38,15 @@ class ProductListing extends React.Component {
         });
         return postList;
     }
+   
     render(){
         const postList = this.getPostList();
+        const wrap = this.props.wrap;
+        console.log(wrap)
         return(
-            <Wrapper>
+            // <Wrapper Justify={this.props.Justify}>
+            
+            <div className={wrap}>       
                 {
                 postList.map(post => (
                     <Link to={post.path} key={post.name}>
@@ -63,7 +59,8 @@ class ProductListing extends React.Component {
                     </Link>
                 ))
                 }
-            </Wrapper>
+            </div>
+           
         )
     }
 }

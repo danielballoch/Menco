@@ -4,11 +4,11 @@ import styled from '@emotion/styled';
 export const StyledLink = styled(Link)`
 padding: 10px;
 text-decoration: none;
-color: black;
+color: ${props => props.theme.colors.nav.textdark};
 list-style-type: none;
 transition: 0.1s;
 &:hover {
-    color: ${props => props.theme.colors.highlights.blue};
+    color: ${props => props.theme.colors.nav.texthover};
 }
 &:active {
     color: red;

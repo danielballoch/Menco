@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import TagsBlock from '../components/ProductTagsBlock';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import ProductListing from "../components/product-link"
 
 import SEO from "../components/seo"
@@ -16,7 +16,7 @@ const postEdges = data.allMarkdownRemark.edges;
     <Layout>
         
 
-        <div className="wrapper">
+        <div className="top-margin">
             <SEO />
             <div className="sort-bar">Shop/All <button>sort by: popularity</button></div>
             <div className="content">
@@ -32,7 +32,7 @@ const postEdges = data.allMarkdownRemark.edges;
                 </div>
                 </div>
 
-                <ProductListing postEdges={postEdges} />
+                <ProductListing postEdges={postEdges} wrap={"wrapper-left"}/>
             </div>
           </div>
 
