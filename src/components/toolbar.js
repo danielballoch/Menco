@@ -20,14 +20,17 @@ const Toolbar = styled.header`
     z-index: 300;
     font-family: "open sans";
     a{
+        
         color: ${props => props.light ? 'white' : 'black'};
         &:hover {
             color: ${props => props.light ? '' : '#36648b' };
             text-shadow:${props => props.light ? '0px 0px 6px rgba(255,255,255,0.3)' : '' } ;
         }
+        
     }
     button{
         color: ${props => props.light ? 'white' : 'black'};
+        align-items: center;
         &:hover {
             color: ${props => props.light ? '' : '#36648b' };
             text-shadow:${props => props.light ? '0px 0px 6px rgba(255,255,255,0.3)' : '' } ;
@@ -35,6 +38,7 @@ const Toolbar = styled.header`
     }
     @media (max-width: 880px) {
         margin-top: -20px;
+        height: 80px;
     }
 
 `
@@ -67,6 +71,7 @@ const LeftNav = styled.div`
    margin-left: 70px;
    a{
         text-decoration: none;
+        align-items: center;
         font-size: 1.8rem; 
         transition: 0.3s;
         padding: 1rem 1rem;
@@ -93,6 +98,7 @@ const MiddleNav = styled.div`
     font-size: 14px;
     a{
         padding: 1rem 1rem;
+        
     }
     @media (max-width: 880px) {
         display: none;
@@ -102,15 +108,16 @@ const MiddleNav = styled.div`
 const RightNav = styled.div`
     display: flex;
     height: 100%;
-    align-items: right;
     margin-right: 70px;
     padding: 1rem 1rem;
+    align-items: flex-start;
     button{
         display: flex;
         border: none;
         background-color: rgba(255,255,255, 0);
         padding: 1.7rem 1rem;
         text-decoration: none;
+        align-items: flex-start;
         &:hover{
             cursor: pointer;
         }
@@ -126,7 +133,7 @@ const RightNav = styled.div`
 const ToggleButton = styled.div`
     display: flex;
     height: 100%;
-    align-items: center;
+    align-items: flex-end;
     margin-right: 70px;
     padding: 1rem 1rem;
     @media (min-width: 880px) {
@@ -182,8 +189,8 @@ export default class toolbar extends React.Component {
                         </div>
                     </button>  
                 </RightNav>
-                <ToggleButton>
-                    <DrawerToggleButton open={this.props.open} click={this.props.drawerClickHandler} aria-label="Toggle side drawer"/>
+                <ToggleButton >
+                    <DrawerToggleButton open={this.props.open} click={this.props.drawerClickHandler} aria-label="Toggle side drawer" light={navtheme}/>
                 </ToggleButton>
                 
             </ToolbarNavigation>  

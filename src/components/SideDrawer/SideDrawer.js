@@ -11,12 +11,13 @@ const sideDrawer = props => {
    
        
         <div className="draw-link-wrapper">
+            <StyledLink id="StyledLink" to="/" >Cart</StyledLink>
+            <StyledLink id="StyledLink" to="/" >Profile</StyledLink>
             <StyledLink id="StyledLink" to="/" >Home</StyledLink>
-            <StyledLink to="/products" >products</StyledLink>
+            <StyledLink to="/products/" >Products</StyledLink>
             shirts <br/>
             pants <br/>
             etc <br/>
-            <StyledLink to="/about" >About</StyledLink>
             <StyledLink to="/blog">Blog</StyledLink>
             <StyledLink to="/lookbook" >Lookbook</StyledLink>
         </div>
