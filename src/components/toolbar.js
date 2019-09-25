@@ -8,6 +8,7 @@ import styled from '@emotion/styled';
 
 
 const Toolbar = styled.header`
+    transition: 1s;
     position: fixed;
     top: 0;
     left: 0;
@@ -31,6 +32,9 @@ const Toolbar = styled.header`
             color: ${props => props.light ? '' : '#36648b' };
             text-shadow:${props => props.light ? '0px 0px 6px rgba(255,255,255,0.3)' : '' } ;
         }
+    }
+    @media (max-width: 880px) {
+        margin-top: -20px;
     }
 
 `
@@ -71,6 +75,12 @@ const LeftNav = styled.div`
             text-decoration: none;
         }
    }
+   @media (max-width: 880px) {
+        margin-left: 30px;
+    }
+    @media (max-width: 480px) {
+        margin-left: 0px;
+    }
 
 `
 
@@ -78,13 +88,13 @@ const MiddleNav = styled.div`
     display: flex;
     height: 100%;
     align-items: center;
-    padding: .5rem 1rem;
+    padding: 1rem 1rem;
     margin: auto;
     font-size: 14px;
     a{
         padding: 1rem 1rem;
     }
-    @media (max-width: 760px) {
+    @media (max-width: 880px) {
         display: none;
     }
 `
@@ -93,18 +103,40 @@ const RightNav = styled.div`
     display: flex;
     height: 100%;
     align-items: right;
-    padding: 1rem 2rem;
+    margin-right: 70px;
+    padding: 1rem 1rem;
     button{
         display: flex;
         border: none;
         background-color: rgba(255,255,255, 0);
-        padding: 0 1rem;
+        padding: 1.7rem 1rem;
         text-decoration: none;
         &:hover{
             cursor: pointer;
         }
-        
     }
+    @media (max-width: 880px) {
+        margin-right: 0;
+    }
+    @media(max-width: 365px){
+        display: none;
+    }
+`
+
+const ToggleButton = styled.div`
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin-right: 70px;
+    padding: 1rem 1rem;
+    @media (min-width: 880px) {
+        display: none;
+        margin-right: 30px;
+    }
+    @media(max-width: 365px){
+        margin-right: 0px;
+    }
+
 `
 
 
@@ -113,12 +145,11 @@ const RightNav = styled.div`
 export default class toolbar extends React.Component {
    
   render(){ 
-      const navtheme = this.props.navtheme;
-      
+    console.log("tool bar" + this.props.scroll);
+      let navtheme = this.props.navtheme;
+      if (this.props.scroll === true){navtheme = ""};
       console.log(navtheme);
-    //   if (this.props.scroll){
-    //     return navtheme = "dark"
-    //     }
+    
     return(
         
         
@@ -140,8 +171,8 @@ export default class toolbar extends React.Component {
                 
                 <RightNav>
                         
-                    <button className="snipcart-user-profile">
-                        Login
+                    <button className="snipcart-user-profile profile-btn">
+                       <a> Login </a>
                     </button>
                         
                     <button className="cart-div snipcart-checkout" >
@@ -149,13 +180,12 @@ export default class toolbar extends React.Component {
                         <div className="snipcart-summary snip-item-count">
                             <span className="snipcart-total-items"></span>
                         </div>
-                    </button>
+                    </button>  
                 </RightNav>
-                    
-                <div className='toolbar__toggle-button'>
+                <ToggleButton>
                     <DrawerToggleButton open={this.props.open} click={this.props.drawerClickHandler} aria-label="Toggle side drawer"/>
-                </div>
-                    
+                </ToggleButton>
+                
             </ToolbarNavigation>  
         </Toolbar>
     );

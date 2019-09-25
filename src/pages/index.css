@@ -1,6 +1,15 @@
+.hero-wrapper {
+    height: 100vh;
+}
 .hero-image {
-    
-    
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    object-fit: cover;
+    object-position: right top;
+    /* transform: scale(1.14); */
+    will-change: transform;
 }
 
 /* .hero-text {
@@ -271,8 +280,11 @@ justify-content: center;
 
 
 @media (max-width: 760px) {
-    .hero-image {margin-top: 70px;
-    width: 200vw;}
+    /* .hero-image {margin-top: 70px;width: 200vw;} */
+    .hero-image {
+        overflow:hidden; /* this is important */
+        object-fit: cover;
+    }
     .hero-text h1 {font-size: 70px; padding-top: 10vw;}
     
 }

@@ -26,7 +26,11 @@ export default class Layout extends React.Component {
       }
       
       componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll);
+          //index page is currently only page which has non-top white
+          //if more added, create getScrollTarget fuction 
+          if(this.props.navtheme === "light"){
+            window.addEventListener('scroll', this.handleScroll);
+          }
       };
       
       componentWillUnmount() {
@@ -35,14 +39,29 @@ export default class Layout extends React.Component {
 
       state = {
         sideDrawerOpen: false, 
-        scroll: false
+        scroll: false,
     };
       
       handleScroll = (event) => {
-        console.log('the scroll things', event)
-        this.setState({
-            scroll: true
-        })
+        // console.log('the scroll things', event)
+        // console.log(document.getElementsByClassName('hero-image', event));
+        // console.log(window.pageYOffset, event);
+        const scrollTarget = document.getElementById('hero-image').offsetHeight-60;
+        console.log(scrollTarget)
+        if(window.pageYOffset > scrollTarget){
+            console.log("over and out")
+            this.setState({
+                scroll: true
+            })
+            console.log("state:" + this.state.scroll)
+        } else {
+            this.setState({
+                scroll: false
+            })
+        }
+        
+        
+        
       };
 
     
@@ -64,10 +83,10 @@ export default class Layout extends React.Component {
 
     render() {
       const { children } = this.props;
-      const scroll = this.state.scroll
+      let scroll = this.state.scroll;
       
       let backdrop;
-      console.log(scroll);
+      console.log("scroll state " + scroll);
 
       if(this.state.sideDrawerOpen){
           backdrop = <Backdrop click={this.backdropClickHandler}/>;
@@ -126,7 +145,7 @@ export default class Layout extends React.Component {
 
 
         
-        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} open={this.state.sideDrawerOpen} navtheme={this.props.navtheme} scroll/>
+        <Toolbar drawerClickHandler={this.drawerToggleClickHandler} open={this.state.sideDrawerOpen} navtheme={this.props.navtheme} scroll={this.state.scroll} />
         <SideDrawer show={this.state.sideDrawerOpen}/>
         {backdrop}
           <PageTransition>

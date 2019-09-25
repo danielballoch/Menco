@@ -27,12 +27,14 @@ class Index extends React.Component {
       return (
         <Layout navtheme="light">
             <SEO />
-            <img className="hero-image" src={heroimage} alt="Menco model Andrew fitted with navy jacket, grey pants, shirt and tie looking smart"/>
-            {/* <Image fluid={data.hero.childImageSharp.fluid} className="hero-image"  /> */}
-            <div className="hero-text">
-                <h1>Quality Essentials.</h1>
-                <h3>Quality mensware, making smart attire effortless.</h3>
-                {/* <button className="shop-now">shop now</button> */}
+            <div className="hero-wrapper">
+                <img className="hero-image" id="hero-image" src={heroimage} alt="Menco model Andrew fitted with navy jacket, grey pants, shirt and tie looking smart"/>
+                {/* <Image fluid={data.hero.childImageSharp.fluid} className="hero-image"  /> */}
+                <div className="hero-text">
+                    {/* <h1>Quality Essentials.</h1>
+                    <h3>Quality mensware, making smart attire effortless.</h3> */}
+                    {/* <button className="shop-now">shop now</button> */}
+                </div>
             </div>
             <h1>Featured Products</h1>
         

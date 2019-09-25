@@ -143,12 +143,11 @@ z-index: 300;
     }
 }
 
-@media (min-width: 760px) {
-    .toolbar__toggle-button{
+@media (max-width: 410px) {
+    .profile-btn a {
         display:none;
+        padding: 0;
     }
-    
+
 }
-
-
 
