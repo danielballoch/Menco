@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import Image from 'gatsby-image';
-import "../pages/index.css";
 import styled from '@emotion/styled';
 
 
@@ -13,6 +12,13 @@ display: flex;
 background-color: #542323;
 color: white;
 transition: .3s;
+@media (max-width: 620px) {
+        width: 80vw;
+        flex-direction: column;
+        h1{
+            font-size:30px;
+        }
+    }
 
 h1{
     margin: 1px 0;
@@ -55,6 +61,12 @@ class PostListing extends React.Component {
     }
     render(){
         const postList = this.getPostList();
+        var smallExcerpt = postList.map(post => (
+            post.excerpt.substring(0, 150)
+        ));
+        let excerptLength = 290;
+        if (window.innerWidth < 620) {excerptLength = 110};
+        console.log(excerptLength)
         return(
             <div>
                 {
@@ -64,11 +76,12 @@ class PostListing extends React.Component {
                             <Image className="image" fluid={post.image.childImageSharp.fluid}/>
                             <div className="text-box">
                                 <h1>{post.title}</h1>
-                                <p className="sub_text">{post.excerpt}</p>
-                                <p className="sub_text">{post.date} {post.timeToRead}m read</p>
+                                <p className="sub_text">{post.excerpt.substring(0,excerptLength)}...</p>
+                                
                                 {post.tags.map(post => (
                                     <span key={post}>#{post} </span>
-                                ))}                               
+                                ))}   
+                                <p className="sub_text">{post.date} {post.timeToRead}m read</p>                            
                             </div>
                         </Wrapper>
                     </Link>

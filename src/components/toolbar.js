@@ -55,7 +55,7 @@ padding: 10px;
 text-decoration: none;
 /* color: ${props => props.theme.colors.nav.textlight}; */
 list-style-type: none;
-transition: 0.1s;
+transition: 0.3s;
 &:active {
     color: red;
     background: radial-gradient(rgba(255,245,255, 0.95), rgba(255,255,255, 0.95)); 
@@ -111,7 +111,9 @@ const RightNav = styled.div`
     margin-right: 70px;
     padding: 1rem 1rem;
     align-items: flex-start;
+    a {transition: 0.3s;}
     button{
+        transition: 0.3s;
         display: flex;
         border: none;
         background-color: rgba(255,255,255, 0);

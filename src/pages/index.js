@@ -134,7 +134,7 @@ class Index extends React.Component {
             edges {
               node {
                 id
-                excerpt(pruneLength: 300)
+                excerpt(pruneLength: 310)
                 timeToRead
                 frontmatter {
                   title
