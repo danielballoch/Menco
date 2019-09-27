@@ -5,12 +5,28 @@
     display: flex;
 }
 .sort-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
     width: 100%;
-    background-color: #f0f0f0;
-    padding: 0 2rem;
+    max-width: 1300px;
+    /* background-color: #f0f0f0; */
+    background-color: white;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    padding: 4px 3rem;
+}
+.sort-bar a {
+ font-size: 12px;
+ color: #676565;
 }
 .sort-button {
-
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    background-color: white;
+    text-decoration: none;
+    padding: 4px;
+    font-size: 14px;
 }
 
 .filter-bar {

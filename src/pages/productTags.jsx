@@ -12,15 +12,16 @@ const Tags = ({ pageContext, data }) => {
   const { tags } = pageContext;
 //  console.log(products);
 const postEdges = data.allMarkdownRemark.edges;
+console.log(postEdges.length)
   return (
     <Layout>
         
 
         <div className="top-margin">
             <SEO />
-            <div className="sort-bar">Shop/All <button>sort by: popularity</button></div>
+            <div className="sort-bar">Shop/All <a>{postEdges.length} items found</a> <button className="sort-button">sort by: popularity</button></div>
             <div className="content">
-                
+            
                 <div className="filter-bar">
                 <h2>Clothing:</h2>
                 <div className="catalog-menu">
@@ -28,10 +29,11 @@ const postEdges = data.allMarkdownRemark.edges;
                     <p>Catagory</p>
                     <TagsBlock list={tags} />
                     <p>Refine</p><br/>
+                    <p>Color</p>
+                    <p>Fabric</p>
 
                 </div>
                 </div>
-
                 <ProductListing postEdges={postEdges} wrap={"wrapper-left"}/>
             </div>
           </div>

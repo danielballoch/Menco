@@ -3,8 +3,14 @@ import { graphql } from "gatsby"
 import PostListing from "../components/post-link"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import styled from '@emotion/styled';
 
-
+const Header = styled.div`
+margin-top: 140px;
+h1 {
+    margin: 40px;
+}
+`
 
 class Index extends React.Component {
     render() {
@@ -13,7 +19,11 @@ class Index extends React.Component {
         <Layout>
           <div >
             <SEO />
-            <h1>Welcome to the Community</h1>
+            <Header>
+                <h1>Welcome to the Community</h1>
+                <h3>This is where we post all insider information around mens fashion!</h3>
+                Search Posts: (* search bar ) (filter)(tags filter)
+            </Header>
             <PostListing postEdges={postEdges} />
           </div>
         </Layout>

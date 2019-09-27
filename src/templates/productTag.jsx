@@ -38,16 +38,16 @@ const Tag = ({ pageContext, data}) => {
   const { tags, tagName } = pageContext;
   const upperTag = tagName.charAt(0).toUpperCase() + tagName.slice(1);
   const postEdges = data.allMarkdownRemark.edges;
-  console.log(postEdges)
+  console.log(postEdges.length)
   return (
     <Layout>
       {/* <Helmet title={`${tagName} | ${config.siteTitle}`} /> */}
 
       <div className="top-margin">
             <SEO />
-            <div className="sort-bar">Shop/{tagName}'s <button className="sort-button">sort by: popularity</button></div>
+            <div className="sort-bar">Shop/{tagName}'s <a>{postEdges.length} items found</a><button className="sort-button">sort by: popularity</button></div>
             <div className="content">
-                
+            
                 <div className="filter-bar">
                 <h2>Clothing:</h2>
                     <div className="catalog-menu">
@@ -61,9 +61,9 @@ const Tag = ({ pageContext, data}) => {
                         
 
                     </div>
-                </div>
-
+                </div> 
                 <ProductListing postEdges={postEdges} wrap={"wrapper-left"}/>
+              
             </div>
           </div>
      

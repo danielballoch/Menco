@@ -35,6 +35,7 @@ const Toolbar = styled.header`
             color: ${props => props.light ? '' : '#36648b' };
             text-shadow:${props => props.light ? '0px 0px 6px rgba(255,255,255,0.3)' : '' } ;
         }
+        
     }
     @media (max-width: 880px) {
         margin-top: -20px;
@@ -56,10 +57,7 @@ text-decoration: none;
 /* color: ${props => props.theme.colors.nav.textlight}; */
 list-style-type: none;
 transition: 0.3s;
-&:active {
-    color: red;
-    background: radial-gradient(rgba(255,245,255, 0.95), rgba(255,255,255, 0.95)); 
-  }
+
 
 `
 const LeftNav = styled.div`

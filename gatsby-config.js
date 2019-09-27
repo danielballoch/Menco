@@ -107,8 +107,8 @@ module.exports = {
     },
     { resolve: 'gatsby-plugin-netlify-cms',
     options: {
- 
-        modulePath: `${__dirname}/src/cms/cms`,
+        modulePath: `${__dirname}/static/admin/config.yml`,
+        // modulePath: `${__dirname}/src/cms/cms`,
     }   
 },'gatsby-plugin-netlify',
 {
