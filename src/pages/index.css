@@ -72,12 +72,19 @@ h3 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin: 40px auto 0 0;
+    margin: 20px auto 0 0;
     
     max-width: 1240px;
     /* width: 100%; */
     text-align: center;
+    
 }
+@media (max-width: 720px){
+    .wrapper-left {
+        justify-content: space-evenly;
+        margin: 0px;
+    }
+  }
 .wrapper-center{
     display: flex;
     flex-direction: row;

@@ -21,6 +21,12 @@ h1{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
     transition: .5s;
 }
+@media (max-width: 530px){
+    width: 50vw;
+    height: auto;
+    min-height: 260px;
+    margin: 0px;
+}
 `
 
 class ProductListing extends React.Component {

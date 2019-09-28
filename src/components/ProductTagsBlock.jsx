@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 const TagsContainer = styled.div`
-  margin: 1rem 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -15,6 +15,9 @@ const TagsContainer = styled.div`
     &:hover {
         color: ${props => props.theme.colors.highlights.blue};
     }
+  }
+  @media (max-width: 720px) {
+    flex-direction: row;
   }
   
 `;

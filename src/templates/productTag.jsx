@@ -26,6 +26,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
+
 const Information = styled.div`
   text-align: center;
   h1 {
@@ -49,7 +50,7 @@ const Tag = ({ pageContext, data}) => {
             <div className="content">
             
                 <div className="filter-bar">
-                <h2>Clothing:</h2>
+                    <h2>Clothing:</h2>
                     <div className="catalog-menu">
                         
                         <p>Catagory</p><br/>
