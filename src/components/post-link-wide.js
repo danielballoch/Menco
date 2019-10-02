@@ -59,11 +59,22 @@ class PostListing extends React.Component {
         });
         return postList;
     }
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            excerptLength: 290
+        }
+    }
+    componentDidMount(){
+        if (this.window.innerWidth < 620) {this.state.excerptLength = 110};
+    }
+
+
+
     render(){
         const postList = this.getPostList();
-        let excerptLength = 290;
-        if (window.innerWidth < 620) {excerptLength = 110};
-        console.log(excerptLength)
+        console.log(this.state.excerptLength)
         return(
             <div>
                 {
@@ -73,7 +84,7 @@ class PostListing extends React.Component {
                             <Image className="image" fluid={post.image.childImageSharp.fluid}/>
                             <div className="text-box">
                                 <h1>{post.title}</h1>
-                                <p className="sub_text">{post.excerpt.substring(0,excerptLength)}...</p>
+                                <p className="sub_text">{post.excerpt.substring(0,this.state.excerptLength)}...</p>
                                 
                                 {post.tags.map(post => (
                                     <span key={post}>#{post} </span>

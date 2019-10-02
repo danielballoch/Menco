@@ -29,7 +29,7 @@ const TagsBlock = ({ list }) => (
         const upperTag = tag.charAt(0).toUpperCase() + tag.slice(1);
         return (
           <Link key={tag} to={`/product-catagories/${tag}`}>
-            {upperTag}
+            {upperTag}'s
           </Link>
         );
       })}

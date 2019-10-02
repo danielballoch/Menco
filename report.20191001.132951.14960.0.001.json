@@ -1,0 +1,444 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20191001.132951.14960.0.001.json",
+    "dumpEventTime": "2019-10-01T13:29:51Z",
+    "dumpEventTimeStamp": "1569889791084",
+    "processId": 14960,
+    "cwd": "C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom",
+    "commandLine": [
+      "node",
+      "C:\\Users\\danie\\AppData\\Roaming\\npm\\\\node_modules\\gatsby-cli\\lib\\index.js",
+      "build"
+    ],
+    "nodejsVersion": "v12.11.0",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.11.0",
+      "v8": "7.7.299.11-node.12",
+      "uv": "1.32.0",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.39.2",
+      "napi": "5",
+      "llhttp": "1.1.4",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1c",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019a",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "headersUrl": "https://nodejs.org/download/release/v12.11.0/node-v12.11.0-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.11.0/node-v12.11.0.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.11.0/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.18362",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "AMD FX(tm)-6300 Six-Core Processor             ",
+        "speed": 3516,
+        "user": 42246531,
+        "nice": 0,
+        "sys": 19161562,
+        "idle": 119444906,
+        "irq": 1247046
+      },
+      {
+        "model": "AMD FX(tm)-6300 Six-Core Processor             ",
+        "speed": 3516,
+        "user": 72915593,
+        "nice": 0,
+        "sys": 16084859,
+        "idle": 91852328,
+        "irq": 272937
+      },
+      {
+        "model": "AMD FX(tm)-6300 Six-Core Processor             ",
+        "speed": 3516,
+        "user": 56445750,
+        "nice": 0,
+        "sys": 15671859,
+        "idle": 108735171,
+        "irq": 224140
+      },
+      {
+        "model": "AMD FX(tm)-6300 Six-Core Processor             ",
+        "speed": 3516,
+        "user": 45197953,
+        "nice": 0,
+        "sys": 14427656,
+        "idle": 121227156,
+        "irq": 219359
+      },
+      {
+        "model": "AMD FX(tm)-6300 Six-Core Processor             ",
+        "speed": 3516,
+        "user": 27516890,
+        "nice": 0,
+        "sys": 11314203,
+        "idle": 142021671,
+        "irq": 165921
+      },
+      {
+        "model": "AMD FX(tm)-6300 Six-Core Processor             ",
+        "speed": 3516,
+        "user": 27757390,
+        "nice": 0,
+        "sys": 9541250,
+        "idle": 143554109,
+        "irq": 177140
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "WiFi",
+        "internal": false,
+        "mac": "c4:e9:84:ae:2f:8a",
+        "address": "fe80::e59f:5d4f:632d:6124",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 13
+      },
+      {
+        "name": "WiFi",
+        "internal": false,
+        "mac": "c4:e9:84:ae:2f:8a",
+        "address": "192.168.20.9",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+        "family": "IPv6",
+        "scopeid": 0
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "127.0.0.1",
+        "netmask": "255.0.0.0",
+        "family": "IPv4"
+      }
+    ],
+    "host": "DESKTOP-RSRR1TK"
+  },
+  "javascriptStack": {
+    "message": "No stack.",
+    "stack": [
+      "Unavailable."
+    ]
+  },
+  "nativeStack": [
+    {
+      "pc": "0x00007ff6b92b7539",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+10873"
+    },
+    {
+      "pc": "0x00007ff6b92bb8cc",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+28172"
+    },
+    {
+      "pc": "0x00007ff6b92ba878",
+      "symbol": "std::basic_ostream<char,std::char_traits<char> >::operator<<+23992"
+    },
+    {
+      "pc": "0x00007ff6b93a8c0b",
+      "symbol": "v8::base::CPU::has_sse+37563"
+    },
+    {
+      "pc": "0x00007ff6b9ba9aee",
+      "symbol": "v8::Isolate::ReportExternalAllocationLimitReached+94"
+    },
+    {
+      "pc": "0x00007ff6b9b91b31",
+      "symbol": "v8::SharedArrayBuffer::Externalize+833"
+    },
+    {
+      "pc": "0x00007ff6b9a5f4bc",
+      "symbol": "v8::internal::Heap::EphemeronKeyWriteBarrierFromCode+1436"
+    },
+    {
+      "pc": "0x00007ff6b9a6a860",
+      "symbol": "v8::internal::Heap::ProtectUnprotectedMemoryChunks+1312"
+    },
+    {
+      "pc": "0x00007ff6b9a67394",
+      "symbol": "v8::internal::Heap::PageFlagsAreConsistent+3204"
+    },
+    {
+      "pc": "0x00007ff6b9a5cc23",
+      "symbol": "v8::internal::Heap::CollectGarbage+1283"
+    },
+    {
+      "pc": "0x00007ff6b9a5b3f4",
+      "symbol": "v8::internal::Heap::AddRetainedMap+2356"
+    },
+    {
+      "pc": "0x00007ff6b9a7c6c5",
+      "symbol": "v8::internal::Factory::NewFillerObject+53"
+    },
+    {
+      "pc": "0x00007ff6b97e8e99",
+      "symbol": "v8::internal::interpreter::JumpTableTargetOffsets::iterator::operator=+4057"
+    },
+    {
+      "pc": "0x00007ff6b9fd580d",
+      "symbol": "v8::internal::SetupIsolateDelegate::SetupHeap+567949"
+    },
+    {
+      "pc": "0x0000031e4b2d4443",
+      "symbol": ""
+    }
+  ],
+  "javascriptHeap": {
+    "totalMemory": 2154115072,
+    "totalCommittedMemory": 2154115072,
+    "usedMemory": 2099378632,
+    "availableMemory": 48257608,
+    "memoryLimit": 2197815296,
+    "heapSpaces": {
+      "read_only_space": {
+        "memorySize": 262144,
+        "committedMemory": 262144,
+        "capacity": 261872,
+        "used": 32296,
+        "available": 229576
+      },
+      "new_space": {
+        "memorySize": 4194304,
+        "committedMemory": 4194304,
+        "capacity": 2094976,
+        "used": 52968,
+        "available": 2042008
+      },
+      "old_space": {
+        "memorySize": 2029367296,
+        "committedMemory": 2029367296,
+        "capacity": 1981976392,
+        "used": 1981785568,
+        "available": 190824
+      },
+      "code_space": {
+        "memorySize": 2523136,
+        "committedMemory": 2523136,
+        "capacity": 2242368,
+        "used": 2242368,
+        "available": 0
+      },
+      "map_space": {
+        "memorySize": 5509120,
+        "committedMemory": 5509120,
+        "capacity": 3253520,
+        "used": 3253520,
+        "available": 0
+      },
+      "large_object_space": {
+        "memorySize": 111636480,
+        "committedMemory": 111636480,
+        "capacity": 111461512,
+        "used": 111461512,
+        "available": 0
+      },
+      "code_large_object_space": {
+        "memorySize": 622592,
+        "committedMemory": 622592,
+        "capacity": 550400,
+        "used": 550400,
+        "available": 0
+      },
+      "new_large_object_space": {
+        "memorySize": 0,
+        "committedMemory": 0,
+        "capacity": 2094976,
+        "used": 0,
+        "available": 2094976
+      }
+    }
+  },
+  "resourceUsage": {
+    "userCpuSeconds": 230.093,
+    "kernelCpuSeconds": 12.921,
+    "cpuConsumptionPercent": 192.868,
+    "maxRss": 2343825408,
+    "pageFaults": {
+      "IORequired": 1449223,
+      "IONotRequired": 0
+    },
+    "fsActivity": {
+      "reads": 10994,
+      "writes": 415
+    }
+  },
+  "libuv": [
+  ],
+  "environmentVariables": {
+    "": "C:=C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom",
+    "ALLUSERSPROFILE": "C:\\ProgramData",
+    "APPDATA": "C:\\Users\\danie\\AppData\\Roaming",
+    "asl.log": "Destination=file",
+    "ChocolateyInstall": "C:\\ProgramData\\chocolatey",
+    "ChocolateyLastPathUpdate": "Fri Sep 21 09:07:54 2018",
+    "CommonProgramFiles": "C:\\Program Files\\Common Files",
+    "CommonProgramFiles(x86)": "C:\\Program Files (x86)\\Common Files",
+    "CommonProgramW6432": "C:\\Program Files\\Common Files",
+    "COMPUTERNAME": "DESKTOP-RSRR1TK",
+    "ComSpec": "C:\\WINDOWS\\system32\\cmd.exe",
+    "DriverData": "C:\\Windows\\System32\\Drivers\\DriverData",
+    "FPS_BROWSER_APP_PROFILE_STRING": "Internet Explorer",
+    "FPS_BROWSER_USER_PROFILE_STRING": "Default",
+    "GATSBY_BUILD_STAGE": "build-javascript",
+    "gatsby_executing_command": "build",
+    "gatsby_log_level": "normal",
+    "HOMEDRIVE": "C:",
+    "HOMEPATH": "\\Users\\danie",
+    "LOCALAPPDATA": "C:\\Users\\danie\\AppData\\Local",
+    "LOGONSERVER": "\\\\DESKTOP-RSRR1TK",
+    "NODE_ENV": "production",
+    "NUMBER_OF_PROCESSORS": "6",
+    "OneDrive": "C:\\Users\\danie\\OneDrive",
+    "OneDriveConsumer": "C:\\Users\\danie\\OneDrive",
+    "OS": "Windows_NT",
+    "Path": "C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\Git\\cmd;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files (x86)\\Yarn\\bin\\;C:\\Program Files\\nodejs\\;C:\\Users\\danie\\.windows-build-tools\\python27\\;C:\\Users\\danie\\AppData\\Roaming\\npm\\node_modules\\npm\\node_modules\\npm-lifecycle\\node-gyp-bin;C:\\Users\\danie\\AppData\\Roaming\\npm\\node_modules\\windows-build-tools\\node_modules\\.bin;C:\\Users\\danie\\AppData\\Roaming\\npm\\node_modules\\.bin;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Microsoft VS Code\\bin;C:\\Program Files\\nodejs\\;C:\\Program Files\\Git\\cmd;C:\\Users\\danie\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\danie\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\danie\\AppData\\Local\\Yarn\\bin;C:\\Users\\danie\\AppData\\Local\\GitHubDesktop\\bin;C:\\Users\\danie\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\danie\\AppData\\Roaming\\npm",
+    "PATHEXT": ".COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JSE;.WSF;.WSH;.MSC;.CPL",
+    "PROCESSOR_ARCHITECTURE": "AMD64",
+    "PROCESSOR_IDENTIFIER": "AMD64 Family 21 Model 2 Stepping 0, AuthenticAMD",
+    "PROCESSOR_LEVEL": "21",
+    "PROCESSOR_REVISION": "0200",
+    "ProgramData": "C:\\ProgramData",
+    "ProgramFiles": "C:\\Program Files",
+    "ProgramFiles(x86)": "C:\\Program Files (x86)",
+    "ProgramW6432": "C:\\Program Files",
+    "PROMPT": "$P$G",
+    "PSModulePath": "C:\\Users\\danie\\OneDrive\\Documents\\WindowsPowerShell\\Modules;C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules",
+    "PUBLIC": "C:\\Users\\Public",
+    "SESSIONNAME": "Console",
+    "SystemDrive": "C:",
+    "SystemRoot": "C:\\WINDOWS",
+    "TEMP": "C:\\Users\\danie\\AppData\\Local\\Temp",
+    "TMP": "C:\\Users\\danie\\AppData\\Local\\Temp",
+    "USERDOMAIN": "DESKTOP-RSRR1TK",
+    "USERDOMAIN_ROAMINGPROFILE": "DESKTOP-RSRR1TK",
+    "USERNAME": "daniel",
+    "USERPROFILE": "C:\\Users\\danie",
+    "VIPSHOME": "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release",
+    "windir": "C:\\WINDOWS",
+    "TERM_PROGRAM": "vscode",
+    "TERM_PROGRAM_VERSION": "1.38.1",
+    "LANG": "en_GB.UTF-8",
+    "COLORTERM": "truecolor"
+  },
+  "sharedObjects": [
+    "C:\\Program Files\\nodejs\\node.exe",
+    "C:\\WINDOWS\\SYSTEM32\\ntdll.dll",
+    "C:\\Program Files\\AVAST Software\\Avast\\aswhook.dll",
+    "C:\\WINDOWS\\System32\\KERNEL32.DLL",
+    "C:\\WINDOWS\\System32\\KERNELBASE.dll",
+    "C:\\WINDOWS\\System32\\WS2_32.dll",
+    "C:\\WINDOWS\\System32\\RPCRT4.dll",
+    "C:\\WINDOWS\\System32\\ADVAPI32.dll",
+    "C:\\WINDOWS\\System32\\msvcrt.dll",
+    "C:\\WINDOWS\\System32\\sechost.dll",
+    "C:\\WINDOWS\\System32\\USER32.dll",
+    "C:\\WINDOWS\\System32\\win32u.dll",
+    "C:\\WINDOWS\\System32\\GDI32.dll",
+    "C:\\WINDOWS\\System32\\gdi32full.dll",
+    "C:\\WINDOWS\\System32\\msvcp_win.dll",
+    "C:\\WINDOWS\\System32\\ucrtbase.dll",
+    "C:\\WINDOWS\\System32\\PSAPI.DLL",
+    "C:\\WINDOWS\\System32\\CRYPT32.dll",
+    "C:\\WINDOWS\\System32\\MSASN1.dll",
+    "C:\\WINDOWS\\System32\\bcrypt.dll",
+    "C:\\WINDOWS\\SYSTEM32\\dbghelp.dll",
+    "C:\\WINDOWS\\SYSTEM32\\IPHLPAPI.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\USERENV.dll",
+    "C:\\WINDOWS\\System32\\profapi.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMM.dll",
+    "C:\\WINDOWS\\SYSTEM32\\WINMMBASE.dll",
+    "C:\\WINDOWS\\System32\\cfgmgr32.dll",
+    "C:\\WINDOWS\\System32\\bcryptPrimitives.dll",
+    "C:\\WINDOWS\\System32\\IMM32.DLL",
+    "C:\\WINDOWS\\System32\\powrprof.dll",
+    "C:\\WINDOWS\\System32\\UMPDC.dll",
+    "C:\\WINDOWS\\system32\\uxtheme.dll",
+    "C:\\WINDOWS\\System32\\combase.dll",
+    "C:\\WINDOWS\\system32\\mswsock.dll",
+    "C:\\WINDOWS\\System32\\kernel.appcore.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\sharp.node",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libvips-42.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libglib-2.0-0.dll",
+    "C:\\WINDOWS\\System32\\ole32.dll",
+    "C:\\WINDOWS\\System32\\SHELL32.dll",
+    "C:\\WINDOWS\\System32\\shcore.dll",
+    "C:\\WINDOWS\\System32\\windows.storage.dll",
+    "C:\\WINDOWS\\System32\\shlwapi.dll",
+    "C:\\WINDOWS\\System32\\cryptsp.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libvips-cpp.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libcairo-2.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libexif-12.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libexpat-1.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libfontconfig-1.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libgif-7.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libgmodule-2.0-0.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libgobject-2.0-0.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libgsf-1-114.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libjpeg-62.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\liblcms2-2.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\liborc-0.4-0.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libpango-1.0-0.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libpangoft2-1.0-0.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libpng16-16.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\librsvg-2-2.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libtiff-5.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libwebp-7.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libwebpdemux-2.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libwebpmux-3.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libz1.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libintl.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libfreetype-6.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libpixman-1-0.dll",
+    "C:\\WINDOWS\\SYSTEM32\\MSIMG32.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libgcc_s_seh-1.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libffi-6.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libgio-2.0-0.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libxml2-2.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libfribidi-0.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libharfbuzz.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libcroco-0.6-3.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libgdk_pixbuf-2.0-0.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libpangocairo-1.0-0.dll",
+    "C:\\WINDOWS\\SYSTEM32\\DNSAPI.dll",
+    "C:\\WINDOWS\\System32\\NSI.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libiconv-2.dll",
+    "\\\\?\\C:\\Users\\danie\\OneDrive\\Documents\\WebDev\\gatsbyprojects\\ecom\\node_modules\\sharp\\build\\Release\\libpangowin32-1.0-0.dll",
+    "C:\\WINDOWS\\SYSTEM32\\USP10.dll",
+    "C:\\WINDOWS\\SYSTEM32\\ntmarta.dll",
+    "C:\\WINDOWS\\SYSTEM32\\CRYPTBASE.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc6.DLL",
+    "C:\\WINDOWS\\SYSTEM32\\dhcpcsvc.DLL",
+    "C:\\Windows\\System32\\rasadhlp.dll",
+    "C:\\WINDOWS\\System32\\fwpuclnt.dll",
+    "C:\\WINDOWS\\system32\\napinsp.dll",
+    "C:\\WINDOWS\\system32\\pnrpnsp.dll",
+    "C:\\WINDOWS\\System32\\winrnr.dll",
+    "C:\\WINDOWS\\system32\\NLAapi.dll",
+    "C:\\WINDOWS\\system32\\wshbth.dll"
+  ]
+}

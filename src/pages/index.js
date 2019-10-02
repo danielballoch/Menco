@@ -31,8 +31,9 @@ class Index extends React.Component {
                 <img className="hero-image" id="hero-image" src={heroimage} alt="Menco model Andrew fitted with navy jacket, grey pants, shirt and tie looking smart"/>
                 {/* <Image fluid={data.hero.childImageSharp.fluid} className="hero-image"  /> */}
                 <div className="hero-text">
-                    {/* <h1>Quality Essentials.</h1>
-                    <h3>Quality mensware, making smart attire effortless.</h3> */}
+                    <h3>M</h3>
+                    <h1>Quality Mensware</h1>
+                    <h2>making smart attire effortless</h2>
                     {/* <button className="shop-now">shop now</button> */}
                 </div>
             </div>
