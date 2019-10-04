@@ -5,13 +5,15 @@ import PropTypes from 'prop-types';
 const Wrapper = styled.section`
   text-align: ${props => (props.center ? 'center' : '')};
   margin: auto;
-  padding: 3rem 1.5rem;
+  margin-top: 110px;
+  padding: 0;
   /* width: 60%; */
   max-width: ${props => props.theme.layout[props.type]};
   height: 100%;
   flex: 1;
 
   @media (max-width: ${props => props.theme.breakpoints.m}) {
+    margin-top: 60px;  
     width: 90%;
   }
 

@@ -97,31 +97,31 @@ export default class Template extends React.Component {
 
             <div className="container">
                 {/* pushing array into ImageGallery component */}
-                <ImageGallery items={productImages} showPlayButton={false} showFullscreenButton={false} showNav={false}/>
+                <ImageGallery  items={productImages} showPlayButton={false} showFullscreenButton={false} showNav={false}/>
         
-        <div className="product">
-          <h2>{frontmatter.name} - ${frontmatter.price}</h2>
+                <div className="product">
+                    <h2>{frontmatter.name} - ${frontmatter.price}</h2>
          
-        <div className="detail-section">
-            <div className="section">
-                {frontmatter.details.map(detail => (
-                    <li key={detail}>{detail}</li>
-                ))}
-            </div>
-            <div className="section" id="myDiv">
+                        <div className="detail-section">
+                            <div className="section">
+                                {frontmatter.details.map(detail => (
+                                <li key={detail}>{detail}</li>
+                                ))}
+                            </div>
+                            <div className="section" id="myDiv">
                 
-                <h3>Size:</h3>
-                {SizeBtns}
-                <button onClick={() => this.ToggleSizeguide(this.value)} value={this.state.modalOpen}>size guide</button>
-            </div>  
-            <div className={this.state.modalOpen === true ? 'sizeguide-modal open' : 'sizeguide-modal'}>
-                <div className="modal-content">
-                    <button className="close" onClick={() => this.ToggleSizeguide(this.value)} value={this.state.modalOpen}>&times;</button>
-                    <h1>Size Guide:</h1>
-                    <h2>Tops</h2>
-                    <p><b>Tops:</b> T-shirts & Singlets, Shirts & Polos, Coats & Jackets, Jumpers & Cardigans, Sweats & Hoodies, Base Layers, Sleepwear Top </p>
-                    {/* <Table data={sizeGuide}/> */}
-                    <table>
+                                <h3>Size:</h3>
+                                {SizeBtns}
+                                <button onClick={() => this.ToggleSizeguide(this.value)} value={this.state.modalOpen}>size guide</button>
+                            </div>  
+                            <div className={this.state.modalOpen === true ? 'sizeguide-modal open' : 'sizeguide-modal'}>
+                            <div className="modal-content">
+                                <button className="close" onClick={() => this.ToggleSizeguide(this.value)} value={this.state.modalOpen}>&times;</button>
+                                <h1>Size Guide:</h1>
+                                <h2>Tops</h2>
+                                <p><b>Tops:</b> T-shirts & Singlets, Shirts & Polos, Coats & Jackets, Jumpers & Cardigans, Sweats & Hoodies, Base Layers, Sleepwear Top </p>
+                                {/* <Table data={sizeGuide}/> */}
+                                <table>
                             <tr><td>SIZE INTL.</td><td>EU</td><td>UK/US</td><td>Chest(cm)</td><td>Collar(cm)</td><td>Collar(in)</td></tr>
                             {topSizeGuide.map(row => (
                             <tr>

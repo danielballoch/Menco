@@ -8,7 +8,7 @@ import styled from '@emotion/styled';
 
 
 const Product = styled.div`
-height: 300px;
+height: 360px;
 width: 240px;
 margin: 10px;
 background-color: #f4f4f4;

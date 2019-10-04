@@ -41,7 +41,7 @@ img {
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 5vw;
 }
 .detail-section {
@@ -67,6 +67,12 @@ img {
     background-color: #dcdcdc;
     border-color:#dcdcdc;
 }
+.image-gallery-content {
+    width: 50vw;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+}
 
 .image-gallery-thumbnail.active {
     border: none;
@@ -75,6 +81,7 @@ img {
 }
 .image-gallery-thumbnail{
     border: none;
+    display: flex;
 }
 
 .sizeguide-modal {
@@ -112,21 +119,24 @@ img {
   text-decoration: none;
   cursor: pointer;
 }
+.product {
+    margin-top: 80px;
+}
 
 
 
-@media (min-width: 760px) {
+@media (max-width: 760px) {
     .container {
-        flex-direction: row; 
+        flex-direction: column; 
     }
-    .image-gallery {
-        display: flex;
-        max-width: 50%;
+    .image-gallery-content {
+        width:100%;
     }
     .product{
         display: flexbox;
-        width: 50%;
+        width: 100%;
         padding: 20px;
+        margin-top: 20px;
     }
     .detail-section {
         flex-direction: row;

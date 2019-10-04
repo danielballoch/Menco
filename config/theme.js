@@ -28,7 +28,7 @@ const colors = {
   const breakpoints = {
         xs: '400px',
         s: '600px',
-        m: '900px',
+        m: '880px',
         l: '1200px',
         xl: '1400px',
     }
