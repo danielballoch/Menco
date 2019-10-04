@@ -67,7 +67,7 @@ class PostListing extends React.Component {
         }
     }
     componentDidMount(){
-        if (this.window.innerWidth < 620) {this.state.excerptLength = 110};
+        if (window.innerWidth < 620) {this.state.excerptLength = 110};
     }
 
     render(){
