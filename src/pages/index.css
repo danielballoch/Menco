@@ -33,6 +33,8 @@ button {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 } */
 
+
+
 .hero-text {
     position: absolute;
     /* top: 8vw; */
@@ -52,18 +54,23 @@ button {
 .hero-text h3 {
     font-family: 'Quattrocento', serif;
     font-size: 400px;
+    /* font-size:40vw; */
     margin-top: 200px;
     line-height: 250px;
+    transition: 1s;
 }
 .hero-text h1 {
     margin:0;
     margin-bottom: 14px;
     font-size: 80px;
+    /* font-size: 8vw; */
+    transition: 1s;
 
 }
 .hero-text h2 {
     font-size: 36px;
-
+    /* font-size: 4vw; */
+    transition: 1s;
 }
 
 h1 {
@@ -309,7 +316,21 @@ justify-content: center;
         overflow:hidden; /* this is important */
         object-fit: cover;
     }
-    .hero-text h1 {font-size: 70px; padding-top: 10vw;}
+    /* .hero-text h3 {
+       
+        font-size: 70vw;
+        
+    }
+    .hero-text h1 {
+        margin:0;
+        margin-bottom: 14px;
+        font-size: 80px;
+    
+    }
+    .hero-text h2 {
+        font-size: 36px;
+    
+    } */
     
 }
 
@@ -323,6 +344,57 @@ justify-content: center;
         width: 0px;
         margin-top: 50px;
     }
+
+
+
+  
+}
+
+/* each breakpoint var is * 0.8 */
+@media (max-width: 1200px){
+    .hero-text h3 {
+        /* margin-top: 250px; */
+        font-size: 320px;
+        line-height: 200px;
+    }
+    .hero-text h1 {
+        font-size: 58px;
+        margin-bottom: 11px;
+    }
+    .hero-text h2 {
+        font-size: 29px;
+    }
+
+}
+@media (max-width: 880px){
+    .hero-text h3 {
+        /* margin-top: 250px; */
+        font-size: 256px;
+        line-height: 160px;
+    }
+    .hero-text h1 {
+        font-size: 46px;
+        margin-bottom: 9px;
+    }
+    .hero-text h2 {
+        font-size: 23px;
+    }
+
+}
+@media (max-width: 600px){
+    .hero-text h3 {
+        /* margin-top: 225px; */
+        font-size: 204px;
+        line-height: 128px;
+    }
+    .hero-text h1 {
+        font-size: 37px;
+        margin-bottom: 7px;
+    }
+    .hero-text h2 {
+        font-size: 18px;
+    }
+
 }
 
 
