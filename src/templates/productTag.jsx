@@ -54,7 +54,7 @@ const Tag = ({ pageContext, data}) => {
                     <div className="catalog-menu">
                         
                         <p>Catagory</p><br/>
-                        <StyledLink to="/product-catagories">Shop All</StyledLink>
+                        <StyledLink to="/products">Shop All</StyledLink>
                         <TagsBlock list={tags} />
                         <p>Refine</p>
                         <p>Color</p>
