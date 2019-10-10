@@ -186,7 +186,7 @@ exports.createPages = ({ actions, graphql }) => {
             const products = productsByTag[tagName];
   
             createPage({
-              path: `/product-catagories/${tagName}`,
+              path: `/products/${tagName}`,
               component: productTag,
               context: {
                 products,

@@ -25,8 +25,41 @@
     border-radius: 3px;
     background-color: white;
     text-decoration: none;
+    transition: 0.3s;
     padding: 4px;
     font-size: 14px;
+}
+.sort-button:hover {
+    color: #36648b;   
+}
+.sort-button:active {
+    border: 1px solid #36648b;
+    color: #36648b;   
+}
+.sort-button > div {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    padding: 5px;
+    
+}
+.sort-button > div > button {
+    margin: -1px;
+    padding: 2px;
+    background-color: white;
+    border: 1px solid #d2d2d2;
+}
+.sort-button > div > button:hover {
+    color: #36648b;
+    z-index: 200;
+}
+.sort-button.open > div {
+    display: flex;
+    flex-direction: column;
+}
+.open {
+ background-color: white;
+ 
 }
 
 .filter-bar {

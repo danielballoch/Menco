@@ -8,18 +8,94 @@ import ProductListing from "../components/product-link"
 import SEO from "../components/seo"
 import "../pages/products.css"
 
-const Tags = ({ pageContext, data }) => {
-  const { tags } = pageContext;
-//  console.log(products);
-const postEdges = data.allMarkdownRemark.edges;
-console.log(postEdges.length)
-  return (
+// const Tags = ({ pageContext, data }) => {
+class Tags extends React.Component {
+    constructor(props) {
+        super(props);
+      }
+      
+      componentDidMount() {
+        //   if(this.props.navtheme === "light"){
+        //     window.addEventListener('scroll', this.handleScroll);
+        //   }
+      };
+      
+      componentWillUnmount() {
+        
+      };
+
+      state = {
+        sortBtn: false,  
+        sort: "price low-high"
+    };
+    // sort button is set to true when clicked, displaying sort options
+    sortBtnToggleClickHandler = () => {
+        this.setState((prevState)=> {
+            return{sortBtn: !prevState.sortBtn};
+        });
+       };
+    // sort set to button value when clicked
+    sortToggleClickHandler = (option) => {
+        console.log("option:" + option);
+        this.setState(() => {
+            return {sort: option}
+        });
+       };
+
+
+
+
+
+    render(){
+        const { tags } = this.props.pageContext;
+        //  console.log(products);
+        const postEdges = this.props.data.allMarkdownRemark.edges;
+        console.log(postEdges.length)
+        console.log("Sort open: " + this.state.sortBtn)
+        console.log("Sort by: " + this.state.sort)
+
+
+return (
     <Layout>
+
+{/* state = {
+        activeSize: "M",
+        modalOpen: false
+    };
+    
+  
+    setActiveSize(name) {
+        this.setState({ activeSize: name })
+        let selectedsize = name;
+        console.log(selectedsize);
+        return {selectedsize}
+    }
+
+    ToggleSizeguide(){
+        this.setState((currentState) => ({
+            modalOpen: !currentState.modalOpen, 
+        }));
+    } */}
+
+        {/* className={this.state.activeSize === size ? 'sizeBtn active' : 'sizeBtn'}
+            value={size}
+            onClick={() => this.setActiveSize(size)}
+            key={ size } */}
         
 
         <div className="top-margin">
             <SEO />
-            <div className="sort-bar">Shop/All <a>{postEdges.length} items found</a> <button className="sort-button">sort by: popularity</button></div>
+            <div className="sort-bar">
+                Shop/All 
+                <a>{postEdges.length} items found</a>
+                <button onClick={() => this.sortBtnToggleClickHandler()} className={this.state.sortBtn ? 'sort-button open' : "sort-button"}>
+                    sort: {this.state.sort} 
+                    <div>
+                        <button onClick={() => this.sortToggleClickHandler("new releases")}>new releases</button>
+                        <button onClick={() => this.sortToggleClickHandler("price low-high")}>price low-high</button>
+                        <button onClick={() => this.sortToggleClickHandler("price high-low")}>price high-low</button>
+                    </div>
+                    </button></div>
             <div className="content">
             
                 <div className="filter-bar">
@@ -30,6 +106,7 @@ console.log(postEdges.length)
                     <TagsBlock list={tags} />
                     <p>Refine</p><br/>
                     <p>Color</p>
+                    <p>Price</p>
                     <p>Fabric</p>
 
                 </div>
@@ -40,7 +117,9 @@ console.log(postEdges.length)
 
     </Layout>
   );
+    }
 };
+
 
 export default Tags;
 
