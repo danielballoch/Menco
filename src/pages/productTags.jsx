@@ -12,16 +12,17 @@ import "../pages/products.css"
 class Tags extends React.Component {
     constructor(props) {
         super(props);
+
+        this.setWrapperRef = this.setWrapperRef.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
       }
       
       componentDidMount() {
-        //   if(this.props.navtheme === "light"){
-        //     window.addEventListener('scroll', this.handleScroll);
-        //   }
+        document.addEventListener('mousedown', this.handleClickOutside);
       };
       
       componentWillUnmount() {
-        
+        document.removeEventListener('mousedown', this.handleClickOutside);
       };
 
       state = {
@@ -41,6 +42,18 @@ class Tags extends React.Component {
             return {sort: option}
         });
        };
+       //set the sortBtn wrapper ref
+       setWrapperRef(node) {
+        this.wrapperRef = node;
+      }
+      // close sort bar
+      handleClickOutside(event) {
+        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+            this.setState(() => {
+                return {sortBtn: false}
+            });
+        }
+      }
 
 
 
@@ -88,12 +101,15 @@ return (
             <div className="sort-bar">
                 Shop/All 
                 <a>{postEdges.length} items found</a>
-                <button onClick={() => this.sortBtnToggleClickHandler()} className={this.state.sortBtn ? 'sort-button open' : "sort-button"}>
+                <button onClick={() => this.sortBtnToggleClickHandler()} className={this.state.sortBtn ? 'sort-button open' : "sort-button"} ref={this.setWrapperRef}>
                     sort: {this.state.sort} 
                     <div>
-                        <button onClick={() => this.sortToggleClickHandler("new releases")}>new releases</button>
-                        <button onClick={() => this.sortToggleClickHandler("price low-high")}>price low-high</button>
-                        <button onClick={() => this.sortToggleClickHandler("price high-low")}>price high-low</button>
+                        <Link className="sortLink" to="/products/frontmatter___price/ASC" onClick={() => this.sortToggleClickHandler("price low-high")}>price low-high</Link>
+                        <Link className="sortLink" to="/products/frontmatter___price/DESC" onClick={() => this.sortToggleClickHandler("price high-low")}>price high-low</Link>
+                        <Link className="sortLink" to="/products/frontmatter___date/ASC" onClick={() => this.sortToggleClickHandler("new releases")}>new releases</Link>
+                        <Link className="sortLink" to="/products/frontmatter___date/DESC" onClick={() => this.sortToggleClickHandler("old gold")}>
+                            old gold
+                        </Link>
                     </div>
                     </button></div>
             <div className="content">
@@ -130,9 +146,13 @@ Tags.propTypes = {
 };
 
 export const pageQuery = graphql`
-    query($tagName: String) {
+    query(
+        $tagName: String, 
+        $order: [SortOrderEnum], 
+        $sortOption: [MarkdownRemarkFieldsEnum], 
+        )  {
         allMarkdownRemark(sort: {
-             order: ASC, fields: [frontmatter___date] }
+             order: $order, fields: $sortOption }
              filter: {fields: {collection: {eq: "products"}},frontmatter: {tags: {eq: $tagName }}}
              ) {
           edges {

@@ -7,7 +7,7 @@ price: 20.00
 weight: 1
 image: "../vneck_black/vneck_black_front.jpg"
 path: "/products/vneck_black/vneck_black"
-date: "2017-11-07"
+date: "2019-11-07"
 tags: ['t-shirt']
 details: ['Material: 100% Cotton', 'Size & fit:  Length: 70cm','Care: Cold machine wash.']
 sizes: ['S','M','L','XL']

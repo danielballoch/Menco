@@ -157,15 +157,26 @@ exports.createPages = ({ actions, graphql }) => {
 
         const productTags = Object.keys(productsByTag);
         const productsList = productsByTag[productTags];
-        createPage({
-            
-          path: '/products',
-          component: productTagPage,
-          context: {
-            tags: productTags.sort(),
-            productsList,
-          },
-        });
+        //create different product pages based on sortOption's
+        const orderOption = ["ASC", "DESC"]
+        const sortOptions = ["frontmatter___price", "frontmatter___date"]
+        sortOptions.forEach(option => {
+            orderOption.forEach(order => {
+                createPage({
+                    
+                    path: `/products/${option}/${order}`,
+                    component: productTagPage,
+                    context: {
+                      tags: productTags.sort(),
+                      order: order,
+                      sortOption: option,
+                      productsList,
+                    },
+                  });
+            })
+        })
+        
+        
 
         //create tags
         postTags.forEach(tagName => {

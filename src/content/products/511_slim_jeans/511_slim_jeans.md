@@ -7,7 +7,7 @@ price: 65.00
 weight: 1
 image: "../511_slim_jeans/511_slim_jeans_front.jpg"
 path: "/products/511_slim_jeans/511_slim_jeans"
-date: "2017-11-07"
+date: "2019-11-07"
 tags: ['jean']
 details: ['Material: 99% Cotton & 1% Elastane', 'Size & fit Length: Inside Leg: 80cm; Front Rise: 26cm; Leg Opening: 38cm','Care: Cold machine wash. Do not tumble dry. Warm iron.','brand donates 1% or more of all profits to a charitable cause',]
 sizes: ['W29/L32','W30/L32','W31/L32','W32/L32','W34/L34']
