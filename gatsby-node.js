@@ -192,19 +192,55 @@ exports.createPages = ({ actions, graphql }) => {
           });
         });
 
-         //create tags
-         productTags.forEach(tagName => {
-            const products = productsByTag[tagName];
+        sortOptions.forEach(option => {
+            orderOption.forEach(order => {
+                productTags.forEach(tagName => {
+                    const products = productsByTag[tagName];
+          
+                    createPage({
+                      path: `/products/${tagName}/${option}/${order}`,
+                      component: productTagPage,
+                      context: {
+                        products,
+                        tagName,
+                        order: order,
+                        sortOption: option,
+                      },
+                    });
+                  });
+            })
+        })
+
+        //create tags
+        // productTags.forEach(tagName => {
+        //     const products = productsByTag[tagName];
   
-            createPage({
-              path: `/products/${tagName}`,
-              component: productTag,
-              context: {
-                products,
-                tagName,
-              },
-            });
-          });
+        //     createPage({
+        //       path: `/products/${tagName}`,
+        //       component: productTag,
+        //       context: {
+        //         products,
+        //         tagName,
+        //       },
+        //     });
+        //   });
+
+
+
+
+         //create tags original
+        //  productTags.forEach(tagName => {
+        //     const products = productsByTag[tagName];
+  
+        //     createPage({
+        //       path: `/products/${tagName}`,
+        //       component: productTag,
+        //       context: {
+        //         products,
+        //         tagName,
+        //       },
+        //     });
+        //   });
 
 
 
