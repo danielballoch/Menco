@@ -9,6 +9,7 @@ image: "../vneck_white/vneck_white_front.jpg"
 path: "/products/vneck_white/vneck_white"
 date: "2015-11-07"
 tags: ['t-shirt']
+color: ['white']
 details: ['Material: 95% Cotton 5% Spandex', 'Size & fit:  Length: 70cm','Care Dissolve detergent completely before immersing. Gentle machine wash in cold water. Do not bleach and do not tumble dry. Spot clean. Drip dry. Warm steam iron']
 sizes: ['S','M','L','XL']
 ---

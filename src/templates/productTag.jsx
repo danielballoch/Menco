@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import SEO from "../components/seo"
 
+
 import "../pages/products.css"
 
 import ProductListing from "../components/product-link"
@@ -56,6 +57,7 @@ const Tag = ({ pageContext, data}) => {
                         <p>Catagory</p><br/>
                         <StyledLink to="/products">Shop All</StyledLink>
                         <TagsBlock list={tags} />
+                        
                         <p>Refine</p>
                         <p>Color</p>
                         <p>Fabric</p>

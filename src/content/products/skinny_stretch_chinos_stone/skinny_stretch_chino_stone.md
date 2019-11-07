@@ -9,6 +9,7 @@ image: "../skinny_stretch_chinos_stone/skinny_stretch_chino_front.jpg"
 path: "/products/skinny_stretch_chinos_stone/skinny_stretch_chinos_stone"
 date: "2017-11-07"
 tags: ['chino']
+color: ['stone']
 details: ['Material: 97% Cotton, 3% Elastane', 'Size & fit Length: Inside Leg: 80cm Front Rise: 26cm Leg Opening: 34cm (size 32)','Care Cold hand or machine wash.']
 sizes: ['W29/L32','W30/L32','W31/L32','W32/L32','W34/L34']
 ---

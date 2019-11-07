@@ -59,6 +59,7 @@ exports.createPages = ({ actions, graphql }) => {
                             date
                             name
                             tags
+                            color
                         }
                     }
                 }
@@ -131,7 +132,7 @@ exports.createPages = ({ actions, graphql }) => {
           }
         });
         const productsByTag = {};
-        //create product tags page
+        //create product tags array
         products.forEach(({ node }) => {
             if (node.frontmatter.tags) {
               node.frontmatter.tags.forEach(tag => {
@@ -140,6 +141,20 @@ exports.createPages = ({ actions, graphql }) => {
                 }
   
                 productsByTag[tag].push(node);
+              });
+            }
+          });
+
+          const productsByColor = {};
+        //create product colors array
+        products.forEach(({ node }) => {
+            if (node.frontmatter.color) {
+              node.frontmatter.color.forEach(color => {
+                if (!productsByColor[color]) {
+                  productsByColor[color] = [];
+                }
+  
+                productsByColor[color].push(node);
               });
             }
           });
@@ -156,6 +171,7 @@ exports.createPages = ({ actions, graphql }) => {
         });
 
         const productTags = Object.keys(productsByTag);
+        const productColors = Object.keys(productsByColor);
         const productsList = productsByTag[productTags];
         //create different product pages based on sortOption's
         const orderOption = ["ASC", "DESC"]
@@ -168,6 +184,7 @@ exports.createPages = ({ actions, graphql }) => {
                     component: productTagPage,
                     context: {
                       tags: productTags.sort(),
+                      colors: productColors.sort(),
                       order: order,
                       sortOption: option,
                       productsList,
@@ -203,6 +220,7 @@ exports.createPages = ({ actions, graphql }) => {
                       context: {
                         products,
                         tagName,
+                        colors: productColors.sort(),
                         order: order,
                         sortOption: option,
                       },

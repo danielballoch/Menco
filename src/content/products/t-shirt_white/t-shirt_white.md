@@ -9,6 +9,7 @@ image: "../t-shirt_white/t-shirt_white_front.jpg"
 path: "/products/t-shirt_white/t-shirt_white"
 date: "2017-11-07"
 tags: ['t-shirt']
+color: ['white']
 details: ['Material: 90% Cotton & 10% Polyester', 'Size & fit:  Length: 73cm','Care: Warm machine wash. Do not tumble dry.']
 sizes: ['S','M','L','XL']
 ---

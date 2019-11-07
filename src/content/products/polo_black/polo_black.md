@@ -9,6 +9,7 @@ image: "../polo_black/polo_black_front.jpg"
 path: "/products/polo_black/polo_black_front"
 date: "2017-11-07"
 tags: ['polo']
+color: ['black']
 details: ['Material: 100% Cotton', 'Size & fit:  Length: 72cm','Care: Cold machine wash.']
 sizes: ['S','M','L','XL']
 ---

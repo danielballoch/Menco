@@ -4,6 +4,7 @@ import PostListing from "../components/post-link"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from '@emotion/styled';
+import blogTags from "./blogTags";
 
 const Header = styled.div`
 margin-top: 140px;
@@ -23,6 +24,7 @@ class Index extends React.Component {
                 <h1>Welcome to the Community</h1>
                 <h3>This is where we post all insider information around mens fashion!</h3>
                 Search Posts: (* search bar ) (filter)(tags filter)
+                <blogTags/>
             </Header>
             <PostListing postEdges={postEdges} />
           </div>

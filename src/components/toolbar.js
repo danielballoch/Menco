@@ -170,7 +170,7 @@ export default class toolbar extends React.Component {
                 
                 <MiddleNav>
                     <StyledLink to="/">Home</StyledLink>
-                    <StyledLink to="/products/">Products</StyledLink>
+                    <StyledLink to="/products/frontmatter___date/ASC">Products</StyledLink>
                     <StyledLink to="/blog" >Blog</StyledLink>
                     <StyledLink to="/lookbook/" >Lookbook</StyledLink>
                 </MiddleNav>

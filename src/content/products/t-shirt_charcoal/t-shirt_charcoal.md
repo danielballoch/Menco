@@ -9,6 +9,7 @@ image: "../t-shirt_charcoal/t-shirt_charcoal_front.jpg"
 path: "/products/t-shirt_charcoal/t-shirt_charcoal"
 date: "2017-11-07"
 tags: ['t-shirt']
+color: ['grey']
 details: ['Material: 100% Linen', 'Size & fit:  Length: 71cm','Care: Warm machine wash. Do not tumble dry.']
 sizes: ['S','M','L','XL']
 ---

@@ -9,6 +9,7 @@ image: "../511_slim_jeans_workwear/511_slim_jeans_workwear_front.jpg"
 path: "/products/511_slim_jeans_workwear/511_slim_jeans_workwear"
 date: "2017-11-07"
 tags: ['jean']
+color: ['blue']
 details: ['Material: 85% Cotton, 13% Polyester, 2% Elastane', 'Size & fit Length: Inside Leg: 80cm Front Rise: 26cm Leg Opening: 36cm (size 32)','Care for our planet. Wash less. Wash cold. Line Dry. Donate or Recycle.','brand donates 1% or more of all profits to a charitable cause',]
 sizes: ['W29/L32','W30/L32','W31/L32','W32/L32','W34/L34']
 ---

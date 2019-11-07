@@ -9,6 +9,7 @@ image: "../oxford_shirt_bergundy/oxford_shirt_bergundy_front.jpg"
 path: "/products/oxford_shirt_bergundy/oxford_shirt_bergundy"
 date: "2017-11-07"
 tags: ['shirt']
+color: ['red']
 details: ['Material: 90% Cotton & 10% Polyester', 'Size & fit:  Length: 73cm','Care: Warm machine wash.']
 sizes: ['S','M','L','XL']
 ---

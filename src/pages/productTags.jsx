@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Layout from '../components/layout';
 import TagsBlock from '../components/ProductTagsBlock';
 import { Link, graphql } from 'gatsby';
-import ProductListing from "../components/product-link"
+import ProductListing from "../components/product-link";
+import DropdownBtn from "../components/dropdownBtn";
 
 import SEO from "../components/seo"
 import "../pages/products.css"
@@ -22,7 +23,7 @@ class Tags extends React.Component {
         sortLinkPre: "/products/"
     };
       
-       // sort set to button value when clicked
+       // sort (state) set to button value when clicked
     sortToggleClickHandler = (option) => {
         console.log("option:" + option);
         this.setState(() => {
@@ -81,6 +82,7 @@ class Tags extends React.Component {
         // console.log("Sort by: " + this.state.sort)
         console.log(this.props.pageContext)
         console.log(this.props.pageContext.order)
+        console.log(this.props.pageContext.colors)
 
         
         //creating var sortLinkPre so sortBtns redirect to the proper url whether there is a tag selected or not. 
@@ -151,10 +153,11 @@ return (
                     
                     <p>Catagory</p>
                     <TagsBlock list={tags} />
-                    <Link to="/products">Shop All</Link>
+                    <Link to="/products/frontmatter___date/ASC">Shop All</Link>
                     <p>Refine</p><br/>
-                    <p>Color</p>
-                    <p>Price</p>
+                    <DropdownBtn mainText="Color" options={this.props.pageContext.colors || ['']}/>
+                    <DropdownBtn mainText="Price" options={[' 0-50',' 50-100', " 100-200"] || ['']}/>
+                    
                     
 
                 </div>

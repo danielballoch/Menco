@@ -9,6 +9,7 @@ image: "../polo_navy/polo_navy_front.jpg"
 path: "/products/polo_black/polo_navy"
 date: "2017-11-07"
 tags: ['polo']
+color: ['navy']
 details: ['Material: 100% Cotton', 'Size & fit:  Length: 72cm','Care: Cold machine wash.']
 sizes: ['S','M','L','XL']
 ---
