@@ -9,7 +9,9 @@ export default class refineBtn extends React.Component {
 
     }
       state = {
-        open: false
+        open: false,
+        [this.props.mainText + "Option"]: "all",
+        
     };
 
     dropdownBtnToggle = () => {
@@ -18,15 +20,18 @@ export default class refineBtn extends React.Component {
         });
 
     };
+    optionClickHandler = (option) => {
+     
+        this.setState(() => {
+            console.log(this.props.mainText + " updated to " + option)
+            return {[this.props.mainText + "Option"] : option}
+        });
+       };
 
 
 
 
     render(){ 
-        let toggleClasses = 'side-drawer-button';
-    if(this.props.open){
-        toggleClasses = 'side-drawer-button toggle'
-    }
     const options = this.props.options
     console.log("open: " + this.state.open)
     
@@ -40,8 +45,9 @@ return(
                 
         </button>
         <div className={this.state.open ? 'option open' : "option"} >
+            <p key={"all"} onClick={() => this.optionClickHandler("all")}> all</p>
            {options.map(option => (
-               <p>{option}</p>
+               <p key={option} onClick={() => this.optionClickHandler(option)}>{option}</p>
             ))}
         </div>
     </div>

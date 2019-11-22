@@ -16,11 +16,16 @@ class Tags extends React.Component {
 
         this.setWrapperRef = this.setWrapperRef.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
+
+        this.dropdownRef1 = React.createRef();
+        
+        this.dropdownRef2 = React.createRef();
       }
       state = {
         sortBtn: false,  
-        sort: "price low-high",
-        sortLinkPre: "/products/"
+        sort:"price low-high",
+        sortLinkPre: "/products/",
+        sortColor: "All"
     };
       
        // sort (state) set to button value when clicked
@@ -38,6 +43,8 @@ class Tags extends React.Component {
          else if (this.props.pageContext.order === "ASC" && this.props.pageContext.sortOption === "frontmatter___price"){this.sortToggleClickHandler("price low-high")}
          else if (this.props.pageContext.order === "DESC" && this.props.pageContext.sortOption === "frontmatter___date"){this.sortToggleClickHandler("old gold")}
          else {this.sortToggleClickHandler("new releases")};
+
+        //  console.log("Color Option:" + this.dropdownRef1.current.state.ColorOption)
          
       };
       
@@ -45,6 +52,13 @@ class Tags extends React.Component {
         document.removeEventListener('mousedown', this.handleClickOutside);
         
       };
+
+      componentDidUpdate(){
+        console.log(this.dropdownRef1.current.state)
+        
+        
+            // console.log("Color Option:" + this.dropdownRef1.current.state.ColorOption)
+      }
 
      
     // sort button is set to true when clicked, displaying sort options
@@ -68,6 +82,14 @@ class Tags extends React.Component {
         }
       }
 
+      setDropdownState() {
+        console.log("MUEEEEN")
+          this.setState(() => {
+            return{sortColor : this.dropdownRef1.current.state.ColorOption}
+          })
+          
+      }
+
       
 
 
@@ -80,9 +102,9 @@ class Tags extends React.Component {
         // console.log(postEdges.length)
         // console.log("Sort open: " + this.state.sortBtn)
         // console.log("Sort by: " + this.state.sort)
-        console.log(this.props.pageContext)
-        console.log(this.props.pageContext.order)
-        console.log(this.props.pageContext.colors)
+        // console.log(this.props.pageContext)
+        // console.log(this.props.pageContext.order)
+        // console.log(this.props.pageContext.colors)
 
         
         //creating var sortLinkPre so sortBtns redirect to the proper url whether there is a tag selected or not. 
@@ -99,6 +121,9 @@ class Tags extends React.Component {
             }
         console.log("sortLinkPre:" + this.state.sortLinkPre);
         let sortLinkPre = this.state.sortLinkPre;
+        
+        // console.log("Color Option:" + this.dropdownRef1)
+        // console.log("Price Option:" + this.dropdownRef2)
         
         
 
@@ -155,8 +180,8 @@ return (
                     <TagsBlock list={tags} />
                     <Link to="/products/frontmatter___date/ASC">Shop All</Link>
                     <p>Refine</p><br/>
-                    <DropdownBtn mainText="Color" options={this.props.pageContext.colors || ['']}/>
-                    <DropdownBtn mainText="Price" options={[' 0-50',' 50-100', " 100-200"] || ['']}/>
+                    <DropdownBtn ref={this.dropdownRef1} mainText="Color" options={this.props.pageContext.colors || ['']} onClick={this.setDropdownState}/>
+                    <DropdownBtn ref={this.dropdownRef2} mainText="Price" options={[' 0-50',' 50-100', " 100-200"] || ['']}/>
                     
                     
 
