@@ -24,7 +24,7 @@ class Tags extends React.Component {
         sortLinkPre: "/products/",
         sortOption: "frontmatter___price",
         sortOrder: "ASC",
-        ColorOption: "all",
+        colorOption: "all",
         priceRange: "all",
     };
       
@@ -43,12 +43,12 @@ class Tags extends React.Component {
          else if (this.props.pageContext.order === "ASC" && this.props.pageContext.sortOption === "frontmatter___price"){this.sortTextClickHandler("price low-high")}
          else if (this.props.pageContext.order === "DESC" && this.props.pageContext.sortOption === "frontmatter___date"){this.sortTextClickHandler("old gold")}
          else {this.sortTextClickHandler("new releases")};
-         //same for ColorOption
-        if (this.state.ColorOption !== this.props.pageContext.colorOption){this.setState({ColorOption: this.props.pageContext.colorOption})};
+         //same for colorOption
+        if (this.state.colorOption !== this.props.pageContext.colorOption){this.setState({colorOption: this.props.pageContext.colorOption})};
         // and priceRange 
-        if (this.state.PriceRange !== this.props.pageContext.priceRange){this.setState({PriceRange: this.props.pageContext.priceRange})};
+        if (this.state.priceRange !== this.props.pageContext.priceRange){this.setState({priceRange: this.props.pageContext.priceRange})};
          
-        //  console.log("Color Option:" + this.dropdownRef1.current.state.ColorOption)
+        //  console.log("Color Option:" + this.dropdownRef1.current.state.colorOption)
 
 
          //creating var sortLinkPre so sortBtns redirect to the proper url whether there is a tag selected or not. 
@@ -73,12 +73,7 @@ class Tags extends React.Component {
       };
 
       componentDidUpdate(){
-        console.log("ColorOption:" + this.state.ColorOption)
-        console.log("PriceOption:" + this.state.PriceOption)
-        
-
-
-        
+        console.log("pricerange state:" + this.state.priceRange)
       }
 
      
@@ -131,21 +126,14 @@ class Tags extends React.Component {
         // console.log(this.props.pageContext.order)
         // console.log(this.props.pageContext.colors)
         console.log(postEdges)
-        
-        
-
-        
-       
         console.log("sortLinkPre:" + this.state.sortLinkPre);
-        let sortLinkPre = this.state.sortLinkPre;
+        
         
        
 
         //getting colors for dropdownButton
         var colorOptions = this.props.pageContext.colors;
-        var selectedColor = this.state.ColorOption
         if (colorOptions[0] !== "all")colorOptions.unshift("all")
-
         var pageProductColors = [];
         postEdges.forEach(({node}) => {
             if (node.frontmatter.color){
@@ -159,15 +147,12 @@ class Tags extends React.Component {
         })
         if (!tagName){pageProductColors = colorOptions}
         console.log(pageProductColors);
-        
+
+        //set vars for sort links
+        var sortLinkPre = this.state.sortLinkPre;
+        var colorOption = this.state.colorOption;
+        var priceRange = this.state.priceRange;
              
-
-        
-
-        
-        
-        
-
 return (
     <Layout>
 
@@ -180,10 +165,10 @@ return (
                 <button onClick={() => this.sortBtnToggleClickHandler()} className={this.state.sortBtn ? 'sort-button open' : "sort-button"} ref={this.setWrapperRef}>
                     sort: {this.state.sort} 
                     <div>
-                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___price/ASC/all"} onClick={() => this.sortTextClickHandler("price low-high")}>price low-high</Link>
-                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___price/DESC/all"} onClick={() => this.sortTextClickHandler("price high-low")}>price high-low</Link>
-                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___date/ASC/all"} onClick={() => this.sortTextClickHandler("new releases")}>new releases</Link>
-                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___date/DESC/all"} onClick={() => this.sortTextClickHandler("old gold")}> old gold</Link>
+                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___price/ASC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("price low-high")}>price low-high</Link>
+                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___price/DESC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("price high-low")}>price high-low</Link>
+                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___date/ASC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("new releases")}>new releases</Link>
+                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___date/DESC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("old gold")}> old gold</Link>
                     </div>
                     </button></div>
             <div className="content">
@@ -200,8 +185,8 @@ return (
                     {/* <DropdownBtn ref={this.dropdownRef1} mainText="Color" options={this.props.pageContext.colors || ['']} />
                     <DropdownBtn ref={this.dropdownRef2} mainText="Price" options={[' 0-50',' 50-100', " 100-200"] || ['']}/> */}
 
-                    <DropdownBtn onChange={this.setDropdownState} options={pageProductColors || ['']} mainText="Color" sortlinkpre={sortLinkPre} priceRange={this.props.pageContext.priceRange}/>
-                    <DropdownBtn onChange={this.setDropdownState} options={['0-50','50-100', '100-200'] || ['']} mainText="Price" sortlinkpre={sortLinkPre} colorOption={this.props.pageContext.colorOption}/>
+                    <DropdownBtn onChange={this.setDropdownState} options={pageProductColors || ['']} mainText="Color" sortlinkpre={sortLinkPre} priceRange={this.props.pageContext.priceRange || "all"} colorOption={this.props.pageContext.colorOption}/>
+                    <DropdownBtn onChange={this.setDropdownState} options={['all','0-50','50-100', '100-200'] || ['']} mainText="Price" sortlinkpre={sortLinkPre} colorOption={this.props.pageContext.colorOption} priceRange={this.props.pageContext.priceRange || "all"}/>
                     
                     
                     

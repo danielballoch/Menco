@@ -179,7 +179,7 @@ exports.createPages = ({ actions, graphql }) => {
         const orderOption = ["ASC", "DESC"]
         const sortOptions = ["frontmatter___price", "frontmatter___date"]
         //creating price options array for dropdown refine option
-        const PriceOptions = {"0-50": {"lower": 0, "upper": 50}, "50-100": {"lower": 50, upper: 100}, "100-200": {"lower": 100, "upper": 200}};
+        const PriceOptions = {"all": {"lower": 0, "upper": 1000},"0-50": {"lower": 0, "upper": 50}, "50-100": {"lower": 50, upper: 100}, "100-200": {"lower": 100, "upper": 200}};
         //looping though price options to create vars for nested values, using such to create all possible pages.
         //*checking needed pages is not possible at this stage 
         for (let [key, value] of Object.entries(PriceOptions)) {

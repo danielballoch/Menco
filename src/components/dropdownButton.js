@@ -4,24 +4,43 @@ import {Link} from 'gatsby';
 export default class DropdownButton extends React.Component {
     constructor(props) {
       super(props)
-      this.state = {open: false, value: 'all'}
+      this.state = {
+        open: false,
+        value: 'all', 
+        label: "all", 
+        priceRange: this.props.priceRange, 
+        colorOption: this.props.colorOption, 
+        midLink: "/frontmatter___date/ASC/" }
     }
-  
-    render() {
-        let linkPre = this.props.sortlinkpre;
+    componentDidMount(){
+        
         var priceRange = this.props.priceRange;
         var colorOption = this.props.colorOption;
         console.log("priceRange Before: " + priceRange)
-        if (priceRange === undefined){ var midLink = "/frontmatter___date/ASC/" + colorOption + "/" ; priceRange = "";}
-        else {midLink = "/frontmatter___date/ASC/"; }
+        if (this.props.mainText === "Color"){
+            if (this.state.midLink !== "/frontmatter___date/ASC/"){this.setState({midLink: "/frontmatter___date/ASC/"}); }
+                this.setState({label: colorOption});
+                               
+        }
+        else if (this.props.mainText === "Price"){
+            this.setState({midLink: "/frontmatter___date/ASC/" + colorOption + "/"});
+            this.setState({label: this.state.priceRange})
+            this.setState({priceRange: ""});
+            
+        }   
+        
+    }
+  
+    render() {
+        var linkPre = this.props.sortlinkpre
+        var midLink = this.state.midLink
+        var priceRange = this.state.priceRange
         console.log("priceRange:" + priceRange)
         console.log(midLink)
-
-
       return (
       
         <div>
-    <div onClick={() => this.setState({open: true})}>{this.props.mainText}: {this.state.value}</div>
+        <div onClick={() => this.setState({open: true})}>{this.props.mainText}: {this.state.label}</div>
           <div style={{display: this.state.open ? 'block' : 'none'}}>
             {this.props.options.map((option) => {
                 const handleClick = () => {
