@@ -9,7 +9,7 @@ image: "../vneck_grey/vneck_grey_front.jpg"
 path: "/products/vneck_grey/vneck_grey"
 date: "2017-11-07"
 tags: ['t-shirt']
-color: ['grey']
+color: ['all','grey']
 details: ['Material: 90% Cotton & 10% Polyester', 'Size & fit:  Length: 73cm','Care: Warm machine wash. Do not tumble dry.']
 sizes: ['S','M','L','XL']
 ---

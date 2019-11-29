@@ -9,7 +9,7 @@ image: "../t-shirt_bergundy/t-shirt_bergundy_front.jpg"
 path: "/products/t-shirt_bergundy/t-shirt_bergundy"
 date: "2017-11-07"
 tags: ['t-shirt']
-color: ['red']
+color: ['all','red']
 details: ['Material: 90% Cotton & 10% Polyester', 'Size & fit:  Length: 73cm','Care: Warm machine wash. Do not tumble dry.']
 sizes: ['S','M','L','XL']
 ---

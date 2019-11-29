@@ -6,19 +6,16 @@ import "./dropdownBtn.css"
 export default class refineBtn extends React.Component {
     constructor(props) {
         super(props);
-
     }
       state = {
         open: false,
-        [this.props.mainText + "Option"]: "all",
-        
+        [this.props.mainText + "Option"]: "all",    
     };
 
     dropdownBtnToggle = () => {
         this.setState((prevState)=> {
             return{open: !prevState.open};
         });
-
     };
     optionClickHandler = (option) => {
      
@@ -28,30 +25,25 @@ export default class refineBtn extends React.Component {
         });
        };
 
-
-
-
     render(){ 
     const options = this.props.options
     console.log("open: " + this.state.open)
     
-
 return(
     <div>
-        <button onClick={() => this.dropdownBtnToggle()} 
-        // className={toggleClasses} onClick={this.props.click} 
-        >
-            {this.props.mainText}:
-                
+        {/* <button onClick={() => this.dropdownBtnToggle()} >
+            {this.props.mainText}: 
+        </button> */}
+        <button onClick={this.dropdownBtnToggle} >
+            {this.props.mainText}: 
         </button>
         <div className={this.state.open ? 'option open' : "option"} >
             <p key={"all"} onClick={() => this.optionClickHandler("all")}> all</p>
            {options.map(option => (
                <p key={option} onClick={() => this.optionClickHandler(option)}>{option}</p>
             ))}
-        </div>
+        </div>  
     </div>
-    
     );
 }
 

@@ -39,7 +39,7 @@ exports.createPages = ({ actions, graphql }) => {
     const postTagPage = path.resolve('src/pages/blogTags.jsx');
     const productTagPage = path.resolve('src/pages/productTags.jsx');
     const postTag = path.resolve('src/templates/postTag.jsx');
-    const productTag = path.resolve('src/templates/productTag.jsx');
+    
     // const replacePath = path => (path === `/` ? path : path.replace(/\/$/,``))
 
     resolve(
@@ -170,28 +170,49 @@ exports.createPages = ({ actions, graphql }) => {
           },
         });
 
+
+        
         const productTags = Object.keys(productsByTag);
         const productColors = Object.keys(productsByColor);
         const productsList = productsByTag[productTags];
         //create different product pages based on sortOption's
         const orderOption = ["ASC", "DESC"]
         const sortOptions = ["frontmatter___price", "frontmatter___date"]
-        sortOptions.forEach(option => {
-            orderOption.forEach(order => {
-                createPage({
-                    
-                    path: `/products/${option}/${order}`,
-                    component: productTagPage,
-                    context: {
-                      tags: productTags.sort(),
-                      colors: productColors.sort(),
-                      order: order,
-                      sortOption: option,
-                      productsList,
-                    },
-                  });
+        //creating price options array for dropdown refine option
+        const PriceOptions = {"0-50": {"lower": 0, "upper": 50}, "50-100": {"lower": 50, upper: 100}, "100-200": {"lower": 100, "upper": 200}};
+        //looping though price options to create vars for nested values, using such to create all possible pages.
+        //*checking needed pages is not possible at this stage 
+        for (let [key, value] of Object.entries(PriceOptions)) {
+            var PriceRange = key;
+            var pricerange = []
+            for (let [k,v] of Object.entries(value)){
+              pricerange[k] = v;  
+            }
+            productColors.forEach(color => {
+                sortOptions.forEach(option => {
+                    orderOption.forEach(order => {
+                        createPage({
+                            
+                            path: `/products/${option}/${order}/${color}/${PriceRange}`,
+                            component: productTagPage,
+                            context: {
+                            tags: productTags.sort(),
+                            colors: productColors.sort(),
+                            order: order,
+                            sortOption: option,
+                            colorOption: color,
+                            priceLower: pricerange.lower,
+                            priceUpper: pricerange.upper,
+                            priceRange: PriceRange,
+                            productsList,
+                            },
+                        });
+                    })
+
+                })
             })
-        })
+        }
+        
         
         
 
@@ -209,64 +230,64 @@ exports.createPages = ({ actions, graphql }) => {
           });
         });
 
-        sortOptions.forEach(option => {
-            orderOption.forEach(order => {
-                productTags.forEach(tagName => {
-                    const products = productsByTag[tagName];
-          
-                    createPage({
-                      path: `/products/${tagName}/${option}/${order}`,
-                      component: productTagPage,
-                      context: {
-                        products,
-                        tagName,
-                        colors: productColors.sort(),
-                        order: order,
-                        sortOption: option,
-                      },
+        productColors.forEach(color => {
+            sortOptions.forEach(option => {
+                orderOption.forEach(order => {
+                    productTags.forEach(tagName => {
+                        for (let [key, value] of Object.entries(PriceOptions)) {
+                            var PriceRange = key;
+                            var pricerange = []
+                            for (let [k,v] of Object.entries(value)){
+                              pricerange[k] = v;  
+                            }
+                            
+                                const products = productsByTag[tagName];
+                    
+                                createPage({
+                                path: `/products/${tagName}/${option}/${order}/${color}/${PriceRange}`,
+                                component: productTagPage,
+                                context: {
+                                    products,
+                                    tagName,
+                                    colors: productColors.sort(),
+                                    colorOption: color,
+                                    order: order,
+                                    priceLower: pricerange.lower,
+                                    priceUpper: pricerange.upper,
+                                    priceRange: PriceRange,
+                                    sortOption: option,
+                                },
+                                });
+                            
+                        }
                     });
-                  });
+                })
             })
-        })
+        });
 
-        //create tags
-        // productTags.forEach(tagName => {
-        //     const products = productsByTag[tagName];
-  
+       
+
+        // ///testing creating product link pages using products vs thing
+        // products.forEach(product => {
+        //     const products = productsByTag[product.frontmatter.tags];
+            
         //     createPage({
-        //       path: `/products/${tagName}`,
-        //       component: productTag,
-        //       context: {
+        //     path: `/products/${product.frontmatter.tags}/randsoooom`,
+        //     component: productTagPage,
+        //     context: {
         //         products,
-        //         tagName,
-        //       },
+        //         tagName: product.frontmatter.tags,
+        //         colors: productColors.sort(),
+        //         colorOption: "all",
+        //         order: "ASC",
+        //         sortOption: "frontmatter___price",
+        //     },
         //     });
-        //   });
+        // });
 
 
 
 
-         //create tags original
-        //  productTags.forEach(tagName => {
-        //     const products = productsByTag[tagName];
-  
-        //     createPage({
-        //       path: `/products/${tagName}`,
-        //       component: productTag,
-        //       context: {
-        //         products,
-        //         tagName,
-        //       },
-        //     });
-        //   });
-
-
-
-
-
-
-
-        //tag
         
         
         //create product pages

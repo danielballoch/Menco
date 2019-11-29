@@ -4,7 +4,8 @@ import Layout from '../components/layout';
 import TagsBlock from '../components/ProductTagsBlock';
 import { Link, graphql } from 'gatsby';
 import ProductListing from "../components/product-link";
-import DropdownBtn from "../components/dropdownBtn";
+// import DropdownBtn from "../components/dropdownBtn";
+import DropdownBtn from "../components/dropdownButton";
 
 import SEO from "../components/seo"
 import "../pages/products.css"
@@ -16,20 +17,19 @@ class Tags extends React.Component {
 
         this.setWrapperRef = this.setWrapperRef.bind(this);
         this.handleClickOutside = this.handleClickOutside.bind(this);
-
-        this.dropdownRef1 = React.createRef();
-        
-        this.dropdownRef2 = React.createRef();
       }
       state = {
         sortBtn: false,  
-        sort:"price low-high",
+        sortText:"price low-high",
         sortLinkPre: "/products/",
-        sortColor: "All"
+        sortOption: "frontmatter___price",
+        sortOrder: "ASC",
+        ColorOption: "all",
+        priceRange: "all",
     };
       
        // sort (state) set to button value when clicked
-    sortToggleClickHandler = (option) => {
+    sortTextClickHandler = (option) => {
         console.log("option:" + option);
         this.setState(() => {
             return {sort: option}
@@ -39,12 +39,31 @@ class Tags extends React.Component {
       componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
         //set state based on page context, this is done so state is not reset to defualt "price low-high" on page reload
-        if (this.props.pageContext.order === "DESC" && this.props.pageContext.sortOption === "frontmatter___price"){this.sortToggleClickHandler("price high-low")}
-         else if (this.props.pageContext.order === "ASC" && this.props.pageContext.sortOption === "frontmatter___price"){this.sortToggleClickHandler("price low-high")}
-         else if (this.props.pageContext.order === "DESC" && this.props.pageContext.sortOption === "frontmatter___date"){this.sortToggleClickHandler("old gold")}
-         else {this.sortToggleClickHandler("new releases")};
-
+        if (this.props.pageContext.order === "DESC" && this.props.pageContext.sortOption === "frontmatter___price"){this.sortTextClickHandler("price high-low")}
+         else if (this.props.pageContext.order === "ASC" && this.props.pageContext.sortOption === "frontmatter___price"){this.sortTextClickHandler("price low-high")}
+         else if (this.props.pageContext.order === "DESC" && this.props.pageContext.sortOption === "frontmatter___date"){this.sortTextClickHandler("old gold")}
+         else {this.sortTextClickHandler("new releases")};
+         //same for ColorOption
+        if (this.state.ColorOption !== this.props.pageContext.colorOption){this.setState({ColorOption: this.props.pageContext.colorOption})};
+        // and priceRange 
+        if (this.state.PriceRange !== this.props.pageContext.priceRange){this.setState({PriceRange: this.props.pageContext.priceRange})};
+         
         //  console.log("Color Option:" + this.dropdownRef1.current.state.ColorOption)
+
+
+         //creating var sortLinkPre so sortBtns redirect to the proper url whether there is a tag selected or not. 
+        // *neccacery since I now use productTags.jsx for both pages vs haveing productTag && productTags as templates;
+        const tagName = this.props.pageContext.tagName;
+        console.log("tagname:" + tagName);
+        if (tagName !== undefined && this.state.sortLinkPre === "/products/"){
+            this.setState(() => {
+                let link = "/products/" + tagName;
+                console.log("tagnameinyeah" + tagName)
+                return {sortLinkPre : link }
+            }); 
+        } else if (this.state.sortLinkPre !== "/products/" && tagName === undefined){
+             this.setState(() => { return {sortLinkPre: "/products/"}})
+            }    
          
       };
       
@@ -54,10 +73,12 @@ class Tags extends React.Component {
       };
 
       componentDidUpdate(){
-        console.log(this.dropdownRef1.current.state)
+        console.log("ColorOption:" + this.state.ColorOption)
+        console.log("PriceOption:" + this.state.PriceOption)
         
+
+
         
-            // console.log("Color Option:" + this.dropdownRef1.current.state.ColorOption)
       }
 
      
@@ -82,19 +103,23 @@ class Tags extends React.Component {
         }
       }
 
-      setDropdownState() {
-        console.log("MUEEEEN")
-          this.setState(() => {
-            return{sortColor : this.dropdownRef1.current.state.ColorOption}
-          })
-          
+      setDropdownState = (option, mainText) => {
+        this.setState({[mainText + "Option"]: option})
+        console.log([mainText + "Option:"] + this.state.sortColor)
       }
+
+
+
+
+
 
       
 
 
 
     render(){
+        if (!this.props) { console.log("no data")};
+        console.log(this.props);
         const { tags } = this.props.pageContext;
         const tagName = this.props.pageContext.tagName;
         //  console.log(products);
@@ -105,55 +130,47 @@ class Tags extends React.Component {
         // console.log(this.props.pageContext)
         // console.log(this.props.pageContext.order)
         // console.log(this.props.pageContext.colors)
+        console.log(postEdges)
+        
+        
 
         
-        //creating var sortLinkPre so sortBtns redirect to the proper url whether there is a tag selected or not. 
-        // *neccacery since I now use productTags.jsx for both pages vs haveing productTag && productTags as templates;
-        console.log("tagname:" + tagName);
-        if (tagName !== undefined && this.state.sortLinkPre === "/products/"){
-            this.setState(() => {
-                let link = "/products/" + tagName;
-                console.log("tagnameinyeah" + tagName)
-                return {sortLinkPre : link }
-            }); 
-        } else if (this.state.sortLinkPre !== "/products/" && tagName === undefined){
-             this.setState(() => { return {sortLinkPre: "/products/"}})
-            }
+       
         console.log("sortLinkPre:" + this.state.sortLinkPre);
         let sortLinkPre = this.state.sortLinkPre;
         
-        // console.log("Color Option:" + this.dropdownRef1)
-        // console.log("Price Option:" + this.dropdownRef2)
+       
+
+        //getting colors for dropdownButton
+        var colorOptions = this.props.pageContext.colors;
+        var selectedColor = this.state.ColorOption
+        if (colorOptions[0] !== "all")colorOptions.unshift("all")
+
+        var pageProductColors = [];
+        postEdges.forEach(({node}) => {
+            if (node.frontmatter.color){
+                node.frontmatter.color.forEach(color => {
+                    if (!pageProductColors.includes(color)){
+                        pageProductColors.push(color);
+                    }
+                    
+                })
+            }
+        })
+        if (!tagName){pageProductColors = colorOptions}
+        console.log(pageProductColors);
+        
+             
+
+        
+
+        
         
         
 
 return (
     <Layout>
 
-{/* state = {
-        activeSize: "M",
-        modalOpen: false
-    };
-    
-  
-    setActiveSize(name) {
-        this.setState({ activeSize: name })
-        let selectedsize = name;
-        console.log(selectedsize);
-        return {selectedsize}
-    }
-
-    ToggleSizeguide(){
-        this.setState((currentState) => ({
-            modalOpen: !currentState.modalOpen, 
-        }));
-    } */}
-
-        {/* className={this.state.activeSize === size ? 'sizeBtn active' : 'sizeBtn'}
-            value={size}
-            onClick={() => this.setActiveSize(size)}
-            key={ size } */}
-        
 
         <div className="top-margin">
             <SEO />
@@ -163,10 +180,10 @@ return (
                 <button onClick={() => this.sortBtnToggleClickHandler()} className={this.state.sortBtn ? 'sort-button open' : "sort-button"} ref={this.setWrapperRef}>
                     sort: {this.state.sort} 
                     <div>
-                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___price/ASC"} onClick={() => this.sortToggleClickHandler("price low-high")}>price low-high</Link>
-                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___price/DESC"} onClick={() => this.sortToggleClickHandler("price high-low")}>price high-low</Link>
-                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___date/ASC"} onClick={() => this.sortToggleClickHandler("new releases")}>new releases</Link>
-                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___date/DESC"} onClick={() => this.sortToggleClickHandler("old gold")}> old gold</Link>
+                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___price/ASC/all"} onClick={() => this.sortTextClickHandler("price low-high")}>price low-high</Link>
+                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___price/DESC/all"} onClick={() => this.sortTextClickHandler("price high-low")}>price high-low</Link>
+                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___date/ASC/all"} onClick={() => this.sortTextClickHandler("new releases")}>new releases</Link>
+                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___date/DESC/all"} onClick={() => this.sortTextClickHandler("old gold")}> old gold</Link>
                     </div>
                     </button></div>
             <div className="content">
@@ -178,10 +195,16 @@ return (
                     
                     <p>Catagory</p>
                     <TagsBlock list={tags} />
-                    <Link to="/products/frontmatter___date/ASC">Shop All</Link>
+                    <Link to="/products/frontmatter___date/ASC/all">Shop All</Link>
                     <p>Refine</p><br/>
-                    <DropdownBtn ref={this.dropdownRef1} mainText="Color" options={this.props.pageContext.colors || ['']} onClick={this.setDropdownState}/>
-                    <DropdownBtn ref={this.dropdownRef2} mainText="Price" options={[' 0-50',' 50-100', " 100-200"] || ['']}/>
+                    {/* <DropdownBtn ref={this.dropdownRef1} mainText="Color" options={this.props.pageContext.colors || ['']} />
+                    <DropdownBtn ref={this.dropdownRef2} mainText="Price" options={[' 0-50',' 50-100', " 100-200"] || ['']}/> */}
+
+                    <DropdownBtn onChange={this.setDropdownState} options={pageProductColors || ['']} mainText="Color" sortlinkpre={sortLinkPre} priceRange={this.props.pageContext.priceRange}/>
+                    <DropdownBtn onChange={this.setDropdownState} options={['0-50','50-100', '100-200'] || ['']} mainText="Price" sortlinkpre={sortLinkPre} colorOption={this.props.pageContext.colorOption}/>
+                    
+                    
+                    
                     
                     
 
@@ -209,11 +232,14 @@ export const pageQuery = graphql`
     query(
         $tagName: String, 
         $order: [SortOrderEnum], 
-        $sortOption: [MarkdownRemarkFieldsEnum], 
+        $sortOption: [MarkdownRemarkFieldsEnum],
+        $colorOption: String,
+        $priceUpper: Int,
+        $priceLower: Int,
         )  {
         allMarkdownRemark(sort: {
              order: $order, fields: $sortOption }
-             filter: {fields: {collection: {eq: "products"}},frontmatter: {tags: {eq: $tagName }}}
+             filter: {fields: {collection: {eq: "products"}},frontmatter: {tags: {eq: $tagName}, color: {eq : $colorOption}, price: {gte: $priceLower , lte: $priceUpper} }  }
              ) {
           edges {
             node {
@@ -226,6 +252,7 @@ export const pageQuery = graphql`
                 weight
                 templateKey
                 tags
+                color
                 image {
                     childImageSharp {
                         fluid(maxWidth: 980) {

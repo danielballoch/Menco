@@ -37,6 +37,7 @@ class ProductListing extends React.Component {
                 path: postEdge.node.frontmatter.path,
                 price: postEdge.node.frontmatter.price,
                 tags: postEdge.node.frontmatter.tags,
+                color: postEdge.node.frontmatter.color,
                 image: postEdge.node.frontmatter.image,
                 name: postEdge.node.frontmatter.name,
                 weight: postEdge.node.frontmatter.weight,

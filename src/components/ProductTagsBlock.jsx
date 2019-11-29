@@ -28,7 +28,7 @@ const TagsBlock = ({ list }) => (
       list.map(tag => {
         const upperTag = tag.charAt(0).toUpperCase() + tag.slice(1);
         return (
-          <Link key={tag} to={`/products/${tag}/frontmatter___date/ASC`}>
+          <Link key={tag} to={`/products/${tag}/frontmatter___date/ASC/all`}>
             {upperTag}'s
           </Link>
         );
