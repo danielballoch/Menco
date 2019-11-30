@@ -21,9 +21,6 @@ import { ThemeProvider } from 'emotion-theming';
 
 
 export default class Layout extends React.Component {
-    constructor(props) {
-        super(props);
-      }
       
       componentDidMount() {
           //index page is currently only page which has non-top white
