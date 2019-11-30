@@ -6,7 +6,7 @@ import ImageGallery from 'react-image-gallery'
 import PropTypes from 'prop-types'
 import "react-image-gallery/styles/css/image-gallery.css";
 import "./productPageTem.css"
-import heart from "../Icons/heart.svg";
+import heart from "../../static/icons/heart.svg";
 
 
 export default class Template extends React.Component {

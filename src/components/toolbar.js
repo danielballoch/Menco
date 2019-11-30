@@ -2,7 +2,6 @@ import React from  'react';
 
 import DrawerToggleButton from './SideDrawer/DrawerToggleButton'
 import './toolbar.css';
-import ShoppingCart from "../icons/shopping-cart.svg";
 import { Link } from 'gatsby'
 import styled from '@emotion/styled';
 

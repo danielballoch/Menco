@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import Image from 'gatsby-image';
 import "../pages/index.css";
-import heart from "../Icons/heart.svg";
+import heart from "../../static/icons/heart.svg"
 import styled from '@emotion/styled';
 
 

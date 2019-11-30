@@ -12,9 +12,9 @@ import SEO from "../components/seo"
 import heroimage from "../images/cover-image2.jpg";
 import "../pages/index.css";
 
-import twitter from "../icons/twitter.svg";
-import facebook from "../icons/facebook.svg";
-import instagram from "../icons/instagram.svg";
+import twitter from "../../static/icons/twitter.svg"
+import facebook from "../../static/icons/facebook.svg"
+import instagram from "../../static/icons/instagram.svg"
 
 
 
