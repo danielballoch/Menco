@@ -21,11 +21,12 @@ class Tags extends React.Component {
       state = {
         sortBtn: false,  
         sortText:"price low-high",
-        sortLinkPre: "/products/",
+        sortLinkPre: "/products",
         sortOption: "frontmatter___price",
         sortOrder: "ASC",
         colorOption: "all",
         priceRange: "all",
+        tagName: "",
     };
       
        // sort (state) set to button value when clicked
@@ -47,21 +48,23 @@ class Tags extends React.Component {
         if (this.state.colorOption !== this.props.pageContext.colorOption){this.setState({colorOption: this.props.pageContext.colorOption})};
         // and priceRange 
         if (this.state.priceRange !== this.props.pageContext.priceRange){this.setState({priceRange: this.props.pageContext.priceRange})};
-         
-        //  console.log("Color Option:" + this.dropdownRef1.current.state.colorOption)
+        // //set tagName to empty string 
+        // if (this.props.pageContext.tagName === undefined){} 
+        if (this.props.pageContext.tagName){this.setState({tagName: this.props.pageContext.tagName})};
+        
 
 
          //creating var sortLinkPre so sortBtns redirect to the proper url whether there is a tag selected or not. 
-        // *neccacery since I now use productTags.jsx for both pages vs haveing productTag && productTags as templates;
-        const tagName = this.props.pageContext.tagName;
+        // *neccecery since I now use productTags.jsx for both pages vs haveing productTag && productTags as templates;
+        const tagName = this.state.tagName;
         console.log("tagname:" + tagName);
-        if (tagName !== undefined && this.state.sortLinkPre === "/products/"){
+        if (tagName !== "" && this.state.sortLinkPre === "/products/"){
             this.setState(() => {
                 let link = "/products/" + tagName;
                 console.log("tagnameinyeah" + tagName)
                 return {sortLinkPre : link }
             }); 
-        } else if (this.state.sortLinkPre !== "/products/" && tagName === undefined){
+        } else if (this.state.sortLinkPre !== "/products/" && tagName === ""){
              this.setState(() => { return {sortLinkPre: "/products/"}})
             }    
          
@@ -116,7 +119,7 @@ class Tags extends React.Component {
         if (!this.props) { console.log("no data")};
         console.log(this.props);
         const { tags } = this.props.pageContext;
-        const tagName = this.props.pageContext.tagName;
+        var tagName = this.state.tagName;
         //  console.log(products);
         const postEdges = this.props.data.allMarkdownRemark.edges;
         // console.log(postEdges.length)
@@ -125,8 +128,9 @@ class Tags extends React.Component {
         // console.log(this.props.pageContext)
         // console.log(this.props.pageContext.order)
         // console.log(this.props.pageContext.colors)
-        console.log(postEdges)
-        console.log("sortLinkPre:" + this.state.sortLinkPre);
+        // console.log(postEdges)
+        // console.log("sortLinkPre:" + this.state.sortLinkPre);
+        console.log(this.props.pageContext)
         
         
        
@@ -165,10 +169,10 @@ return (
                 <button onClick={() => this.sortBtnToggleClickHandler()} className={this.state.sortBtn ? 'sort-button open' : "sort-button"} ref={this.setWrapperRef}>
                     sort: {this.state.sort} 
                     <div>
-                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___price/ASC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("price low-high")}>price low-high</Link>
-                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___price/DESC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("price high-low")}>price high-low</Link>
-                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___date/ASC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("new releases")}>new releases</Link>
-                        <Link className="sortLink" to={sortLinkPre + "/frontmatter___date/DESC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("old gold")}> old gold</Link>
+                        <Link className="sortLink" to={sortLinkPre + tagName + "/frontmatter___price/ASC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("price low-high")}>price low-high</Link>
+                        <Link className="sortLink" to={sortLinkPre + tagName + "/frontmatter___price/DESC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("price high-low")}>price high-low</Link>
+                        <Link className="sortLink" to={sortLinkPre + tagName + "/frontmatter___date/ASC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("new releases")}>new releases</Link>
+                        <Link className="sortLink" to={sortLinkPre + tagName + "/frontmatter___date/DESC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("old gold")}> old gold</Link>
                     </div>
                     </button></div>
             <div className="content">
@@ -180,7 +184,7 @@ return (
                     
                     <p>Catagory</p>
                     <TagsBlock list={tags} />
-                    <Link to="/products/frontmatter___date/ASC/all">Shop All</Link>
+                    <Link to="/products/frontmatter___date/ASC/all/all">Shop All</Link>
                     <p>Refine</p><br/>
                     {/* <DropdownBtn ref={this.dropdownRef1} mainText="Color" options={this.props.pageContext.colors || ['']} />
                     <DropdownBtn ref={this.dropdownRef2} mainText="Price" options={[' 0-50',' 50-100', " 100-200"] || ['']}/> */}
@@ -215,16 +219,16 @@ Tags.propTypes = {
 
 export const pageQuery = graphql`
     query(
+        $sort: MarkdownRemarkSortInput,
         $tagName: String, 
-        $order: [SortOrderEnum], 
-        $sortOption: [MarkdownRemarkFieldsEnum],
         $colorOption: String,
         $priceUpper: Int,
         $priceLower: Int,
         )  {
-        allMarkdownRemark(sort: {
-             order: $order, fields: $sortOption }
-             filter: {fields: {collection: {eq: "products"}},frontmatter: {tags: {eq: $tagName}, color: {eq : $colorOption}, price: {gte: $priceLower , lte: $priceUpper} }  }
+        allMarkdownRemark(
+            sort: $sort
+            filter: {fields: {collection: {eq: "products"}},frontmatter: {tags: {eq: $tagName}, color: {eq : $colorOption}, price: {gte: $priceLower , lte: $priceUpper} }  }
+             
              ) {
           edges {
             node {
@@ -253,3 +257,44 @@ export const pageQuery = graphql`
         }
       }
     `
+//backup query
+    // export const pageQuery = graphql`
+    // query(
+    //     $tagName: String, 
+    //     $order: [SortOrderEnum], 
+    //     $sortOption: [MarkdownRemarkFieldsEnum],
+    //     $colorOption: String,
+    //     $priceUpper: Int,
+    //     $priceLower: Int,
+    //     )  {
+    //     allMarkdownRemark(sort: {
+    //          order: $order, fields: $sortOption }
+    //          filter: {fields: {collection: {eq: "products"}},frontmatter: {tags: {eq: $tagName}, color: {eq : $colorOption}, price: {gte: $priceLower , lte: $priceUpper} }  }
+    //          ) {
+    //       edges {
+    //         node {
+    //           id
+    //           excerpt(pruneLength: 250)
+    //           frontmatter {
+    //             path
+    //             name
+    //             price
+    //             weight
+    //             templateKey
+    //             tags
+    //             color
+    //             image {
+    //                 childImageSharp {
+    //                     fluid(maxWidth: 980) {
+    //                         ...GatsbyImageSharpFluid
+    //                         src
+    //                     }
+    //                 }
+    //             }
+    //           }
+    
+    //         }
+    //       }
+    //     }
+    //   }
+    // `

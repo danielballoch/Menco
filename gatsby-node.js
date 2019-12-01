@@ -86,33 +86,7 @@ exports.createPages = ({ actions, graphql }) => {
         if (result.errors){
             return reject(result.errors);
         }
-// 
 
-
-        // const oldPage = Object.assign({}, page)
-        // // Remove trailing slash unless page is /
-        // page.path = replacePath(page.path)
-        // if (page.path !== oldPage.path) {
-        //     // Replace new page with old page
-        //     deletePage(oldPage)
-        //     createPage({
-        //         ...page,
-        //         context: {
-        //             ...page.context,
-        //             catagorie: `shirts`,
-        //         }
-        //     })
-        // }
-
-
-
-
-
-
-
-
-
-// 
         //shorten links
         const products = result.data.products.edges;
         const posts = result.data.posts.edges;
@@ -176,12 +150,12 @@ exports.createPages = ({ actions, graphql }) => {
         const productColors = Object.keys(productsByColor);
         const productsList = productsByTag[productTags];
         //create different product pages based on sortOption's
-        const orderOption = ["ASC", "DESC"]
-        const sortOptions = ["frontmatter___price", "frontmatter___date"]
+        const orderOption = [`ASC`,`DESC`];
+        const sortOptions = [`frontmatter___price`,`frontmatter___date`];
         //creating price options array for dropdown refine option
-        const PriceOptions = {"all": {"lower": 0, "upper": 1000},"0-50": {"lower": 0, "upper": 50}, "50-100": {"lower": 50, upper: 100}, "100-200": {"lower": 100, "upper": 200}};
-        //looping though price options to create vars for nested values, using such to create all possible pages.
-        //*checking needed pages is not possible at this stage 
+        const PriceOptions = {"all": {"lower": 0, "upper": 1000},"0-50": {"lower": 0, "upper": 50}, "50-100": {"lower": 50, "upper": 100}, "100-200": {"lower": 100, "upper": 200}};
+        // looping though price options to create vars for nested values, using such to create all possible pages.
+        // *checking needed pages is not possible at this stage 
         for (let [key, value] of Object.entries(PriceOptions)) {
             var PriceRange = key;
             var pricerange = []
@@ -200,6 +174,7 @@ exports.createPages = ({ actions, graphql }) => {
                             colors: productColors.sort(),
                             order: order,
                             sortOption: option,
+                            sort: {'fields': [option], 'order': [order]},
                             colorOption: color,
                             priceLower: pricerange.lower,
                             priceUpper: pricerange.upper,
@@ -252,10 +227,12 @@ exports.createPages = ({ actions, graphql }) => {
                                     colors: productColors.sort(),
                                     colorOption: color,
                                     order: order,
+                                    sortOption: option,
+                                    sort: {'fields': [option], 'order': [order]},
                                     priceLower: pricerange.lower,
                                     priceUpper: pricerange.upper,
                                     priceRange: PriceRange,
-                                    sortOption: option,
+                                    
                                 },
                                 });
                             
@@ -265,31 +242,7 @@ exports.createPages = ({ actions, graphql }) => {
             })
         });
 
-       
 
-        // ///testing creating product link pages using products vs thing
-        // products.forEach(product => {
-        //     const products = productsByTag[product.frontmatter.tags];
-            
-        //     createPage({
-        //     path: `/products/${product.frontmatter.tags}/randsoooom`,
-        //     component: productTagPage,
-        //     context: {
-        //         products,
-        //         tagName: product.frontmatter.tags,
-        //         colors: productColors.sort(),
-        //         colorOption: "all",
-        //         order: "ASC",
-        //         sortOption: "frontmatter___price",
-        //     },
-        //     });
-        // });
-
-
-
-
-        
-        
         //create product pages
         products.forEach(({node}) => {
             // const path = node.frontmatter.path;
