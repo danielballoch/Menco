@@ -16,7 +16,6 @@ export default class DropdownButton extends React.Component {
         
         var priceRange = this.props.priceRange;
         var colorOption = this.props.colorOption;
-        console.log("priceRange Before: " + priceRange)
         if (this.props.mainText === "Color"){
             if (this.state.midLink !== "/frontmatter___date/ASC/"){this.setState({midLink: "/frontmatter___date/ASC/"}); }
                 this.setState({label: colorOption});
@@ -35,8 +34,6 @@ export default class DropdownButton extends React.Component {
         var linkPre = this.props.sortlinkpre
         var midLink = this.state.midLink
         var priceRange = this.state.priceRange
-        console.log("priceRange:" + priceRange)
-        console.log(midLink)
       return (
       
         <div>

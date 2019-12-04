@@ -49,7 +49,6 @@ class ProductListing extends React.Component {
     render(){
         const postList = this.getPostList();
         const wrap = this.props.wrap;
-        console.log(wrap)
         return(
             // <Wrapper Justify={this.props.Justify}>
             

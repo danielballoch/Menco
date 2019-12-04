@@ -38,17 +38,11 @@ import { ThemeProvider } from 'emotion-theming';
     };
       
       handleScroll = (event) => {
-        // console.log('the scroll things', event)
-        // console.log(document.getElementsByClassName('hero-image', event));
-        // console.log(window.pageYOffset, event);
         const scrollTarget = document.getElementById('hero-image').offsetHeight-60;
-        console.log(scrollTarget)
         if(window.pageYOffset > scrollTarget){
-            console.log("over and out")
             this.setState({
                 scroll: true
             })
-            console.log("state:" + this.state.scroll)
         } else {
             this.setState({
                 scroll: false
@@ -76,12 +70,7 @@ import { ThemeProvider } from 'emotion-theming';
     render() {
       const { children } = this.props;
       let scroll = this.state.scroll;
-      console.log("hello")
-      console.log(this.props)
-      
       let backdrop;
-      console.log("scroll state " + scroll);
-      
 
       if(this.state.sideDrawerOpen){
           backdrop = <Backdrop click={this.backdropClickHandler}/>;

@@ -20,14 +20,13 @@ export default class refineBtn extends React.Component {
     optionClickHandler = (option) => {
      
         this.setState(() => {
-            console.log(this.props.mainText + " updated to " + option)
+        
             return {[this.props.mainText + "Option"] : option}
         });
        };
 
     render(){ 
     const options = this.props.options
-    console.log("open: " + this.state.open)
     
 return(
     <div>

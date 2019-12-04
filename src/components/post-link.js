@@ -73,9 +73,6 @@ class PostListing extends React.Component {
     render(){
         const postList = this.getPostList();
         
-          
-        
-        console.log(this.state.excerptLength)
         return(
             <div>
                 {
@@ -102,46 +99,3 @@ class PostListing extends React.Component {
 }
 
 export default PostListing;
-
-
-
-
-// const PostLink = ({ post }) => (
-//     <Link to={`/${post.frontmatter.path}`} key={post.title}>
-//         <div className="post_div">
-//             <Image fluid={post.frontmatter.image.childImageSharp.fluid}/>
-//             {post.frontmatter.title}
-//             <br/>
-//             <p className="sub_text"> {post.frontmatter.date}</p>
-//             <p className="sub_text">{post.excerpt}</p>
-//             {post.frontmatter.tags}
-            
-//         </div>
-//     </Link>
-// )
-
-
-
-
-
-
-
-
-
-
-
-// const PostLink = ({ post }) => (
-//     <Link to={`/${post.frontmatter.path}`} key={post.title}>
-//         <div className="post_div">
-//             <Image fluid={post.frontmatter.image.childImageSharp.fluid}/>
-//             {post.frontmatter.title}
-//             <br/>
-//             <p className="sub_text"> {post.frontmatter.date}</p>
-//             <p className="sub_text">{post.excerpt}</p>
-//             {post.frontmatter.tags}
-            
-//         </div>
-//     </Link>
-// )
-
-// export default PostLink
