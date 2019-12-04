@@ -142,6 +142,8 @@ const ToggleButton = styled.div`
     @media(max-width: 365px){
         margin-right: 0px;
     }
+    
+}
 
 `
 

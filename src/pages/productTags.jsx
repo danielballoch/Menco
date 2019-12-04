@@ -10,6 +10,7 @@ import DropdownBtn from "../components/dropdownButton";
 import SEO from "../components/seo"
 import "../pages/products.css"
 
+
 // const Tags = ({ pageContext, data }) => {
 class Tags extends React.Component {
     constructor(props) {
@@ -152,14 +153,13 @@ return (
                     
                     <p>Catagory</p>
                     <TagsBlock list={tags} />
-                    <Link to="/products/frontmatter___date/ASC/all/all" className="shop-all-btn">Shop All</Link>
                     <p>Refine</p><br/>
                     {/* <DropdownBtn ref={this.dropdownRef1} mainText="Color" options={this.props.pageContext.colors || ['']} />
                     <DropdownBtn ref={this.dropdownRef2} mainText="Price" options={[' 0-50',' 50-100', " 100-200"] || ['']}/> */}
-
-                    <DropdownBtn onChange={this.setDropdownState} options={this.state.pageProductColors || ['']} mainText="Color" sortlinkpre={sortLinkPre} priceRange={this.props.pageContext.priceRange || "all"} colorOption={this.props.pageContext.colorOption}/>
-                    <DropdownBtn onChange={this.setDropdownState} options={['all','0-50','50-100', '100-200'] || ['']} mainText="Price" sortlinkpre={sortLinkPre} colorOption={this.props.pageContext.colorOption} priceRange={this.props.pageContext.priceRange || "all"}/>
-                    
+                    <div className="dropdown-container">
+                        <DropdownBtn onChange={this.setDropdownState} options={this.state.pageProductColors || ['']} mainText="Color" sortlinkpre={sortLinkPre} priceRange={this.props.pageContext.priceRange || "all"} colorOption={this.props.pageContext.colorOption}/>
+                        <DropdownBtn onChange={this.setDropdownState} options={['all','0-50','50-100', '100-200'] || ['']} mainText="Price" sortlinkpre={sortLinkPre} colorOption={this.props.pageContext.colorOption} priceRange={this.props.pageContext.priceRange || "all"}/>
+                    </div>
                     
                     
                     

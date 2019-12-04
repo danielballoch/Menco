@@ -7,8 +7,7 @@ const TagsContainer = styled.div`
   margin: 0;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
+  width: 100%;
   a {
     padding: .5rem;
     border-radius: 10px;
@@ -16,14 +15,21 @@ const TagsContainer = styled.div`
         color: ${props => props.theme.colors.highlights.blue};
     }
   }
+  @media (max-width: 400px) {
+    display: block;
+    overflow-x: scroll hidden;
+    white-space: nowrap;
+  }
   @media (max-width: 720px) {
     flex-direction: row;
+    justify-content: center;
   }
   
 `;
 
 const TagsBlock = ({ list }) => (
   <TagsContainer>
+    <Link to="/products/frontmatter___date/ASC/all/all" className="shop-all-btn">All</Link>
     {list &&
       list.map(tag => {
         const upperTag = tag.charAt(0).toUpperCase() + tag.slice(1);

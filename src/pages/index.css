@@ -107,6 +107,7 @@ h3 {
     .wrapper-left {
         justify-content: space-evenly;
         margin: 0px;
+        background-color: #f4f4f4;
     }
   }
 .wrapper-center{

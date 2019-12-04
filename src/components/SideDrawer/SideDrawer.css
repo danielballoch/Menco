@@ -1,33 +1,42 @@
 .side-drawer {
     display: flex;
-    flex-direction: column;
     height: 100%;
-    background: white;
+    background: #38373c;
     box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
-    left: 0;
-    width: 70%;
+    right: 0;
+    /* left: 50%;*/
+    width: 70%; 
+    height: 100%;
     max-width: 400px; 
     z-index: 200;
-    transform: translateX(-100%);
+    transform: translateX(70vw);
     transition: transform 0.3s ease-out;
+
 }
 .draw-link-wrapper {
     padding-top: 200px;
+    width: 100%;
 }
 
 .side-drawer.open {
     transform: translateX(0);
+    transition: background-color 1;
+    right: 0;
+    width: 70%;
+    
 }
 
 .side-drawer div {
+    background-color: #38373c;
     height: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: top;
     margin: auto;
+    
 }
 
 .side-drawer li {
@@ -35,7 +44,7 @@
 }
 
 .side-drawer a {
-    color: #521751;
+    color: white;
     text-decoration: none;
     font-size: 1.5rem;
 }
