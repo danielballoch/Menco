@@ -24,6 +24,7 @@ class Tags extends React.Component {
         colorOption: "all",
         priceRange: "all",
         tagName: "",
+        pageProductColors: "",
     };
       
        // sort (state) set to button value when clicked
@@ -61,7 +62,26 @@ class Tags extends React.Component {
         } else if (this.state.sortLinkPre !== "/products/" && tagName === ""){
              this.setState(() => { return {sortLinkPre: "/products/"}})
             }    
-         
+
+
+
+        //getting colors for dropdownButton
+        const postEdges = this.props.data.allMarkdownRemark.edges;
+        var colorOptions = this.props.pageContext.colors;
+        if (colorOptions[0] !== "all")colorOptions.unshift("all")
+        var pageProductColors = [];
+        postEdges.forEach(({node}) => {
+            if (node.frontmatter.color){
+                node.frontmatter.color.forEach(color => {
+                    if (!pageProductColors.includes(color)){
+                        pageProductColors.push(color);
+                    }
+                    
+                })
+            }
+        })
+        if (!tagName){pageProductColors = colorOptions}  
+        this.setState({pageProductColors: pageProductColors})          
       };
       
       componentWillUnmount() {
@@ -111,23 +131,7 @@ class Tags extends React.Component {
         const { tags } = this.props.pageContext;
         var tagName = this.state.tagName;
         const postEdges = this.props.data.allMarkdownRemark.edges;
-      
-
-        //getting colors for dropdownButton
-        var colorOptions = this.props.pageContext.colors;
-        if (colorOptions[0] !== "all")colorOptions.unshift("all")
-        var pageProductColors = [];
-        postEdges.forEach(({node}) => {
-            if (node.frontmatter.color){
-                node.frontmatter.color.forEach(color => {
-                    if (!pageProductColors.includes(color)){
-                        pageProductColors.push(color);
-                    }
-                    
-                })
-            }
-        })
-        if (!tagName){pageProductColors = colorOptions}
+  
         //set vars for sort links
         var sortLinkPre = this.state.sortLinkPre;
         var colorOption = this.state.colorOption;
@@ -166,7 +170,7 @@ return (
                     {/* <DropdownBtn ref={this.dropdownRef1} mainText="Color" options={this.props.pageContext.colors || ['']} />
                     <DropdownBtn ref={this.dropdownRef2} mainText="Price" options={[' 0-50',' 50-100', " 100-200"] || ['']}/> */}
 
-                    <DropdownBtn onChange={this.setDropdownState} options={pageProductColors || ['']} mainText="Color" sortlinkpre={sortLinkPre} priceRange={this.props.pageContext.priceRange || "all"} colorOption={this.props.pageContext.colorOption}/>
+                    <DropdownBtn onChange={this.setDropdownState} options={this.state.pageProductColors || ['']} mainText="Color" sortlinkpre={sortLinkPre} priceRange={this.props.pageContext.priceRange || "all"} colorOption={this.props.pageContext.colorOption}/>
                     <DropdownBtn onChange={this.setDropdownState} options={['all','0-50','50-100', '100-200'] || ['']} mainText="Price" sortlinkpre={sortLinkPre} colorOption={this.props.pageContext.colorOption} priceRange={this.props.pageContext.priceRange || "all"}/>
                     
                     
