@@ -16,8 +16,9 @@
     border-bottom: 1px solid rgba(0,0,0,0.05);
     padding: 4px 3rem;
 }
-.sort-bar a {
+.sort-bar .itemsFound {
  font-size: 12px;
+ align-self: center;
  color: #676565;
 }
 .sort-button {

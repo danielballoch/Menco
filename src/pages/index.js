@@ -1,17 +1,12 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-
 import ProductListing from "../components/product-link"
 import PostListing from "../components/post-link-wide"
-
-
 import Layout from "../components/layout"
-
 import SEO from "../components/seo"
 import heroimage from "../images/cover-image2.jpg";
 import "../pages/index.css";
-
 import twitter from "../../static/icons/twitter.svg"
 import facebook from "../../static/icons/facebook.svg"
 import instagram from "../../static/icons/instagram.svg"
@@ -75,7 +70,7 @@ class Index extends React.Component {
                 </div>
 
                 <div className="social-subsection">
-                    <div className="social-icons"><a href="#"><img  src={twitter} alt="white bird icon twitter"/></a><a href="#"><img  src={facebook} alt="white f icon facebook"/></a><a href="https://www.instagram.com/mencoapparel/"><img  src={instagram} alt="white camera icon instagram"/></a></div>
+                    <div className="social-icons"><a href="https://twitter.com/home"><img  src={twitter} alt="white bird icon twitter"/></a><a href="https://www.facebook.com/"><img  src={facebook} alt="white f icon facebook"/></a><a href="https://www.instagram.com/mencoapparel/"><img  src={instagram} alt="white camera icon instagram"/></a></div>
                     <div className="social-sub">We love to share fashion/business tips and have a laugh on social media.
                     Post with #SmartMan for a chance to be featured alongside other inspiring men on @Menco.
                     </div>
@@ -178,47 +173,3 @@ class Index extends React.Component {
 
 
 
-
-
-
-
-
-
-// const IndexPage =  ({
-    
-//     data: {
-//       allMarkdownRemark: { edges },
-//     },
-//   }) => {
-//     const Posts = edges
-//       .filter(edge => !!edge.node.frontmatter.price) // You can filter your posts based on some criteria
-//       .map(edge => <ProductLink key={edge.node.id} post={edge.node} />)
-
-//     return <div>
-    //     <img className="hero-image" src={heroimage} />
-    //     <div className="hero-text">
-    //     <h1>Quality Essentials</h1>
-        
-    //     <button className="shop-now">shop now</button>
-    //     </div>
-
-    //     <h1>Featured Products</h1>
-        
-    // <Layout>
-    //     <div className="post_wrapper_div">
-    //         {Posts}
-    //     </div>
-    //         <button className="shop-all" href="#">Shop All</button>
-    //         <div className="blog-banner">
-    //             <div className="banner-text">
-    //                 <h2>Want to look smart with ease?</h2>
-    //                 <h3>View our recent posts to get on track</h3>
-    //             </div>
-    //         </div>
-    // </Layout>
-    
-    
-//     </div> 
-//   }
-  
-//   export default IndexPage

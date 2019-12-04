@@ -1,11 +1,7 @@
 import React from 'react'
-
 import PageTransition from 'gatsby-v2-plugin-page-transitions';
 import { css, Global } from '@emotion/core';
 import theme from '../../config/theme';
-
-
-
 import Toolbar from './toolbar'
 import SideDrawer from './SideDrawer/SideDrawer'
 import Backdrop from './Backdrop/Backdrop'
@@ -20,7 +16,7 @@ import { ThemeProvider } from 'emotion-theming';
 
 
 
-export default class Layout extends React.Component {
+ class Layout extends React.Component {
       
       componentDidMount() {
           //index page is currently only page which has non-top white
@@ -28,6 +24,7 @@ export default class Layout extends React.Component {
           if(this.props.navtheme === "light"){
             window.addEventListener('scroll', this.handleScroll);
           }
+
       };
       
       componentWillUnmount() {
@@ -37,6 +34,7 @@ export default class Layout extends React.Component {
       state = {
         sideDrawerOpen: false, 
         scroll: false,
+        tags: "",
     };
       
       handleScroll = (event) => {
@@ -73,21 +71,23 @@ export default class Layout extends React.Component {
         this.setState({sideDrawerOpen: false});
     };
 
-   
-
-
-
+    
 
     render() {
       const { children } = this.props;
       let scroll = this.state.scroll;
+      console.log("hello")
+      console.log(this.props)
       
       let backdrop;
       console.log("scroll state " + scroll);
+      
 
       if(this.state.sideDrawerOpen){
           backdrop = <Backdrop click={this.backdropClickHandler}/>;
       }
+
+     
       return (
         <>
         
@@ -157,6 +157,9 @@ export default class Layout extends React.Component {
       );
     }
   }
+  export default Layout;
+
+
 
 
 

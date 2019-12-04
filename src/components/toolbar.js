@@ -151,11 +151,9 @@ const ToggleButton = styled.div`
 export default class toolbar extends React.Component {
    
   render(){ 
-    console.log("tool bar" + this.props.scroll);
-      let navtheme = this.props.navtheme;
-      if (this.props.scroll === true){navtheme = ""};
-      console.log(navtheme);
-    
+    let navtheme = this.props.navtheme;
+    if (this.props.scroll === true){navtheme = ""};
+
     return(
         
         
@@ -178,7 +176,7 @@ export default class toolbar extends React.Component {
                 <RightNav>
                         
                     <button className="snipcart-user-profile profile-btn">
-                       <a> Login </a>
+                       <a href="#" class="snipcart-user-profile"> Login </a>
                     </button>
                         
                     <button className="cart-div snipcart-checkout" >

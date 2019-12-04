@@ -23,7 +23,6 @@ class Index extends React.Component {
             <Header>
                 <h1>Welcome to the Community</h1>
                 <h3>This is where we post all insider information around mens fashion!</h3>
-                Search Posts: (* search bar ) (filter)(tags filter)
                 <blogTags/>
             </Header>
             <PostListing postEdges={postEdges} />

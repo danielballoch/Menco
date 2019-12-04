@@ -14,9 +14,6 @@ import "../pages/products.css"
 class Tags extends React.Component {
     constructor(props) {
         super(props);
-
-        this.setWrapperRef = this.setWrapperRef.bind(this);
-        this.handleClickOutside = this.handleClickOutside.bind(this);
       }
       state = {
         sortBtn: false,  
@@ -31,7 +28,6 @@ class Tags extends React.Component {
       
        // sort (state) set to button value when clicked
     sortTextClickHandler = (option) => {
-        console.log("option:" + option);
         this.setState(() => {
             return {sort: option}
         });
@@ -57,11 +53,9 @@ class Tags extends React.Component {
          //creating var sortLinkPre so sortBtns redirect to the proper url whether there is a tag selected or not. 
         // *neccecery since I now use productTags.jsx for both pages vs haveing productTag && productTags as templates;
         const tagName = this.state.tagName;
-        console.log("tagname:" + tagName);
         if (tagName !== "" && this.state.sortLinkPre === "/products/"){
             this.setState(() => {
                 let link = "/products/" + tagName;
-                console.log("tagnameinyeah" + tagName)
                 return {sortLinkPre : link }
             }); 
         } else if (this.state.sortLinkPre !== "/products/" && tagName === ""){
@@ -75,9 +69,7 @@ class Tags extends React.Component {
         
       };
 
-      componentDidUpdate(){
-        console.log("pricerange state:" + this.state.priceRange)
-      }
+     
 
      
     // sort button is set to true when clicked, displaying sort options
@@ -103,9 +95,9 @@ class Tags extends React.Component {
 
       setDropdownState = (option, mainText) => {
         this.setState({[mainText + "Option"]: option})
-        console.log([mainText + "Option:"] + this.state.sortColor)
       }
 
+      
 
 
 
@@ -116,24 +108,10 @@ class Tags extends React.Component {
 
 
     render(){
-        if (!this.props) { console.log("no data")};
-        console.log(this.props);
         const { tags } = this.props.pageContext;
         var tagName = this.state.tagName;
-        //  console.log(products);
         const postEdges = this.props.data.allMarkdownRemark.edges;
-        // console.log(postEdges.length)
-        // console.log("Sort open: " + this.state.sortBtn)
-        // console.log("Sort by: " + this.state.sort)
-        // console.log(this.props.pageContext)
-        // console.log(this.props.pageContext.order)
-        // console.log(this.props.pageContext.colors)
-        // console.log(postEdges)
-        // console.log("sortLinkPre:" + this.state.sortLinkPre);
-        console.log(this.props.pageContext)
-        
-        
-       
+      
 
         //getting colors for dropdownButton
         var colorOptions = this.props.pageContext.colors;
@@ -150,8 +128,6 @@ class Tags extends React.Component {
             }
         })
         if (!tagName){pageProductColors = colorOptions}
-        console.log(pageProductColors);
-
         //set vars for sort links
         var sortLinkPre = this.state.sortLinkPre;
         var colorOption = this.state.colorOption;
@@ -165,7 +141,8 @@ return (
             <SEO />
             <div className="sort-bar">
                 Shop/{tagName}
-                <a>{postEdges.length} items found</a>
+                <span className="itemsFound">{postEdges.length} items found</span>
+        
                 <button onClick={() => this.sortBtnToggleClickHandler()} className={this.state.sortBtn ? 'sort-button open' : "sort-button"} ref={this.setWrapperRef}>
                     sort: {this.state.sort} 
                     <div>
@@ -257,44 +234,3 @@ export const pageQuery = graphql`
         }
       }
     `
-//backup query
-    // export const pageQuery = graphql`
-    // query(
-    //     $tagName: String, 
-    //     $order: [SortOrderEnum], 
-    //     $sortOption: [MarkdownRemarkFieldsEnum],
-    //     $colorOption: String,
-    //     $priceUpper: Int,
-    //     $priceLower: Int,
-    //     )  {
-    //     allMarkdownRemark(sort: {
-    //          order: $order, fields: $sortOption }
-    //          filter: {fields: {collection: {eq: "products"}},frontmatter: {tags: {eq: $tagName}, color: {eq : $colorOption}, price: {gte: $priceLower , lte: $priceUpper} }  }
-    //          ) {
-    //       edges {
-    //         node {
-    //           id
-    //           excerpt(pruneLength: 250)
-    //           frontmatter {
-    //             path
-    //             name
-    //             price
-    //             weight
-    //             templateKey
-    //             tags
-    //             color
-    //             image {
-    //                 childImageSharp {
-    //                     fluid(maxWidth: 980) {
-    //                         ...GatsbyImageSharpFluid
-    //                         src
-    //                     }
-    //                 }
-    //             }
-    //           }
-    
-    //         }
-    //       }
-    //     }
-    //   }
-    // `
