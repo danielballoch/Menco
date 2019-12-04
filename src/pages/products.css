@@ -4,6 +4,9 @@
 .content {
     display: flex;
 }
+.shop-all-btn {
+ padding: .5rem;
+}
 .sort-bar {
     display: flex;
     justify-content: space-between;

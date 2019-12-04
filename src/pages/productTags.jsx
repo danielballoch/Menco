@@ -152,7 +152,7 @@ return (
                     
                     <p>Catagory</p>
                     <TagsBlock list={tags} />
-                    <Link to="/products/frontmatter___date/ASC/all/all">Shop All</Link>
+                    <Link to="/products/frontmatter___date/ASC/all/all" className="shop-all-btn">Shop All</Link>
                     <p>Refine</p><br/>
                     {/* <DropdownBtn ref={this.dropdownRef1} mainText="Color" options={this.props.pageContext.colors || ['']} />
                     <DropdownBtn ref={this.dropdownRef2} mainText="Price" options={[' 0-50',' 50-100', " 100-200"] || ['']}/> */}

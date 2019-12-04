@@ -22,6 +22,7 @@ transition: .3s;
 
 h1{
     margin: 1px 0;
+    margin-bottom: 10px;
     text-align: left;
 }
 .image{
