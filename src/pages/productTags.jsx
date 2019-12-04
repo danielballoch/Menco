@@ -100,19 +100,6 @@ class Tags extends React.Component {
 
        };
    
-       //set the sortBtn wrapper ref
-       setWrapperRef(node) {
-        this.wrapperRef = node;
-      }
-      // close sort bar
-      handleClickOutside(event) {
-        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-            this.setState(() => {
-                return {sortBtn: false}
-            });
-        }
-      }
-
       setDropdownState = (option, mainText) => {
         this.setState({[mainText + "Option"]: option})
       }
