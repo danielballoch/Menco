@@ -13,17 +13,32 @@ const DropdownBtn = styled.button`
     text-decoration: none;
     transition: 0.3s;
     padding: 4px;
-    margin: 4px;
+    margin: 0 4px;
     font-size: 14px;
     width: 100px;
 `
+
 const DropdownOption = styled.button`
     width: 100px;
     z-index: 100;
     margin: 0 4px;
-    background-color: white;
+    background-color: ${props => props.theme.main};
     border: 1px solid #d2d2d2;
+    :hover{
+        color: #36648b; 
+    }
+    
 `
+DropdownOption.defaultProps = {
+    theme: {
+      main: "white"
+    }
+  }
+
+// Define what props.theme will look like
+const active = {
+    main: "#f4f4f4"
+  };
 
 export default class DropdownButton extends React.Component {
     constructor(props) {
@@ -70,7 +85,7 @@ export default class DropdownButton extends React.Component {
                 }
               return (
                 <Link to={linkPre + midLink + option +"/" + priceRange}>
-                    <DropdownOption key={option} onClick={handleClick} className={this.state.value === option ? 'active' : undefined}>
+                    <DropdownOption key={option} onClick={handleClick} theme={this.state.label === option ? 'active' : undefined}>
                         {option} 
                     </DropdownOption>
                 </Link>

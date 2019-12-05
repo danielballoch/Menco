@@ -7,6 +7,7 @@ const TagsContainer = styled.div`
   margin: 0;
   display: flex;
   flex-direction: column;
+  min-height: 30px;
   width: 100%;
   a {
     padding: .5rem;
@@ -17,7 +18,7 @@ const TagsContainer = styled.div`
   }
   @media (max-width: 400px) {
     display: block;
-    overflow-x: scroll hidden;
+    overflow-x: scroll;
     white-space: nowrap;
   }
   @media (max-width: 720px) {
