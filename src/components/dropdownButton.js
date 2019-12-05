@@ -2,6 +2,28 @@ import React from 'react';
 import {Link} from 'gatsby';
 import styled from '@emotion/styled';
 
+const Container = styled.div`
+
+ width: 110px;
+`
+const DropdownBtn = styled.button`
+    border: 1px solid #d2d2d2;
+    border-radius: 3px;
+    background-color: white;
+    text-decoration: none;
+    transition: 0.3s;
+    padding: 4px;
+    margin: 4px;
+    font-size: 14px;
+    width: 100px;
+`
+const DropdownOption = styled.button`
+    width: 100px;
+    z-index: 100;
+    margin: 0 4px;
+    background-color: white;
+    border: 1px solid #d2d2d2;
+`
 
 export default class DropdownButton extends React.Component {
     constructor(props) {
@@ -38,8 +60,8 @@ export default class DropdownButton extends React.Component {
         var priceRange = this.state.priceRange
       return (
       
-        <div>
-        <div onClick={() => this.setState({open: true})}>{this.props.mainText}: {this.state.label}</div>
+        <Container>
+        <DropdownBtn onClick={() => this.setState({open: true})}>{this.props.mainText}: {this.state.label}</DropdownBtn>
           <div style={{display: this.state.open ? 'block' : 'none'}}>
             {this.props.options.map((option) => {
                 const handleClick = () => {
@@ -47,13 +69,15 @@ export default class DropdownButton extends React.Component {
                     this.props.onChange(option, this.props.mainText)  
                 }
               return (
-                <div key={option} onClick={handleClick} className={this.state.value === option ? 'active' : undefined}>
-                    <Link to={linkPre + midLink + option +"/" + priceRange}>{option}</Link> 
-                </div>
+                <Link to={linkPre + midLink + option +"/" + priceRange}>
+                    <DropdownOption key={option} onClick={handleClick} className={this.state.value === option ? 'active' : undefined}>
+                        {option} 
+                    </DropdownOption>
+                </Link>
               )
             })}
-          </div>
-        </div>
+            </div>
+        </Container>
       )
     }
   }

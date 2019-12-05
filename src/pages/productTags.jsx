@@ -150,12 +150,13 @@ return (
                 <div className="filter-bar">
                 <h2>Clothing:</h2>
                 <div className="catalog-menu">
-                    
+                    <div>
                     <p>Catagory</p>
                     <TagsBlock list={tags} />
-                    <p>Refine</p><br/>
-                    {/* <DropdownBtn ref={this.dropdownRef1} mainText="Color" options={this.props.pageContext.colors || ['']} />
-                    <DropdownBtn ref={this.dropdownRef2} mainText="Price" options={[' 0-50',' 50-100', " 100-200"] || ['']}/> */}
+                    </div>
+                    
+                    <div className="refine-tag"><p>Refine:</p></div>
+                    
                     <div className="dropdown-container">
                         <DropdownBtn onChange={this.setDropdownState} options={this.state.pageProductColors || ['']} mainText="Color" sortlinkpre={sortLinkPre} priceRange={this.props.pageContext.priceRange || "all"} colorOption={this.props.pageContext.colorOption}/>
                         <DropdownBtn onChange={this.setDropdownState} options={['all','0-50','50-100', '100-200'] || ['']} mainText="Price" sortlinkpre={sortLinkPre} colorOption={this.props.pageContext.colorOption} priceRange={this.props.pageContext.priceRange || "all"}/>
