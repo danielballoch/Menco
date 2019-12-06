@@ -10,17 +10,13 @@ import heart from "../../static/icons/heart.svg";
 
 
 export default class Template extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
+   state = {
         activeSize: "M",
         modalOpen: false,
         showThumbnails: true,
         };
 
-    window.addEventListener('resize', this.handleResize())
-    
-}
+
 
     
     
@@ -43,14 +39,6 @@ export default class Template extends React.Component {
         
     }
 
-    handleResize(showThumbnails) {
-        console.log(showThumbnails);
-        var windowWidth = (document.documentElement.clientWidth);
-        if (windowWidth < 420 & this.state.showThumbnails !== false){this.setState({showThumbnails: false})}
-        else if (windowWidth > 420 & this.state.showThumbnails !== true){this.setState({showThumbnails: true})}
-        console.log("windowWidth: " + windowWidth);
-        console.log(this.state.showThumbnails);
-    }
    
 
 
