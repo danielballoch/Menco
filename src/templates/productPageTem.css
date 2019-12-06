@@ -15,6 +15,9 @@ img {
 .snipcart-add-item:hover {
     background-color: #001a33;
 }
+h3 {
+    text-align: left;
+}
 
 .sizeBtn {
     padding: 3px 18px;
@@ -67,6 +70,16 @@ img {
     padding: 20px;
     
 }
+.cart-heart-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: blue; */
+    margin: 20px 0px;
+}
+.add-item-button {
+    min-width: 100px;
+}
 .heart-icon {
     background-color: whitesmoke;
     color: white;
@@ -75,26 +88,28 @@ img {
     font-size: 20px;
     width: 3rem;
     height: 3rem;
-    margin: 20px 0px;
     transition: .5s;
 }
 .heart-icon:hover {
-    background-color: #dcdcdc;
-    border-color:#dcdcdc;
+    background-color: #ffcccb;
+    border-color:#ffcccb;
 }
 .image-gallery {
-    /* width: 40vw; */
-    width: calc(104vh * 0.781);
-    /* height: calc(40vw * 1.279) */
-    height: 104vh;
+    width: 100%;
+
+
+    /* width: calc(104vh * 0.781);
+    height: 104vh; */
+    
 }
 .image-gallery-content {
-    /* width: 40vw; */
     width: calc(104vh * 0.781);
-    height: 104vh;
+    /* height: 104vh; */
     margin-left: 0px;
+    
 }
 .image-gallery-thumbnails-wrapper {
+    width: 10%;
     margin-right: 0;
 }
 
@@ -104,8 +119,10 @@ img {
     transition: .5s;
 }
 .image-gallery-thumbnail {
-    border: none;
     display: flex;
+    flex-direction: column;
+    border: none;
+    
     width: 100%;
 }
 

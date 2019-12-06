@@ -10,10 +10,19 @@ import heart from "../../static/icons/heart.svg";
 
 
 export default class Template extends React.Component {
-    state = {
+    constructor(props){
+        super(props);
+        this.state = {
         activeSize: "M",
-        modalOpen: false
-    };
+        modalOpen: false,
+        showThumbnails: true,
+        };
+
+    window.addEventListener('resize', this.handleResize())
+    
+}
+
+    
     
   
     setActiveSize(name) {
@@ -28,6 +37,21 @@ export default class Template extends React.Component {
             modalOpen: !currentState.modalOpen, 
         }));
     }
+
+    componentDidUpdate(){
+        
+        
+    }
+
+    handleResize(showThumbnails) {
+        console.log(showThumbnails);
+        var windowWidth = (document.documentElement.clientWidth);
+        if (windowWidth < 420 & this.state.showThumbnails !== false){this.setState({showThumbnails: false})}
+        else if (windowWidth > 420 & this.state.showThumbnails !== true){this.setState({showThumbnails: true})}
+        console.log("windowWidth: " + windowWidth);
+        console.log(this.state.showThumbnails);
+    }
+   
 
 
     render(){
@@ -97,27 +121,28 @@ export default class Template extends React.Component {
 
             <div className="container">
                 {/* pushing array into ImageGallery component */}
-                <ImageGallery  items={productImages} showPlayButton={false} showFullscreenButton={false} showNav={false} thumbnailPosition={"left"}/>
+                <ImageGallery  items={productImages} showPlayButton={false} showFullscreenButton={false} showNav={false} showThumbnails={true} thumbnailPosition={"left"} showBullets={true}/>
         
                 <div className="product">
                     <h2>{frontmatter.name} - ${frontmatter.price}</h2>
 
-                    <button href='#' selectedsize
-                    className='snipcart-add-item'
-                    data-item-image={productImages[1].thumbnail}
-                    data-item-price={frontmatter.price}
-                    data-item-name={frontmatter.name}
-                    data-item-id={frontmatter.id}
-                    data-item-weight={frontmatter.weight}
-                    data-item-custom2-name="Size"
-                    data-item-custom2-options={sizeOptions}
-                    data-item-custom2-value={selectedsize}
-                    data-item-url={"http://snipcart-gatsby.netlify.com" + frontmatter.path}>
-                    Add to Cart
+                    <div className="cart-heart-btn">
+                        <button href='#' selectedsize
+                        className='snipcart-add-item add-item-button'
+                        data-item-image={productImages[1].thumbnail}
+                        data-item-price={frontmatter.price}
+                        data-item-name={frontmatter.name}
+                        data-item-id={frontmatter.id}
+                        data-item-weight={frontmatter.weight}
+                        data-item-custom2-name="Size"
+                        data-item-custom2-options={sizeOptions}
+                        data-item-custom2-value={selectedsize}
+                        data-item-url={"http://snipcart-gatsby.netlify.com" + frontmatter.path}>
+                        Add to Cart
 
-                    </button>
-                    <button className="heart-icon"><img src={heart} alt="red heart wishlist icon"/></button>
-
+                        </button>
+                        <button className="heart-icon"><img src={heart} alt="red heart wishlist icon"/></button>
+                    </div>
 
          
                     <div className="detail-section">
