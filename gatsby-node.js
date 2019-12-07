@@ -144,6 +144,8 @@ exports.createPages = ({ actions, graphql }) => {
           },
         });
 
+       
+
 
         
         const productTags = Object.keys(productsByTag);

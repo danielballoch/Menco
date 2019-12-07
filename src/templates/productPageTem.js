@@ -109,7 +109,7 @@ export default class Template extends React.Component {
 
             <div className="container">
                 {/* pushing array into ImageGallery component */}
-                <ImageGallery  items={productImages} showPlayButton={false} showFullscreenButton={false} showNav={false} showThumbnails={true} thumbnailPosition={"left"} showBullets={true}/>
+                <ImageGallery  items={productImages} showPlayButton={false} showFullscreenButton={true} showNav={false} showThumbnails={true} thumbnailPosition={"left"} />
         
                 <div className="product">
                     <h2>{frontmatter.name} - ${frontmatter.price}</h2>

@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 const TagsContainer = styled.div`
-  margin:100px 1rem 1rem 1rem;
+  margin:4rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -22,6 +22,19 @@ const TagsContainer = styled.div`
         color: ${props => props.theme.colors.background.white}; */
         border: 1px solid ${props => props.theme.colors.highlights.blue};
     }
+  }
+
+  @media (max-width: 720px){
+    width: 100%;
+    margin: auto;
+    flex-direction: row;
+    padding: 10px;
+    /* height: 140px; */
+    overflow-x:scroll;
+    flex-wrap: nowrap;
+    /* white-space: nowrap; */
+  
+    
   }
 `;
 

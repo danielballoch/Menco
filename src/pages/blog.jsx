@@ -4,18 +4,49 @@ import PostListing from "../components/post-link"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from '@emotion/styled';
-import blogTags from "./blogTags";
+import TagsBlock from '../components/PostTagsBlock';
 
 const Header = styled.div`
 margin-top: 140px;
 h1 {
     margin: 40px;
 }
+h3 {
+    text-align: center;
+}
 `
+   
 
 class Index extends React.Component {
+    
+
+    
     render() {
-      const postEdges = this.props.data.allMarkdownRemark.edges;
+
+        const posts = this.props.data.allMarkdownRemark.edges;
+        //tag
+
+        const postsByTag = {};
+        // create post tags page
+        posts.forEach(({ node }) => {
+        if (node.frontmatter.tags) {
+                node.frontmatter.tags.forEach(tag => {
+                if (!postsByTag[tag]) {
+                    postsByTag[tag] = [];
+                }
+
+                postsByTag[tag].push(node);
+                });
+            }
+        });
+        const postTags = Object.keys(postsByTag); 
+
+
+
+        
+        const postEdges = this.props.data.allMarkdownRemark.edges;
+        // console.log(postEdges)
+        console.log(postTags)
       return (
         <Layout>
           <div >
@@ -23,13 +54,14 @@ class Index extends React.Component {
             <Header>
                 <h1>Welcome to the Community</h1>
                 <h3>This is where we post all insider information around mens fashion!</h3>
-                <blogTags/>
+                <TagsBlock list={postTags}/>
             </Header>
             <PostListing postEdges={postEdges} />
           </div>
         </Layout>
       );
     }
+    
   }
   
   export default Index;
