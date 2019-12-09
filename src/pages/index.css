@@ -379,7 +379,9 @@ justify-content: center;
     }
     .hero-text h2 {
         font-size: 23px;
+        display: none;
     }
+
 
 }
 @media (max-width: 600px){

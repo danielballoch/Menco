@@ -4,7 +4,7 @@ image: "./Smart-Casual-Jacket.jpg"
 date: "2020-10-15"
 title: "The Perfect Suit"
 published: true
-tags: ['dapper', 'balance', 'casual',]
+tags: ['all', 'suits',]
 ---
 [neutral1]: Smart-Casual-Jacket.jpg
 ![alt-text][neutral1]

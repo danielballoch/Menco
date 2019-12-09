@@ -38,14 +38,14 @@ const TagsContainer = styled.div`
   }
 `;
 
-const TagsBlock = ({ list }) => (
+const TagsBlock = ({ list, pageTags }) => (
   <TagsContainer>
     {list &&
       list.map(tag => {
         const upperTag = tag.charAt(0).toUpperCase() + tag.slice(1);
         return ( 
             <div>
-            <Link key={tag} to={`/blog-tags/${tag}`}>
+            <Link key={tag} to={`/blog/${tag}`} className={pageTags.includes(tag) ? 'active' : ''}>
                 <span>{upperTag}</span>
             </Link>
           </div>

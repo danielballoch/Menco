@@ -36,9 +36,9 @@ exports.createPages = ({ actions, graphql }) => {
  return new Promise((resolve, reject) => {
     const productPostTemplate = path.resolve(`src/templates/productPageTem.js`);
     const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`);
-    const postTagPage = path.resolve('src/pages/blogTags.jsx');
+    // const postTagPage = path.resolve('src/pages/blogTags.jsx');
     const productTagPage = path.resolve('src/pages/productTags.jsx');
-    const postTag = path.resolve('src/templates/postTag.jsx');
+    const blogTagTemplate= path.resolve('src/pages/blog.jsx');
     
     // const replacePath = path => (path === `/` ? path : path.replace(/\/$/,``))
 
@@ -136,13 +136,7 @@ exports.createPages = ({ actions, graphql }) => {
 
         const postTags = Object.keys(postsByTag);
 
-        createPage({
-          path: '/blog-tags',
-          component: postTagPage,
-          context: {
-            tags: postTags.sort(),
-          },
-        });
+     
 
        
 
@@ -155,7 +149,7 @@ exports.createPages = ({ actions, graphql }) => {
         const orderOption = [`ASC`,`DESC`];
         const sortOptions = [`frontmatter___price`,`frontmatter___date`];
         //creating price options array for dropdown refine option
-        const PriceOptions = {"all": {"lower": 0, "upper": 1000},"0-50": {"lower": 0, "upper": 50}, "50-100": {"lower": 50, "upper": 100}, "100-200": {"lower": 100, "upper": 200}};
+        const PriceOptions = {"all": {"lower": 0, "upper": 10000},"0-50": {"lower": 0, "upper": 50}, "50-100": {"lower": 50, "upper": 100}, "100-200": {"lower": 100, "upper": 200}};
         // looping though price options to create vars for nested values, using such to create all possible pages.
         // *checking needed pages is not possible at this stage 
         for (let [key, value] of Object.entries(PriceOptions)) {
@@ -198,9 +192,10 @@ exports.createPages = ({ actions, graphql }) => {
           const posts = postsByTag[tagName];
 
           createPage({
-            path: `/blog-tags/${tagName}`,
-            component: postTag,
+            path: `/blog/${tagName}`,
+            component: blogTagTemplate,
             context: {
+              postList: postTags,
               posts,
               tagName,
             },

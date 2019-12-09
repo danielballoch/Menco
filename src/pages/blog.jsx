@@ -39,14 +39,16 @@ class Index extends React.Component {
                 });
             }
         });
-        const postTags = Object.keys(postsByTag); 
+        const pageTags = Object.keys(postsByTag); 
+        const postList = this.props.pageContext.postList;
+        console.log(this.props)
 
 
 
         
         const postEdges = this.props.data.allMarkdownRemark.edges;
         // console.log(postEdges)
-        console.log(postTags)
+        
       return (
         <Layout>
           <div >
@@ -54,7 +56,7 @@ class Index extends React.Component {
             <Header>
                 <h1>Welcome to the Community</h1>
                 <h3>This is where we post all insider information around mens fashion!</h3>
-                <TagsBlock list={postTags}/>
+                <TagsBlock list={postList} pageTags={pageTags}/>
             </Header>
             <PostListing postEdges={postEdges} />
           </div>
@@ -66,31 +68,12 @@ class Index extends React.Component {
   
   export default Index;
 
-// const products = ({
-//     data: {
-//         allMarkdownRemark: { edges },
-//       },
-//     }) => {
-//       const Posts = edges
-//         .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-//         .map(edge => <PostLink key={edge.node.id} post={edge.node} />)
-//   return <div>
-//         <Layout>
-//         <SEO title="Page two" />
-//         <h1>Blog:</h1>
-//         {Posts}
-//     </Layout>
-//   </div>
-  
-//   }
-
-
-// export default products
-
 export const pageQuery = graphql`
-    query {
+    query(
+        $tagName: String, 
+    ) {
         allMarkdownRemark(
-            filter: {fields: {collection: {eq: "posts"}}}
+            filter: {fields: {collection: {eq: "posts"}}, frontmatter: {tags: {eq: $tagName}}}
             limit: 6
             sort: { order: DESC, fields: [frontmatter___date] }
           ) {

@@ -4,7 +4,7 @@ image: "./Neutral-colors.png"
 date: "2019-05-31"
 title: "Menco Colors Explained"
 published: true
-tags: ['fashion', 'neutrals', 'men', 'color']
+tags: ['all', 'color']
 ---
 
 [neutral1]: Neutral-colors-outfit.jpg

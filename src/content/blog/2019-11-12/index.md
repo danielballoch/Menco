@@ -4,7 +4,7 @@ image: "./bluejeanoutfitcrop.jpg"
 date: "2019-05-21"
 title: "Mens Wardrobe Staples "
 published: true
-tags: ['fashion', 'neutrals', 'men', 'color']
+tags: ['all', 'color',]
 ---
 
 [neutral1]: Neutral-colors-spring-outfit.jpg
