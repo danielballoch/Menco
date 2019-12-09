@@ -18,16 +18,15 @@ h3 {
    
 
 class Index extends React.Component {
-    
-
-    
-    render() {
-
+    constructor(props) {
+        super(props);
+      }
+      state = {
+        pageTags: ["all"],
+    };
+    componentDidMount(){
         const posts = this.props.data.allMarkdownRemark.edges;
-        //tag
-
         const postsByTag = {};
-        // create post tags page
         posts.forEach(({ node }) => {
         if (node.frontmatter.tags) {
                 node.frontmatter.tags.forEach(tag => {
@@ -39,16 +38,16 @@ class Index extends React.Component {
                 });
             }
         });
-        const pageTags = Object.keys(postsByTag); 
-        const postList = this.props.pageContext.postList;
+        const pageTags = Object.keys(postsByTag);
+        this.setState({pageTags: pageTags}); 
+    }
+
+    
+    render() {
         console.log(this.props)
-
-
-
-        
         const postEdges = this.props.data.allMarkdownRemark.edges;
-        // console.log(postEdges)
-        
+        const postList = this.props.pageContext.postList;
+
       return (
         <Layout>
           <div >
@@ -56,7 +55,7 @@ class Index extends React.Component {
             <Header>
                 <h1>Welcome to the Community</h1>
                 <h3>This is where we post all insider information around mens fashion!</h3>
-                <TagsBlock list={postList} pageTags={pageTags}/>
+                <TagsBlock list={postList} pageTags={this.state.pageTags}/>
             </Header>
             <PostListing postEdges={postEdges} />
           </div>

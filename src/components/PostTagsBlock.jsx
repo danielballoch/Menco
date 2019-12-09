@@ -43,6 +43,7 @@ const TagsBlock = ({ list, pageTags }) => (
     {list &&
       list.map(tag => {
         const upperTag = tag.charAt(0).toUpperCase() + tag.slice(1);
+        if (!pageTags){pageTags = ["all"]}
         return ( 
             <div>
             <Link key={tag} to={`/blog/${tag}`} className={pageTags.includes(tag) ? 'active' : ''}>
