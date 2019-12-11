@@ -127,6 +127,7 @@ class Tags extends React.Component {
              
 return (
     <Layout>
+        
 
 
         <div className="top-margin">
@@ -171,7 +172,7 @@ return (
                 <ProductListing postEdges={postEdges} wrap={"wrapper-left"}/>
             </div>
           </div>
-
+          
     </Layout>
   );
     }

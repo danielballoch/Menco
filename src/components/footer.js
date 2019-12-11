@@ -10,10 +10,9 @@ return(
         <div className="links">
                 <div>
                     <StyledLink to="/" >Menco</StyledLink>
-                    <StyledLink to="/products">Products</StyledLink>
-                    <StyledLink to="/" >About</StyledLink>
-                    <StyledLink to="/lookbook/" >Privacy</StyledLink>  
-                    <StyledLink to="/lookbook" >Affiliates</StyledLink>                  
+                    <StyledLink to="/products/frontmatter___date/ASC/all/all">Products</StyledLink>
+                    <StyledLink to="/" >Privacy</StyledLink>  
+                    <StyledLink to="/" >Affiliates</StyledLink>                  
                 </div>
                 <div>
                     <StyledLink to="/customer-care" >Customer Care</StyledLink>
@@ -24,10 +23,10 @@ return(
                     <StyledLink to="/customer-care" >Size Guides</StyledLink>
                 </div>
                 <div>
-                    <StyledLink to="/#" >Follow Us</StyledLink>
-                    <StyledLink to="/#">Instagram</StyledLink>
-                    <StyledLink to="/#" >Twitter</StyledLink>
-                    <StyledLink to="/#" >Facebook</StyledLink>
+                    <StyledLink to="/#social-subsection" >Follow Us</StyledLink>
+                    <a href="https://www.instagram.com/mencoapparel/">Instagram</a>
+                    <a href="https://twitter.com/home" >Twitter</a>
+                    <a href="https://www.facebook.com/" >Facebook</a>
                 </div>
             </div>
                 

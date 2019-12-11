@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link} from "gatsby"
 import Img from "gatsby-image"
 import ProductListing from "../components/product-link"
 import PostListing from "../components/post-link-wide"
@@ -13,6 +13,7 @@ import instagram from "../../static/icons/instagram.svg"
 
 
 
+
 class Index extends React.Component {
     render() {
       const productEdges = this.props.data.product.edges;
@@ -21,6 +22,7 @@ class Index extends React.Component {
     
       return (
         <Layout navtheme="light">
+        
             <SEO />
             <div className="hero-wrapper">
                 <img className="hero-image" id="hero-image" src={heroimage} alt="Menco model Andrew fitted with navy jacket, grey pants, shirt and tie looking smart"/>
@@ -54,7 +56,7 @@ class Index extends React.Component {
             </div>
 
 
-            <div className="social-section">
+            <div className="social-section" id="social-subsection">
                 <div className="social-top">
                     <div className="social-side-text">
                         <h1>@Menco #SmartMan</h1>
@@ -69,13 +71,14 @@ class Index extends React.Component {
                     )}</div>
                 </div>
 
-                <div className="social-subsection">
+                <div className="social-subsection" >
                     <div className="social-icons"><a href="https://twitter.com/home"><img  src={twitter} alt="white bird icon twitter"/></a><a href="https://www.facebook.com/"><img  src={facebook} alt="white f icon facebook"/></a><a href="https://www.instagram.com/mencoapparel/"><img  src={instagram} alt="white camera icon instagram"/></a></div>
                     <div className="social-sub">We love to share fashion/business tips and have a laugh on social media.
                     Post with #SmartMan for a chance to be featured alongside other inspiring men on @Menco.
                     </div>
                 </div>
             </div>
+            
         </Layout>
       );
     }

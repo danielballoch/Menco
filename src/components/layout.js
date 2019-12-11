@@ -1,5 +1,4 @@
-import React from 'react'
-import PageTransition from 'gatsby-v2-plugin-page-transitions';
+import React from 'react';
 import { css, Global } from '@emotion/core';
 import theme from '../../config/theme';
 import Toolbar from './toolbar'
@@ -9,6 +8,7 @@ import Footer from './footer'
 import './layout.css'
 import '../../config/base/snipcart.min.css'
 import { ThemeProvider } from 'emotion-theming';
+import PageTransition from 'gatsby-plugin-page-transitions';
 // import SEO from '../components/SEO'
 
 
@@ -134,13 +134,27 @@ import { ThemeProvider } from 'emotion-theming';
         <Toolbar drawerClickHandler={this.drawerToggleClickHandler} open={this.state.sideDrawerOpen} navtheme={this.props.navtheme} scroll={this.state.scroll} />
         <SideDrawer show={this.state.sideDrawerOpen}/>
         {backdrop}
-          <PageTransition>
+        <PageTransition
+            defaultStyle={{
+            transition: `opacity .5s ease-in-out`,
+            opacity: `100%`,
+            top: '0%',
+            width: '100%',
+            position: 'absolute',
+            }}
+            transitionStyles={{
+                entering: {opacity: 1},
+                entered:  {opacity: 1},
+                exiting:  {opacity: 0},
+                exited:  {opacity: 0},
+            }}
+            transitionTime={500}
+        >
           <div id="wrapper" >
             {children}
           </div>
-          </PageTransition>
-          
         <Footer/>
+        </PageTransition>
         </ThemeProvider>
           </>
       );

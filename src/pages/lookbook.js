@@ -22,7 +22,7 @@ const lookbook = () => (
         <h2>New Season Lookbook</h2>
         <h3>Coming November 2019</h3>
     </div>
-  </Layout>
+</Layout>
 )
 
 export default lookbook

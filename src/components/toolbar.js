@@ -2,7 +2,7 @@ import React from  'react';
 
 import DrawerToggleButton from './SideDrawer/DrawerToggleButton'
 import './toolbar.css';
-import { Link } from 'gatsby'
+import { Link } from "gatsby"
 import styled from '@emotion/styled';
 
 
@@ -168,10 +168,10 @@ export default class toolbar extends React.Component {
             
                 
                 <MiddleNav>
-                    <StyledLink to="/">Home</StyledLink>
+                    <StyledLink swipe to="/">Home</StyledLink>
                     <StyledLink to="/products/frontmatter___date/ASC/all/all">Products</StyledLink>
                     <StyledLink to="/blog/all" >Blog</StyledLink>
-                    <StyledLink to="/lookbook/" >Lookbook</StyledLink>
+                    <StyledLink fade to="/lookbook/" >Lookbook</StyledLink>
                 </MiddleNav>
                 
                 
