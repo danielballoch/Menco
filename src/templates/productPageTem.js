@@ -102,7 +102,7 @@ export default class Template extends React.Component {
 
         return (
             <>
-            {/* <Layout> */}
+            <Layout>
             <Container type="big">
         
 
@@ -198,7 +198,7 @@ export default class Template extends React.Component {
         </div>
       </div>
       </Container>
-      {/* </Layout> */}
+      </Layout>
       </>
         );
     }
