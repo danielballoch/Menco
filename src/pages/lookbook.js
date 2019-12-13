@@ -16,11 +16,11 @@ const divStyle = {
 
 const lookbook = () => (
   <Layout>
-    <SEO title="Page two" />
+    <SEO title="Lookbook" />
     <br/>
     <div style={divStyle}>
         <h2>New Season Lookbook</h2>
-        <h3>Coming November 2019</h3>
+        <h3>Coming July 2020</h3>
     </div>
 </Layout>
 )

@@ -51,7 +51,7 @@ class Index extends React.Component {
       return (
         <Layout>
           <div >
-            <SEO />
+            <SEO title="Blog"/>
             <Header>
                 <h1>Welcome to the Community</h1>
                 <h3>This is where we post all insider information around mens fashion!</h3>
