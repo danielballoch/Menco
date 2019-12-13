@@ -14,7 +14,6 @@ margin: 5px;
 }
 `
 
-
 Wrapper.defaultProps = {
     theme: {
         main: "none"
@@ -23,6 +22,51 @@ Wrapper.defaultProps = {
 
 const active = {
     main: "block"
+}
+const Title = styled.div`
+display: flex;
+width: 100%;
+justify-content:space-between;
+`
+
+const PlusButton = styled.button`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20px;
+    width: 14px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    box-sizing: border-box;
+`
+
+const Line = styled.div`
+width: 14px;
+height: 2px;
+background: black;
+transition: 0.3s;
+:nth-of-type(1){
+    transform: translateY(10px)
+}
+:nth-of-type(2){
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        background: ${props => props.theme.main};
+    }
+`
+
+Line.defaultProps = {
+    theme: {
+        main: "rgba(0,0,0,0)"
+    }
+}
+
+const open = {
+    main: "rgba(0,0,0,0)"
 }
 
 
@@ -37,7 +81,13 @@ export default class dropdown extends React.Component {
         console.log(this.state.open)
     return(
     <Wrapper theme={this.state.open === true ? "active": undefined} onClick={() => this.setState({open: !this.state.open})}>
-        <h3 >{this.props.title}</h3>
+        <Title>
+            <h3>{this.props.title}</h3>
+            <PlusButton>
+                <Line/><Line theme={this.state.open === true ? undefined : "open"}/>
+            </PlusButton>
+        </Title>
+        
         <ul>
         {this.props.options.map (option => (
            <a href="#"><li>{option}</li></a>

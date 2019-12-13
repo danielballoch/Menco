@@ -115,13 +115,13 @@ const MencoButton = styled(Link)`
     background-color:  #f4f4f4;
     color: #362E2E;
     border: none;
-    width: 40%;
+    width: 45%;
     max-width: 330px;
     height: 50px;
     font-size: 18px;
     /* justify-self: center; */
     /* display: block; */
-    margin: 50px 40px;
+    margin: 50px 0;
     border: 2px solid #f4f4f4;
     transition: .3s;
 
@@ -139,7 +139,7 @@ const MencoButton = styled(Link)`
 `
 const ButtonDiv = styled.div`
 display: flex;
-justify-content: center;
+justify-content: space-evenly;
 width: 100%;
 `
 

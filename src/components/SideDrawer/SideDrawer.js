@@ -35,7 +35,7 @@ const SideDrawer = (props) => {
                         <StyledLink id="StyledLink" className="snipcart-checkout" >Checkout</StyledLink>
                         <StyledLink to="/lookbook" >Lookbook</StyledLink>
                         <StyledLink id="StyledLink" className="snipcart-user-profile" >Profile</StyledLink>
-                        <StyledLink to="/lookbook" >Help</StyledLink>
+                        <StyledLink to="/customer-care" >Help</StyledLink>
                         {/* <TagsBlock list={data.allMarkdownRemark.edges.nodes.frontmatter.tags}/> */}
                         <StyledLink to="/blog/all">Blog</StyledLink>
                     </div>

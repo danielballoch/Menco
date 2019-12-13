@@ -27,7 +27,6 @@ const DropdownOption = styled.button`
     :hover{
         color: #36648b; 
     }
-    
 `
 DropdownOption.defaultProps = {
     theme: {
@@ -39,6 +38,9 @@ DropdownOption.defaultProps = {
 const active = {
     main: "#f4f4f4"
   };
+
+
+
 
 export default class DropdownButton extends React.Component {
     constructor(props) {

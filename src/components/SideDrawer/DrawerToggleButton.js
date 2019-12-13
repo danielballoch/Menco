@@ -8,6 +8,7 @@ const Line = styled.div`
     background: ${props => props.light ? 'white' : 'black'}; 
     z-index: 300;
     transition: 0.5s;
+    
 `
 
     
