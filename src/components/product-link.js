@@ -8,18 +8,20 @@ import styled from '@emotion/styled';
 
 
 const Product = styled.div`
-height: 360px;
+/* height: 360px; */
 width: 240px;
 margin: 10px;
 background-color: #f4f4f4;
 text-align: center;
 color: #362E2E;
+:hover {
+    div {
+        opacity: 1;
+        transition: .3s;
+    }
+}
 h1{
     margin: 1px;
-}
-&:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
-    transition: .5s;
 }
 @media (max-width: 530px){
     width: 50vw;
@@ -27,6 +29,29 @@ h1{
     min-height: 260px;
     margin: 0px;
 }
+`
+const Price = styled.div`
+position: absolute;
+z-index: 100;
+/* background: yellow; */
+text-align: left;
+padding: 10px;
+color: #676565;
+opacity: .8;
+`
+const Stock = styled.div`
+position: absolute;
+opacity: 0;
+transform: rotate(-90deg);
+z-index: 100;
+color: #676565;
+margin-top: 40%;
+margin-left: -14px;
+transition: .5s;
+:hover{
+    color: green;
+}
+
 `
 
 class ProductListing extends React.Component {
@@ -49,6 +74,7 @@ class ProductListing extends React.Component {
     render(){
         const postList = this.getPostList();
         const wrap = this.props.wrap;
+
         return(
             // <Wrapper Justify={this.props.Justify}>
             
@@ -56,11 +82,14 @@ class ProductListing extends React.Component {
                 {
                 postList.map(post => (
                     <Link to={post.path} key={post.name}>
-                        <Product>
                         
+                        <Product>
+
+                        {/* <Price>${post.price}</Price> */}
+                        {/* <Stock>Add to cart</Stock> */}
                         <Image fluid={post.image.childImageSharp.fluid}/>
-                        {post.name}<br/>
-                        <p className="sub_text"> ${post.price} - add to wishlist <img className="symbol" src={heart} alt="red heart icon"/> </p>
+                         <p className="sub_text">${post.price} - {post.name}</p> 
+                        {/* <p className="sub_text">  - add to wishlist <img className="symbol" src={heart} alt="red heart icon"/> </p> */}
                         </Product>
                     </Link>
                 ))

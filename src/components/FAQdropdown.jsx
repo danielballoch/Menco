@@ -40,6 +40,9 @@ const PlusButton = styled.button`
     cursor: pointer;
     padding: 0;
     box-sizing: border-box;
+    @media (min-width: 800px){
+        display: none;
+    }
 `
 
 const Line = styled.div`

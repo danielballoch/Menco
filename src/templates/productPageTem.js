@@ -129,7 +129,7 @@ export default class Template extends React.Component {
                         Add to Cart
 
                         </button>
-                        <button className="heart-icon"><img src={heart} alt="red heart wishlist icon"/></button>
+                        {/* <button className="heart-icon"><img src={heart} alt="red heart wishlist icon"/></button> */}
                     </div>
 
          
