@@ -69,7 +69,7 @@ Line.defaultProps = {
 }
 
 const open = {
-    main: "rgba(0,0,0,0)"
+    main: "black"
 }
 
 
@@ -83,11 +83,11 @@ export default class dropdown extends React.Component {
     render(){
         console.log(this.state.open)
     return(
-    <Wrapper theme={this.state.open === true ? "active": undefined} onClick={() => this.setState({open: !this.state.open})}>
+    <Wrapper theme={this.state.open === true ?  active : undefined} onClick={() => this.setState({open: !this.state.open})}>
         <Title>
             <h3>{this.props.title}</h3>
             <PlusButton>
-                <Line/><Line theme={this.state.open === true ? undefined : "open"}/>
+                <Line/><Line theme={this.state.open === true ?  undefined : open}/>
             </PlusButton>
         </Title>
         

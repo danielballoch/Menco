@@ -13,7 +13,9 @@ img {
     transition: .5s;
 }
 .snipcart-add-item:hover {
-    background-color: #001a33;
+    /* background-color: #001a33; */
+    border: solid 1px #50c878;
+    background-color: #50c878;
 }
 h3 {
     text-align: left;
@@ -75,10 +77,12 @@ h3 {
     justify-content: center;
     align-items: center;
     /* background: blue; */
+    cursor: pointer;
     margin: 20px 0px;
 }
 .add-item-button {
     min-width: 100px;
+    cursor: pointer;
 }
 .heart-icon {
     background-color: whitesmoke;

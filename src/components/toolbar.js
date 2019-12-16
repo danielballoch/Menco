@@ -49,6 +49,7 @@ const ToolbarNavigation = styled.nav`
     max-width: 100%;
     justify-content: space-between;
     margin: auto;
+    z-index: 400;
 `
 const StyledLink = styled(Link)`
 padding: 10px;
@@ -62,7 +63,7 @@ transition: 0.3s;
 const LeftNav = styled.div`
     display:flex;
     transition: 0.3s;
-    z-index: 300;
+    z-index: 400;
    height: 100%;
    font-family: 'Quattrocento', serif;
    margin-left: 70px;
@@ -88,6 +89,7 @@ const LeftNav = styled.div`
 
 const MiddleNav = styled.div`
     display: flex;
+    z-index: 400;
     height: 100%;
     align-items: center;
     padding: 1rem 1rem;
@@ -103,6 +105,7 @@ const MiddleNav = styled.div`
 `
 
 const RightNav = styled.div`
+    z-index: 400;
     display: flex;
     height: 100%;
     margin-right: 70px;
@@ -130,6 +133,7 @@ const RightNav = styled.div`
 `
 
 const ToggleButton = styled.div`
+ z-index: 400;
     display: flex;
     height: 100%;
     align-items: flex-end;
@@ -143,22 +147,81 @@ const ToggleButton = styled.div`
         margin-right: 0px;
     }
     
-}
-
 `
+   
+
+
+const NotificationBar = styled.div`
+position: fixed;
+z-index: 100;
+top: ${props => props.theme.main};
+opacity: ${props => props.theme.opac};
+width: 100%;
+background-color: #50c878;
+color: white;
+transition: .5s;
+text-align: center;
+display: block;
+height: 24px;
+@media (max-width: 880px) {
+    top: ${props => props.theme.mobile};
+}
+`
+NotificationBar.defaultProps = {
+    theme: {
+        main: "86px",
+        mobile: "36px",
+        opac: "0",
+    }
+};
+
+const active = {
+    main: "110px",
+    mobile: "60px",
+    opac: "1"
+};
 
 
 
 
 export default class toolbar extends React.Component {
+    state = {
+        notification: false,
+        notificationMessage: "",
+    };
+
    
+
+    componentDidMount(){
+        window.Snipcart.events.on('item.added', (parsedCartItem) => {
+            this.notification(parsedCartItem.name);
+            console.log(parsedCartItem)
+            setTimeout(() => {
+                this.setState({notification: false});
+              }, 1200);
+            });
+
+    }
+
+    componentWillUnmount(){
+        clearTimeout()
+    }
+
+    notification(message){
+        console.log(message);
+        this.setState({notificationMessage: message});
+        this.setState({notification: true});
+    }
+
+    
+
   render(){ 
     let navtheme = this.props.navtheme;
     if (this.props.scroll === true){navtheme = ""};
 
+    
     return(
-        
-        
+        <div>
         <Toolbar light={navtheme} >
             <ToolbarNavigation>
             
@@ -194,6 +257,8 @@ export default class toolbar extends React.Component {
                 
             </ToolbarNavigation>  
         </Toolbar>
+        <NotificationBar theme={this.state.notification === true ? active : undefined }>{this.state.notificationMessage} added to cart</NotificationBar>
+        </div>
     );
     }
 }
