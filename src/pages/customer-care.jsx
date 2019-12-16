@@ -15,7 +15,8 @@ padding: 10px;
 justify-content: center;
 hr{
     margin: auto;
-    width: 1172px;
+    width: 100%;
+    max-width: 1172px;
 }
 form{
     display: flex;

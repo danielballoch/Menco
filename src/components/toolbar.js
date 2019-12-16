@@ -46,7 +46,6 @@ const Toolbar = styled.header`
 const ToolbarNavigation = styled.nav`
     display: flex;
     height: 100%;
-    max-width: 100%;
     justify-content: space-between;
     margin: auto;
     z-index: 400;
