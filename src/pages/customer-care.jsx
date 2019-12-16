@@ -125,7 +125,6 @@ const MencoButton = styled(Link)`
     margin: 50px 0;
     border: 2px solid #f4f4f4;
     transition: .3s;
-
 :hover{
     color: #1b4870;
     background-color: white;
@@ -165,7 +164,7 @@ const CustomerCare = () => (
         <FAQdropdown title='Account' options={['How do I create an account?',"I've forgotten my password"]}></FAQdropdown>
         <FAQdropdown title='Shopping' options={['Do I need an account to shop with Menco?','Can I buy gift cards?','How do I use promo or discount codes?']}></FAQdropdown>
         <ButtonDiv>
-            <MencoButton class="snipcart-user-profile">Account</MencoButton> <MencoButton to="/sizeguides">Size Guides</MencoButton>
+            <MencoButton class="snipcart-user-profile"  onClick={e => e.preventDefault()} ><p class="snipcart-user-profile">Account</p></MencoButton> <MencoButton to="/sizeguides">Size Guides</MencoButton>
         </ButtonDiv>
     </FAQSection>
 

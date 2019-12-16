@@ -9,6 +9,10 @@
 .shop-all-btn {
  padding: .5rem;
 }
+.shop:hover {
+    color: #36648b;
+}
+
 .sort-bar {
     display: flex;
     justify-content: space-between;

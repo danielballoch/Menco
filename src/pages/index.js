@@ -22,8 +22,8 @@ class Index extends React.Component {
     
       return (
         <Layout navtheme="light">
+            <SEO title="Home"/>
         
-            <SEO />
             <div className="hero-wrapper">
                 <img className="hero-image" id="hero-image" src={heroimage} alt="Menco model Andrew fitted with navy jacket, grey pants, shirt and tie looking smart"/>
                 {/* <Image fluid={data.hero.childImageSharp.fluid} className="hero-image"  /> */}

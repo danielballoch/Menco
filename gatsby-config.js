@@ -112,6 +112,14 @@ module.exports = {
     }   
 },'gatsby-plugin-netlify',
 {
+    resolve: 'gatsby-plugin-web-font-loader',
+    options: {
+        google: {
+            families: ['Aleo', 'Quattrocento', 'Open Sans' ]
+        }
+    }
+},
+{
     resolve: 'gatsby-plugin-snipcart',
     options: {
       apiKey: 'MmVjYmVjYzMtZTA5MS00NzJjLTlmZGMtMmIxYjVlZjFjMjM0NjM2ODUzNjg2NTY4NTk5NTIy',

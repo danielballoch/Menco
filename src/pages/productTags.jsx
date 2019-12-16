@@ -127,13 +127,13 @@ class Tags extends React.Component {
              
 return (
     <Layout>
+        <SEO title="Products"/>
         
 
 
         <div className="top-margin">
-            <SEO />
             <div className="sort-bar">
-                Shop/{tagName}
+                <span><Link className="shop" to="/products/frontmatter___date/ASC/all/all">Shop/</Link>{tagName}</span>
                 <span className="itemsFound">{postEdges.length} items found</span>
         
                 <button onClick={() => this.sortBtnToggleClickHandler()} className={this.state.sortBtn ? 'sort-button open' : "sort-button"} ref={this.setWrapperRef}>

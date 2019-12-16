@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import Container from "../layouts/Container"
 import styled from '@emotion/styled';
 import TagsBlock from "../components/PostTagsBlock"
+import SEO from "../components/seo"
 
 
 const BlogPostContainer = styled.div`
@@ -37,6 +38,7 @@ export default function Template({
   const { next, prev } = pageContext;
   return (
       <Layout>
+          <SEO title={frontmatter.title}/>
           <Container type="article">
             <BlogPostContainer>
                 <div className="blog-post">

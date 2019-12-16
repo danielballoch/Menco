@@ -9,7 +9,7 @@ import './layout.css'
 import '../../config/base/snipcart.min.css'
 import { ThemeProvider } from 'emotion-theming';
 import PageTransition from 'gatsby-plugin-page-transitions';
-// import SEO from '../components/SEO'
+import SEO from '../components/seo'
 
 
 
@@ -80,7 +80,7 @@ import PageTransition from 'gatsby-plugin-page-transitions';
       return (
         <>
         
-        {/* <SEO/> */}
+        <SEO/>
         <ThemeProvider theme={theme}>
         <Global
         styles={css`

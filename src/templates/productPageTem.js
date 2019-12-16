@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 import "react-image-gallery/styles/css/image-gallery.css";
 import "./productPageTem.css"
 import heart from "../../static/icons/heart.svg";
+import SEO from "../components/seo"
 
 
 export default class Template extends React.Component {
@@ -103,6 +104,7 @@ export default class Template extends React.Component {
         return (
             <>
             <Layout>
+            <SEO title={frontmatter.name}/>
             <Container type="big">
         
 
