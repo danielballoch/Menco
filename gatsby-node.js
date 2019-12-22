@@ -168,7 +168,7 @@ exports.createPages = ({ actions, graphql }) => {
                             context: {
                             tags: productTags.sort(),
                             colors: productColors.sort(),
-                            order: order,
+                            sortOrder: order,
                             sortOption: option,
                             sort: {'fields': [option], 'order': [order]},
                             colorOption: color,
@@ -223,7 +223,7 @@ exports.createPages = ({ actions, graphql }) => {
                                     tagName,
                                     colors: productColors.sort(),
                                     colorOption: color,
-                                    order: order,
+                                    sortOrder: order,
                                     sortOption: option,
                                     sort: {'fields': [option], 'order': [order]},
                                     priceLower: pricerange.lower,

@@ -6,6 +6,8 @@ import { Link, graphql } from 'gatsby';
 import ProductListing from "../components/product-link";
 // import DropdownBtn from "../components/dropdownBtn";
 import DropdownBtn from "../components/dropdownButton";
+import RefineButton from "../components/refineMenu/refineButton"
+import RefineMenu from "../components/refineMenu/refineMenu"
 
 import SEO from "../components/seo"
 import "../pages/products.css"
@@ -22,10 +24,13 @@ class Tags extends React.Component {
         sortLinkPre: "/products",
         sortOption: "frontmatter___price",
         sortOrder: "ASC",
+        sort: "/frontmatter___price/ASC/",
+        sortLabel: "price low-high",
         colorOption: "all",
         priceRange: "all",
         tagName: "",
         pageProductColors: "",
+        refineMenuOpen: false,
     };
       
        // sort (state) set to button value when clicked
@@ -38,9 +43,9 @@ class Tags extends React.Component {
       componentDidMount() {
         document.addEventListener('mousedown', this.handleClickOutside);
         //set state based on page context, this is done so state is not reset to defualt "price low-high" on page reload
-        if (this.props.pageContext.order === "DESC" && this.props.pageContext.sortOption === "frontmatter___price"){this.sortTextClickHandler("price high-low")}
-         else if (this.props.pageContext.order === "ASC" && this.props.pageContext.sortOption === "frontmatter___price"){this.sortTextClickHandler("price low-high")}
-         else if (this.props.pageContext.order === "DESC" && this.props.pageContext.sortOption === "frontmatter___date"){this.sortTextClickHandler("old gold")}
+        if (this.props.pageContext.sortOrder === "DESC" && this.props.pageContext.sortOption === "frontmatter___price"){this.sortTextClickHandler("price high-low")}
+         else if (this.props.pageContext.sortOrder === "ASC" && this.props.pageContext.sortOption === "frontmatter___price"){this.sortTextClickHandler("price low-high")}
+         else if (this.props.pageContext.sortOrder === "DESC" && this.props.pageContext.sortOption === "frontmatter___date"){this.sortTextClickHandler("old gold")}
          else {this.sortTextClickHandler("new releases")};
          //same for colorOption
         if (this.state.colorOption !== this.props.pageContext.colorOption){this.setState({colorOption: this.props.pageContext.colorOption})};
@@ -49,7 +54,23 @@ class Tags extends React.Component {
         // //set tagName to empty string 
         // if (this.props.pageContext.tagName === undefined){} 
         if (this.props.pageContext.tagName){this.setState({tagName: this.props.pageContext.tagName})};
-        
+
+        //set sort and sortLabel, keeping in check with pageContext so renders don't set state over top of pageContext.
+        var pageSort = ("/" + this.props.pageContext.sortOption + "/" + this.props.pageContext.sortOrder + "/")
+        if (pageSort !== ("/" + this.props.pageContext.sortOption + "/" + this.props.pageContext.sortOrder + "/")){pageSort = ("/" + this.props.pageContext.sortOption + "/" + this.props.pageContext.sortOrder + "/")}
+        console.log(pageSort)
+        console.log(this.props.pageContext)
+        console.log(this.props.pageContext.sortOption)
+        console.log(this.props.pageContext.sortOrder)
+        if (this.state.sort !== pageSort){this.setState({sort: pageSort}); console.log(this.state.sort);}
+
+                if (pageSort === "/frontmatter___price/ASC/"){this.setState({sortLabel: "price low-high"})}
+                else if (pageSort === "/frontmatter___price/DESC/"){this.setState({sortLabel: "price high-low"})}
+                else if (pageSort === "/frontmatter___date/ASC/"){this.setState({sortLabel: "new releases"})}
+                else if (pageSort === "/frontmatter___date/DESC/"){this.setState({sortLabel: "old gold"})}
+                console.log("sort: " + this.state.sort)
+                console.log("sortLabel: " + this.state.sortLabel)
+
 
 
          //creating var sortLinkPre so sortBtns redirect to the proper url whether there is a tag selected or not. 
@@ -84,6 +105,14 @@ class Tags extends React.Component {
         if (!tagName){pageProductColors = colorOptions}  
         this.setState({pageProductColors: pageProductColors})          
       };
+
+     
+      componentDidUpdate(){
+          console.log(this.state.sort)
+          console.log(this.state.sortLabel)
+      }
+
+
       
       componentWillUnmount() {
         document.removeEventListener('mousedown', this.handleClickOutside);
@@ -100,6 +129,12 @@ class Tags extends React.Component {
         });
 
        };
+    refineToggle = () => {
+        this.setState((prevState) => {
+            return{refineMenuOpen: !prevState.refineMenuOpen}
+        })
+        console.log("refine: " + this.state.refineMenuOpen)
+    }   
    
       setDropdownState = (option, mainText) => {
         this.setState({[mainText + "Option"]: option})
@@ -119,15 +154,19 @@ class Tags extends React.Component {
         const { tags } = this.props.pageContext;
         var tagName = this.state.tagName;
         const postEdges = this.props.data.allMarkdownRemark.edges;
-  
+        const SortOptions = ["/frontmatter___price/ASC/","/frontmatter___price/DESC/","/frontmatter___date/ASC/","/frontmatter___date/DESC/"]
+        
+
         //set vars for sort links
         var sortLinkPre = this.state.sortLinkPre;
         var colorOption = this.state.colorOption;
         var priceRange = this.state.priceRange;
+        var refineMenuOpen = this.state.refineMenuOpen;
              
 return (
     <Layout>
         <SEO title="Products"/>
+        <RefineMenu Open={refineMenuOpen} onChange={this.setDropdownState} sortLabel={this.state.sortLabel} SortOptions={SortOptions} ColorOptions={this.state.pageProductColors || ['']} PriceRangeOptions={['all','0-50','50-100', '100-200'] || ['']} sortlinkpre={sortLinkPre} priceRange={this.props.pageContext.priceRange || "all"} colorOption={this.props.pageContext.colorOption}/>
         
 
 
@@ -137,14 +176,18 @@ return (
                 <span className="itemsFound">{postEdges.length} items found</span>
         
                 <button onClick={() => this.sortBtnToggleClickHandler()} className={this.state.sortBtn ? 'sort-button open' : "sort-button"} ref={this.setWrapperRef}>
-                    sort: {this.state.sort} 
+                    sort: {this.state.sortLabel} 
                     <div>
                         <Link className="sortLink" to={sortLinkPre + tagName + "/frontmatter___price/ASC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("price low-high")}>price low-high</Link>
                         <Link className="sortLink" to={sortLinkPre + tagName + "/frontmatter___price/DESC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("price high-low")}>price high-low</Link>
                         <Link className="sortLink" to={sortLinkPre + tagName + "/frontmatter___date/ASC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("new releases")}>new releases</Link>
                         <Link className="sortLink" to={sortLinkPre + tagName + "/frontmatter___date/DESC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("old gold")}> old gold</Link>
                     </div>
-                    </button></div>
+                    </button>
+                    {/* add refine button for mobile to bring up sort and refine options - this stops screen being too overloaded */}
+                    <RefineButton toggle={this.refineToggle} open={refineMenuOpen}/>
+                    
+                    </div>
             <div className="content">
             {/* "/products/{{this.props.tagName}}/frontmatter___price/ASC" */}
             
@@ -158,10 +201,10 @@ return (
                     
                     <div className="refine-tag"><p>Refine:</p></div>
                     
-                    <div className="dropdown-container">
+                    {/* <div className="dropdown-container">
                         <DropdownBtn onChange={this.setDropdownState} options={this.state.pageProductColors || ['']} mainText="Color" sortlinkpre={sortLinkPre} priceRange={this.props.pageContext.priceRange || "all"} colorOption={this.props.pageContext.colorOption}/>
                         <DropdownBtn onChange={this.setDropdownState} options={['all','0-50','50-100', '100-200'] || ['']} mainText="Price" sortlinkpre={sortLinkPre} colorOption={this.props.pageContext.colorOption} priceRange={this.props.pageContext.priceRange || "all"}/>
-                    </div>
+                    </div> */}
                     
                     
                     

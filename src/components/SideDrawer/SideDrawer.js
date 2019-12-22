@@ -31,8 +31,8 @@ const SideDrawer = (props) => {
         return(
             <nav className={drawerClasses}> 
                     <div className="draw-link-wrapper">  
+                        <StyledLink id="StyledLink" className="snipcart-checkout" >Cart</StyledLink>
                         <StyledLink to="/products/frontmatter___date/ASC/all/all" >Clothing</StyledLink>
-                        <StyledLink id="StyledLink" className="snipcart-checkout" >Checkout</StyledLink>
                         <StyledLink to="/lookbook" >Lookbook</StyledLink>
                         <StyledLink id="StyledLink" className="snipcart-user-profile" >Profile</StyledLink>
                         <StyledLink to="/customer-care" >Help</StyledLink>

@@ -173,7 +173,7 @@ const CustomerCare = () => (
         <ContactDetails>
             <h3>phone:</h3>
             <p>0800 83 83 83</p>
-            <p>customer support team open for calls 9-5 weekdays and 10-1 weekends.</p>
+            <p>Customer support team open for calls 9-5 weekdays and 10-1 weekends.</p>
         </ContactDetails>
         <ContactDetails>
             <h3>email:</h3>

@@ -5,6 +5,10 @@ import "../pages/index.css";
 import heart from "../../static/icons/heart.svg"
 import styled from '@emotion/styled';
 
+const Wrap = styled.div`
+@media(max-width: 530px){
+background-color: #f4f4f4
+};`
 
 
 const Product = styled.div`
@@ -78,7 +82,7 @@ class ProductListing extends React.Component {
         return(
             // <Wrapper Justify={this.props.Justify}>
             
-            <div className={wrap}>       
+            <Wrap className={wrap}>       
                 {
                 postList.map(post => (
                     <Link to={post.path} key={post.name}>
@@ -94,7 +98,7 @@ class ProductListing extends React.Component {
                     </Link>
                 ))
                 }
-            </div>
+            </Wrap>
            
         )
     }

@@ -156,4 +156,7 @@ flex-direction: column;
         margin-top: 60px;
         transition: 1s;
     }
+    .sort-button {
+        display: none;
+    }
 }
