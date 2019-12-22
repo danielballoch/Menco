@@ -149,6 +149,12 @@ flex-direction: column;
         flex-direction: row;
         justify-content: space-evenly;
     }
+    .sort-button {
+        display: none;
+    }
+    .dropdown-container{
+        display: none;
+    }
     
 }
 @media(max-width:880px){
@@ -156,7 +162,5 @@ flex-direction: column;
         margin-top: 60px;
         transition: 1s;
     }
-    .sort-button {
-        display: none;
-    }
+    
 }

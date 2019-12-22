@@ -12,6 +12,9 @@ display: flex;
     cursor: pointer;
     padding: 0;
     box-sizing: border-box;
+    @media (min-width: 720px){
+        display: none;
+    }
 }
 `
 
@@ -41,9 +44,7 @@ const PlusButton = styled.button`
     cursor: pointer;
     padding: 0;
     box-sizing: border-box;
-    @media (min-width: 880px){
-        display: none;
-    }
+    
 `
 
 const Line = styled.div`

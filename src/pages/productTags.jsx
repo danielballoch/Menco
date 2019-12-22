@@ -8,6 +8,7 @@ import ProductListing from "../components/product-link";
 import DropdownBtn from "../components/dropdownButton";
 import RefineButton from "../components/refineMenu/refineButton"
 import RefineMenu from "../components/refineMenu/refineMenu"
+import Backdrop from '../components/Backdrop/Backdrop'
 
 import SEO from "../components/seo"
 import "../pages/products.css"
@@ -17,6 +18,8 @@ import "../pages/products.css"
 class Tags extends React.Component {
     constructor(props) {
         super(props);
+        // this.setWrapperRef = this.setWrapperRef.bind(this);
+        // this.handleClickOutside = this.handleClickOutside.bind(this);
       }
       state = {
         sortBtn: false,  
@@ -58,10 +61,6 @@ class Tags extends React.Component {
         //set sort and sortLabel, keeping in check with pageContext so renders don't set state over top of pageContext.
         var pageSort = ("/" + this.props.pageContext.sortOption + "/" + this.props.pageContext.sortOrder + "/")
         if (pageSort !== ("/" + this.props.pageContext.sortOption + "/" + this.props.pageContext.sortOrder + "/")){pageSort = ("/" + this.props.pageContext.sortOption + "/" + this.props.pageContext.sortOrder + "/")}
-        console.log(pageSort)
-        console.log(this.props.pageContext)
-        console.log(this.props.pageContext.sortOption)
-        console.log(this.props.pageContext.sortOrder)
         if (this.state.sort !== pageSort){this.setState({sort: pageSort}); console.log(this.state.sort);}
 
                 if (pageSort === "/frontmatter___price/ASC/"){this.setState({sortLabel: "price low-high"})}
@@ -119,26 +118,45 @@ class Tags extends React.Component {
         
       };
 
+      
+
      
 
      
-    // sort button is set to true when clicked, displaying sort options
-    sortBtnToggleClickHandler = () => {
+      // sort button is set to true when clicked, displaying sort options
+      sortBtnToggleClickHandler = () => {
         this.setState((prevState)=> {
             return{sortBtn: !prevState.sortBtn};
         });
-
        };
-    refineToggle = () => {
+
+      refineToggle = () => {
         this.setState((prevState) => {
             return{refineMenuOpen: !prevState.refineMenuOpen}
         })
         console.log("refine: " + this.state.refineMenuOpen)
-    }   
+      }   
    
       setDropdownState = (option, mainText) => {
         this.setState({[mainText + "Option"]: option})
       }
+
+
+    //   setWrapperRef(node) {
+    //     this.wrapperRef = node;
+    // }
+
+    //   handleClickOutside(event) {
+    //     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+    //         this.setState({sortBtn: false});
+    //         this.setState({refineMenuOpen: false});
+    //       }
+    //   }
+
+      backdropClickHandler = () => {
+        this.setState({refineMenuOpen: false});
+    };
+
 
       
 
@@ -162,12 +180,18 @@ class Tags extends React.Component {
         var colorOption = this.state.colorOption;
         var priceRange = this.state.priceRange;
         var refineMenuOpen = this.state.refineMenuOpen;
+
+        if(this.state.refineMenuOpen){
+            var backdrop = <Backdrop click={this.backdropClickHandler}/>;
+        }
              
 return (
-    <Layout>
+    <div >
+    <Layout >
+
         <SEO title="Products"/>
-        <RefineMenu Open={refineMenuOpen} onChange={this.setDropdownState} sortLabel={this.state.sortLabel} SortOptions={SortOptions} ColorOptions={this.state.pageProductColors || ['']} PriceRangeOptions={['all','0-50','50-100', '100-200'] || ['']} sortlinkpre={sortLinkPre} priceRange={this.props.pageContext.priceRange || "all"} colorOption={this.props.pageContext.colorOption}/>
-        
+        <RefineMenu setWrapperRef={this.setWrapperRef} Open={refineMenuOpen} onChange={this.setDropdownState} sortLabel={this.state.sortLabel} SortOptions={SortOptions} ColorOptions={this.state.pageProductColors || ['']} PriceRangeOptions={['all','0-50','50-100', '100-200'] || ['']} sortlinkpre={sortLinkPre} priceRange={this.props.pageContext.priceRange || "all"} colorOption={this.props.pageContext.colorOption}/>
+        {backdrop}
 
 
         <div className="top-margin">
@@ -175,7 +199,7 @@ return (
                 <span><Link className="shop" to="/products/frontmatter___date/ASC/all/all">Shop/</Link>{tagName}</span>
                 <span className="itemsFound">{postEdges.length} items found</span>
         
-                <button onClick={() => this.sortBtnToggleClickHandler()} className={this.state.sortBtn ? 'sort-button open' : "sort-button"} ref={this.setWrapperRef}>
+                <button onClick={() => this.sortBtnToggleClickHandler()} className={this.state.sortBtn ? 'sort-button open' : "sort-button"}  >
                     sort: {this.state.sortLabel} 
                     <div>
                         <Link className="sortLink" to={sortLinkPre + tagName + "/frontmatter___price/ASC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("price low-high")}>price low-high</Link>
@@ -183,12 +207,12 @@ return (
                         <Link className="sortLink" to={sortLinkPre + tagName + "/frontmatter___date/ASC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("new releases")}>new releases</Link>
                         <Link className="sortLink" to={sortLinkPre + tagName + "/frontmatter___date/DESC/" + colorOption +"/"+ priceRange} onClick={() => this.sortTextClickHandler("old gold")}> old gold</Link>
                     </div>
-                    </button>
-                    {/* add refine button for mobile to bring up sort and refine options - this stops screen being too overloaded */}
-                    <RefineButton toggle={this.refineToggle} open={refineMenuOpen}/>
+                </button>
+                {/* add refine button for mobile to bring up sort and refine options - this stops screen being too overloaded */}
+                <RefineButton toggle={this.refineToggle} open={refineMenuOpen} />
                     
-                    </div>
-            <div className="content">
+            </div>
+            <div className="content" >
             {/* "/products/{{this.props.tagName}}/frontmatter___price/ASC" */}
             
                 <div className="filter-bar">
@@ -199,12 +223,12 @@ return (
                     <TagsBlock list={tags} />
                     </div>
                     
-                    <div className="refine-tag"><p>Refine:</p></div>
+                    <div className="dropdown-container">
+                        <div className="refine-tag"><p>Refine:</p></div>
                     
-                    {/* <div className="dropdown-container">
                         <DropdownBtn onChange={this.setDropdownState} options={this.state.pageProductColors || ['']} mainText="Color" sortlinkpre={sortLinkPre} priceRange={this.props.pageContext.priceRange || "all"} colorOption={this.props.pageContext.colorOption}/>
                         <DropdownBtn onChange={this.setDropdownState} options={['all','0-50','50-100', '100-200'] || ['']} mainText="Price" sortlinkpre={sortLinkPre} colorOption={this.props.pageContext.colorOption} priceRange={this.props.pageContext.priceRange || "all"}/>
-                    </div> */}
+                    </div>
                     
                     
                     
@@ -217,6 +241,7 @@ return (
           </div>
           
     </Layout>
+    </div>
   );
     }
 };
