@@ -181,10 +181,9 @@ const CustomerCare = () => (
             <p>We usually reply within 30 minutes, although we praise your patience around busy seasons.</p>
         </ContactDetails>
         <form>
-            <input type="text" name="HelpQuery" placeholder="*First Name" required autocomplete="on"/>
-            <input type="text" name="HelpQuery" placeholder="Last Name" autocomplete="on"/>
-            <input type="email" name="HelpQuery" placeholder="*Email" required autocomplete="on"/>
-            <input type="text" name="HelpQuery" placeholder="Order Number"/>
+            <input type="text" name="HelpQuery" placeholder="Name" required autocomplete="on"/>
+            <input type="email" name="HelpQuery" placeholder="Email" required autocomplete="on"/>
+            <input type="text" name="HelpQuery" placeholder="Order Number (optional)"/>
             <label>Issue:</label>
             <select>
                 <option value="product Question">Question about product</option>

@@ -7,22 +7,27 @@ const Container = styled.div`
  width: 110px;
 `
 const DropdownBtn = styled.button`
-    border: 1px solid #d2d2d2;
-    border-radius: 3px;
-    background-color: white;
+    border: ${props => props.theme.border};
+    border-bottom: ${props => props.theme.borderBottom};
+    border-radius: ${props => props.theme.borderRadius};
     text-decoration: none;
     transition: 0.3s;
     padding: 4px;
-    margin: 0 4px;
-    font-size: 14px;
-    width: 100px;
+    /* margin: 0 auto; */
+    height: ${props => props.theme.height};
+    color: ${props => props.theme.color};
+    background: ${props => props.theme.background};
+    justify-self: center;
+    font-size: ${props => props.theme.fontSize};
+    min-width: 140px;
+    width: 100%;
 `
 
 const DropdownOption = styled.button`
-    width: 100px;
+    min-width: 140px;
+    width: 100%;
     z-index: 100;
-    margin: 0 4px;
-    background-color: ${props => props.theme.main};
+    background-color: ${props => props.theme.background};
     border: 1px solid #d2d2d2;
     :hover{
         color: #36648b; 
@@ -30,14 +35,38 @@ const DropdownOption = styled.button`
 `
 DropdownOption.defaultProps = {
     theme: {
-      main: "white"
+      color: "white",
+      background: "white"
     }
   }
 
 // Define what props.theme will look like
 const active = {
-    main: "#f4f4f4"
+    color: "#f4f4f4"
   };
+
+  DropdownBtn.defaultProps = {
+    theme: {
+        color: "black",
+        height: "30px",
+        background: "white",
+        border: "1px solid #d2d2d2",
+        borderBottom: "none",
+        borderRadius: "3px",
+        fontSize: "1rem"
+        
+    }
+  }
+
+const darkTheme = {
+    color: "white",
+    height: "75px",
+    background: "#38373c",
+    border: "none" ,
+    borderBottom: "1px solid white",
+    borderRadius: "0",
+    fontSize: "1.2rem"
+}
 
 
 
@@ -91,7 +120,7 @@ export default class DropdownButton extends React.Component {
         return (
       
         <Container>
-        <DropdownBtn onClick={() => this.setState({open: true})}>{this.props.mainText}: {this.state.label}</DropdownBtn>
+        <DropdownBtn theme={this.props.theme === "dark" ? darkTheme : undefined} onClick={() => this.setState({open: true})}>{this.props.mainText}: {this.state.label}</DropdownBtn>
           <div style={{display: this.state.open ? 'block' : 'none'}}>
             {this.props.options.map((option) => {
                 const handleClick = () => {
@@ -118,7 +147,7 @@ export default class DropdownButton extends React.Component {
               else {
                     return (
                         <Link to={linkPre + midLink + option +"/" + colorOption + "/" + priceRange}>
-                            <DropdownOption key={option} mainText={this.props.mainText} onClick={handleClick} theme={this.state.label === option ? 'active' : undefined}>
+                            <DropdownOption key={option} mainText={this.props.mainText} onClick={handleClick} theme={this.state.label === option ? 'active' : this.props.dark ? darkTheme : undefined}>
                                 {option} 
                             </DropdownOption>
                         </Link>

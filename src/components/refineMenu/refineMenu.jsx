@@ -8,6 +8,7 @@ const Wrapper = styled.div`
 position: fixed;
 display: flex;
 flex-direction: column;
+padding-top: 168px;
 opacity: .98;
 z-index: 200;
 min-width: 220px; 
@@ -21,17 +22,10 @@ background: #38373c;
 box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
 transform: ${props => props.theme.translate};
 transition: .3s ease-out;
-h2{
-    margin-top: 140px;
-    width: 100%;
-    color: white;
-}
 div{
     margin: 0 auto;
-    min-height: 60px;   
-}
-div:nth-of-type(1){
-    margin: 10px auto;
+    min-height: 60px; 
+    width: 100%; 
 }
 `
 
@@ -50,12 +44,9 @@ const open = {
 const SideDrawer = (props) => {
         return(
             <Wrapper theme={props.Open ? open : undefined} ref={props.setWrapperRef}>
-                <h2>Refine:</h2>
-                <div>
-                <DropdownBtn  onChange={props.onChange} mainText="Price" options={props.PriceRangeOptions} sortLabel={props.sortLabel} sortlinkpre={props.sortlinkpre} priceRange={props.priceRange} colorOption={props.colorOption}/>
-                <DropdownBtn  onChange={props.onChange} mainText="Color" options={props.ColorOptions} sortLabel={props.sortLabel} sortlinkpre={props.sortlinkpre} priceRange={props.priceRange} colorOption={props.colorOption}/>
-                <DropdownBtn  onChange={props.onChange} mainText="Sort" options={props.SortOptions} sortLabel={props.sortLabel} sortlinkpre={props.sortlinkpre} priceRange={props.priceRange} colorOption={props.colorOption}/>
-                </div>
+                <DropdownBtn theme="dark"  onChange={props.onChange} mainText="Price" options={props.PriceRangeOptions} sortLabel={props.sortLabel} sortlinkpre={props.sortlinkpre} priceRange={props.priceRange} colorOption={props.colorOption}/>
+                <DropdownBtn theme="dark" onChange={props.onChange} mainText="Color" options={props.ColorOptions} sortLabel={props.sortLabel} sortlinkpre={props.sortlinkpre} priceRange={props.priceRange} colorOption={props.colorOption}/>
+                <DropdownBtn theme="dark" onChange={props.onChange} mainText="Sort" options={props.SortOptions} sortLabel={props.sortLabel} sortlinkpre={props.sortlinkpre} priceRange={props.priceRange} colorOption={props.colorOption}/>
             </Wrapper>
         );
    
