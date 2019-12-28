@@ -1,6 +1,6 @@
 ---
 posttype: "product"
-name: Navy Polo
+name: Blue Polo
 templateKey: product
 id: 1
 price: 35.00
