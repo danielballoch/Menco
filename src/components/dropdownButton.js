@@ -116,7 +116,7 @@ export default class DropdownButton extends React.Component {
         var midLink = this.state.midLink
         var priceRange = this.state.priceRange
         var colorOption = this.state.colorOption
-        
+        console.log(this.state.label)
         return (
       
         <Container>
