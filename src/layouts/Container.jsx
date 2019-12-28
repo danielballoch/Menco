@@ -6,14 +6,14 @@ const Wrapper = styled.section`
   text-align: ${props => (props.center ? 'center' : '')};
   margin: auto;
   margin-top: 110px;
-  padding: 0;
+  padding-top: 10px;
   /* width: 60%; */
   max-width: ${props => props.theme.layout[props.type]};
   height: 100%;
   flex: 1;
 
   @media (max-width: ${props => props.theme.breakpoints.m}) {
-    margin-top: 60px;  
+    margin-top: 60px; 
     width: 90%;
   }
 
