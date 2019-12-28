@@ -1,6 +1,7 @@
 .footer {
     background-color: #FFE9E1;
     align-content: center;
+    
 }
 .links {
     display: flex;
@@ -22,6 +23,12 @@
 .links a {
     display: flex;
     padding: .2rem;
+    text-decoration: none;
+    color: #362E2E;
+    
+}
+a:hover {
+    color: #36648b;
 }
 .links div :first-child {
     font-weight: bold;

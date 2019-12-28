@@ -74,7 +74,7 @@ class Index extends React.Component {
                 <div className="social-subsection" >
                     <div className="social-icons"><a href="https://twitter.com/home"><img  src={twitter} alt="white bird icon twitter"/></a><a href="https://www.facebook.com/"><img  src={facebook} alt="white f icon facebook"/></a><a href="https://www.instagram.com/mencoapparel/"><img  src={instagram} alt="white camera icon instagram"/></a></div>
                     <div className="social-sub">We love to share fashion/business tips and have a laugh on social media.
-                    Post with #SmartMan for a chance to be featured alongside other inspiring men on @Menco.
+                    Post with #SmartMan for a chance to be featured alongside other inspiring men on <a href="https://www.instagram.com/mencoapparel/">@Menco.</a>
                     </div>
                 </div>
             </div>
