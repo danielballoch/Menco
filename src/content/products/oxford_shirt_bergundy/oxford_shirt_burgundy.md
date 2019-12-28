@@ -1,6 +1,6 @@
 ---
 posttype: "product"
-name: oxford short sleeve bergundy
+name: Oxford Short Sleeve Bergundy
 templateKey: product
 id: 1
 price: 45.00

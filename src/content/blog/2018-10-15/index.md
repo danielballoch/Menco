@@ -2,14 +2,14 @@
 path: "/blog/dapper-vs-real"
 image: "./Smart-Casual-Jacket.jpg"
 date: "2020-10-15"
-title: "The Perfect Suit"
+title: "Finding The Perfect Suit"
 published: true
 tags: ['all', 'suits',]
 ---
 [neutral1]: Smart-Casual-Jacket.jpg
 ![alt-text][neutral1]
 
-No mens wardrobe is complete without a sharp, well fitting suit for special events, nights out and making business happen... That's why we've 
+No mens wardrobe is complete without a sharp, well fitting suit for special events, nights out and making business happen. That's why we've 
 decided to make a complete fast track guide covering how to test out suits in person, colors, collars and cufflinks, tailoring and some little known  tools and accecesories that'll make you stand out from the crowd.
 
 ## Another great H2

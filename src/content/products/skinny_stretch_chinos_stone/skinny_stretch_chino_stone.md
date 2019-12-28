@@ -1,6 +1,6 @@
 ---
 posttype: "product"
-name: skinny stretch chino stone
+name: Skinny Stretch Chino Stone
 templateKey: product
 id: 1
 price: 65.00

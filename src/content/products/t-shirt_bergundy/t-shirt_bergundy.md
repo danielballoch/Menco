@@ -1,6 +1,6 @@
 ---
 posttype: "product"
-name: bergundy crew neck
+name: Bergundy Crew Neck
 templateKey: product
 id: 1
 price: 20.00

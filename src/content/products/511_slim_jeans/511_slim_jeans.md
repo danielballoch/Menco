@@ -1,6 +1,6 @@
 ---
 posttype: "product"
-name: 511 slim jeans
+name: 511 Slim Jeans
 templateKey: product
 id: 1
 price: 65.00

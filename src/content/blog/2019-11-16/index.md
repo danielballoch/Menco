@@ -1,17 +1,17 @@
 ---
 path: "/blog/mens-neutrals"
-image: "./Neutral-colors.png"
+image: "./mencobarefoot.jpg"
 date: "2019-05-31"
-title: "Menco Colors Explained"
+title: "10 tips for simple style"
 published: true
-tags: ['all', 'color']
+tags: ['all', 'Tips']
 ---
 
 [neutral1]: Neutral-colors-outfit.jpg
 [neutral2]: Neutral-colors.png
 
 
-Part 2 Our philosophy and tips for building a versatile mens wardrobe that will make your life easy and draw eyes for all the right reasons.
+Quick and easy, here's 10 tips that'll make being the smartest man in the room an every day affair. Our Menco team breaks down our guideines and reccomendations for simple smart style and gives you the best bang for buck tips to look good, save money and squeeze every last drop of style out of your clothing. Shopping should be as simple picking whats for dinner, and were extremly excited to release this guide considering how valuable yet simple this stuff really is AND helping men simplify looking good is the driving force behind Menco.
 
 Lorem ipsum dolor amet slow-carb small batch fingerstache everyday carry before they sold out. Austin locavore deep v shabby chic, hella dreamcatcher plaid. Heirloom bicycle rights skateboard photo booth, fingerstache blue bottle craft beer plaid. Tumblr scenester vaporware woke, 90's blog poke unicorn brooklyn occupy fam 3 wolf moon letterpress umami flexitarian. Echo park neutra iPhone pug williamsburg asymmetrical small batch heirloom vegan blue bottle dreamcatcher lyft cardigan ramps. Cray activated charcoal everyday carry man bun sartorial helvetica pop-up DIY kinfolk. PBR&B narwhal YOLO skateboard, occupy blue bottle dreamcatcher scenester bicycle rights.
 

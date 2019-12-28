@@ -1,6 +1,6 @@
 ---
 posttype: "product"
-name: skinny stretch chino black
+name: Skinny Stretch Chino Black
 templateKey: product
 id: 1
 price: 65.00

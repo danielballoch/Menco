@@ -29,7 +29,7 @@ class Index extends React.Component {
                 {/* <Image fluid={data.hero.childImageSharp.fluid} className="hero-image"  /> */}
                 <div className="hero-text">
                     <h3>M</h3>
-                    <h1>Quality Mensware</h1>
+                    <h1>Quality Menswear</h1>
                     <h2>making smart attire effortless</h2>
                     {/* <button className="shop-now">shop now</button> */}
                 </div>

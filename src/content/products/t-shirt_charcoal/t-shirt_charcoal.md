@@ -1,6 +1,6 @@
 ---
 posttype: "product"
-name: charcoal crew neck
+name: Charcoal Crew Neck
 templateKey: product
 id: 1
 price: 20.00

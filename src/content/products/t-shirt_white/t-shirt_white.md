@@ -1,6 +1,6 @@
 ---
 posttype: "product"
-name: white crew neck
+name: White Crew Neck
 templateKey: product
 id: 1
 price: 20.00

@@ -2,14 +2,14 @@
 path: "/blog/blog1"
 image: "./bluejeanoutfitcrop.jpg"
 date: "2019-05-21"
-title: "Mens Wardrobe Staples "
+title: "Wardrobe Staples This Autumn"
 published: true
-tags: ['all', 'color',]
+tags: ['all', 'Staples',]
 ---
 
 [neutral1]: Neutral-colors-spring-outfit.jpg
 
-Our philosophy and tips for building a versatile mens wardrobe that will make your life easy and draw eyes for all the right reasons.
+Colors and styles go with the seasons.. If you've been with us for a while now or your smarter than the average man your well aware, but that does't mean it's easy. This ones a quickie to give you a taste of how and why we dress for autumn, practical tips and some go to versitial pieces that'll step your fashion game up a level. 
 
 Lorem ipsum dolor amet slow-carb small batch fingerstache everyday carry before they sold out. Austin locavore deep v shabby chic, hella dreamcatcher plaid. Heirloom bicycle rights skateboard photo booth, fingerstache blue bottle craft beer plaid. Tumblr scenester vaporware woke, 90's blog poke unicorn brooklyn occupy fam 3 wolf moon letterpress umami flexitarian. Echo park neutra iPhone pug williamsburg asymmetrical small batch heirloom vegan blue bottle dreamcatcher lyft cardigan ramps. Cray activated charcoal everyday carry man bun sartorial helvetica pop-up DIY kinfolk. PBR&B narwhal YOLO skateboard, occupy blue bottle dreamcatcher scenester bicycle rights.
 

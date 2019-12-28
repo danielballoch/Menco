@@ -1,6 +1,6 @@
 ---
 posttype: "product"
-name: skinny stretch chino navy
+name: Skinny Stretch Chino Navy
 templateKey: product
 id: 1
 price: 65.00

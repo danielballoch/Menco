@@ -1,6 +1,6 @@
 ---
 posttype: "product"
-name: grey v-neck
+name: Grey V-neck
 templateKey: product
 id: 1
 price: 20.00
