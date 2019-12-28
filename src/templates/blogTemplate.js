@@ -9,6 +9,7 @@ import SEO from "../components/seo"
 
 const BlogPostContainer = styled.div`
 text-align: left;
+padding-top: 10px;
 h2 {
     text-align: left;
 }

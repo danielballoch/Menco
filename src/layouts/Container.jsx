@@ -6,7 +6,6 @@ const Wrapper = styled.section`
   text-align: ${props => (props.center ? 'center' : '')};
   margin: auto;
   margin-top: 110px;
-  padding-top: 10px;
   /* width: 60%; */
   max-width: ${props => props.theme.layout[props.type]};
   height: 100%;

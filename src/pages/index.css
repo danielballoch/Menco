@@ -201,9 +201,13 @@ color: #362E2E;
     color: orangered;
 }
 
-a {
+.social-section a {
     text-decoration: none;
     color: white;
+}
+
+a {
+    color: black;
 }
 .symbol {
     color: #676565;
