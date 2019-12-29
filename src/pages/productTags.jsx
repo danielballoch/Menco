@@ -61,15 +61,12 @@ class Tags extends React.Component {
         //set sort and sortLabel, keeping in check with pageContext so renders don't set state over top of pageContext.
         var pageSort = ("/" + this.props.pageContext.sortOption + "/" + this.props.pageContext.sortOrder + "/")
         if (pageSort !== ("/" + this.props.pageContext.sortOption + "/" + this.props.pageContext.sortOrder + "/")){pageSort = ("/" + this.props.pageContext.sortOption + "/" + this.props.pageContext.sortOrder + "/")}
-        if (this.state.sort !== pageSort){this.setState({sort: pageSort}); console.log(this.state.sort);}
+        if (this.state.sort !== pageSort){this.setState({sort: pageSort});}
 
                 if (pageSort === "/frontmatter___price/ASC/"){this.setState({sortLabel: "price low-high"})}
                 else if (pageSort === "/frontmatter___price/DESC/"){this.setState({sortLabel: "price high-low"})}
                 else if (pageSort === "/frontmatter___date/ASC/"){this.setState({sortLabel: "new releases"})}
                 else if (pageSort === "/frontmatter___date/DESC/"){this.setState({sortLabel: "old gold"})}
-                console.log("sort: " + this.state.sort)
-                console.log("sortLabel: " + this.state.sortLabel)
-
 
 
          //creating var sortLinkPre so sortBtns redirect to the proper url whether there is a tag selected or not. 
@@ -105,11 +102,6 @@ class Tags extends React.Component {
         this.setState({pageProductColors: pageProductColors})          
       };
 
-     
-      componentDidUpdate(){
-          console.log(this.state.sort)
-          console.log(this.state.sortLabel)
-      }
 
 
       
@@ -134,7 +126,6 @@ class Tags extends React.Component {
         this.setState((prevState) => {
             return{refineMenuOpen: !prevState.refineMenuOpen}
         })
-        console.log("refine: " + this.state.refineMenuOpen)
       }   
    
       setDropdownState = (option, mainText) => {

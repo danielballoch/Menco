@@ -98,15 +98,14 @@ export default class DropdownButton extends React.Component {
             this.setState({priceRange: ""});
             this.setState({colorOption: ""})
             
-        } 
-        else if (this.props.mainText === "Sort"){
-            this.setState({label: this.props.sortLabel})
-            console.log(this.props)
-            
-            
-            // "/frontmatter___price/ASC/","/frontmatter___price/DESC/","/frontmatter___date/ASC/","/frontmatter___date/DESC/"
         }  
         
+    }
+
+    componentDidUpdate(){
+        if (this.props.mainText === "Sort" & this.state.label !== this.props.sortLabel){
+            this.setState({label: this.props.sortLabel})
+        }
     }
 
     
@@ -116,7 +115,6 @@ export default class DropdownButton extends React.Component {
         var midLink = this.state.midLink
         var priceRange = this.state.priceRange
         var colorOption = this.state.colorOption
-        console.log(this.state.label)
         return (
       
         <Container>
