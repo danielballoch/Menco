@@ -24,7 +24,7 @@
 font, color palette, layout, image selection, copy etc making sure it fit with the customer demographic and site vision. Prototyping was done in adobe xd and coding in VSC (html, JavaScript, css, markdown, React)</p>
 
 
-
+<br>
 <p><a href="https://www.danielballoch.com/projects/menco/menco-project/"> view the full case study here<a></p>
 
 
@@ -32,7 +32,7 @@ font, color palette, layout, image selection, copy etc making sure it fit with t
 
 
 
-<a href="https://www.danielballoch.com">© 2020, Daniel Balloch</a>
+<a align="center" href="https://www.danielballoch.com">© 2020, Daniel Balloch</a>
 
 
 <!-- AUTO-GENERATED-CONTENT:END -->
