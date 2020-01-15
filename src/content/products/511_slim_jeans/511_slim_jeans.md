@@ -16,7 +16,6 @@ sizes: ['W29/L32','W30/L32','W31/L32','W32/L32','W34/L34']
 
 <!-- ![alt text](/products/black_100_polo/black_100_polo.jpg) -->
 
-
 Product details
 
 A Levi's mainstay, the 511 Slim Fit Jeans are cut from stretch cotton denim with an easy slim fit. Wear yours with low-tops and a crisp white tee by day, and with collared shirts and boots after dark.

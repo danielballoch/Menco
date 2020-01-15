@@ -190,10 +190,10 @@ export default class Template extends React.Component {
         
         
         
-          <div
+          {/* <div
             className="product-content"
             dangerouslySetInnerHTML={{ __html: html }}
-          />
+          /> */}
 
         <Link to="/">Back</Link>
 
