@@ -17,12 +17,13 @@
 </h1>
 <p><a href="https://www.danielballoch.com/projects/menco/menco-project/"> view case study<a></p>
 <p>Made with Gatsby, React, GraphQL, Styled Emotion, Netlify & Snipcart.</p>
+
+<p>Menco is a mens fashion brand I created aimed at supplying smart dress to young professionals. One of the core aims is to make shopping and getting dressed in the morning rush as simple as possible for this demographic.
+</p>
 <p>This was a in depth project with lot's of planning and learning along the way. I created word documents for selecting/creating key element such as 
 font, color palette, layout, image selection, copy etc making sure it fit with the customer demographic and site vision. Prototyping was done in adobe xd and coding in VSC (html, JavaScript, css, markdown, React)</p>
 
-<p>Menco is a mens fashion brand I created aimed at supplying smart dress to young professionals. One of the core aims is to make shopping and getting dressed in the morning rush as simple as possible for this demographic.
 
-It stocks essential smart casual clothing within the medium range price bracket embracing essential color tones and well fitting clothing, tees, shorts, jeans, hemleys, polos, pants, shirts etc.</p>
 
 <p><a href="https://www.danielballoch.com/projects/menco/menco-project/"> view the full case study here<a></p>
 
