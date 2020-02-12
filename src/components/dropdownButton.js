@@ -4,14 +4,16 @@ import styled from '@emotion/styled';
 
 const Container = styled.div`
 
- width: 110px;
+
+ width: 142px;
 `
 const DropdownBtn = styled.button`
     border: ${props => props.theme.border};
-    border-bottom: ${props => props.theme.borderBottom};
+    /* border-bottom: ${props => props.theme.borderBottom}; */
     border-radius: ${props => props.theme.borderRadius};
     text-decoration: none;
     transition: 0.3s;
+    margin: 4px 0;
     padding: 4px;
     /* margin: 0 auto; */
     height: ${props => props.theme.height};
@@ -21,6 +23,10 @@ const DropdownBtn = styled.button`
     font-size: ${props => props.theme.fontSize};
     min-width: 140px;
     width: 100%;
+    
+`
+const DropdownWrap = styled.div`
+margin-top: -4px;
 `
 
 const DropdownOption = styled.button`
@@ -119,7 +125,7 @@ export default class DropdownButton extends React.Component {
       
         <Container>
         <DropdownBtn theme={this.props.theme === "dark" ? darkTheme : undefined} onClick={() => this.setState({open: true})}>{this.props.mainText}: {this.state.label}</DropdownBtn>
-          <div style={{display: this.state.open ? 'block' : 'none'}}>
+          <DropdownWrap style={{display: this.state.open ? 'block' : 'none'}}>
             {this.props.options.map((option) => {
                 const handleClick = () => {
                     this.setState({open: false, value: option})
@@ -152,7 +158,7 @@ export default class DropdownButton extends React.Component {
                     )
               }
             })}
-            </div>
+            </DropdownWrap>
         </Container>
       )
     }
